@@ -11,7 +11,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var appCoordinator: AppCoordinator!
+    var appCoordinator: AppManager!
     var window: UIWindow?
 
 
@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         window = UIWindow(windowScene: windowScene)
-        appCoordinator = AppCoordinator.shared
+        appCoordinator = AppManager.shared
         appCoordinator.start(from: window)
         
         if !connectionOptions.urlContexts.isEmpty, let url = connectionOptions.urlContexts.first?.url {

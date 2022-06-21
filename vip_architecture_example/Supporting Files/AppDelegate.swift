@@ -10,12 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var appCoordinator: AppCoordinator!
+    var appCoordinator: AppManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        appCoordinator = AppCoordinator.shared
+        appCoordinator = AppManager.shared
         return true
     }
 
@@ -31,20 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 //MARK: - Remote Notifications
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        
-        appCoordinator.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
-    }
-    
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
-        appCoordinator.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        appCoordinator.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
-    }
-}
+//extension AppDelegate: UNUserNotificationCenterDelegate {
+//    
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//        
+//        appCoordinator.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
+//    }
+//    
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        
+//        appCoordinator.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+//    }
+//    
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        
+//        appCoordinator.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+//    }
+//}

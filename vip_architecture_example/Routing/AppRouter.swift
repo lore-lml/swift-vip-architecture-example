@@ -2,22 +2,29 @@
 //  AppRouter.swift
 //  vip_architecture_example
 //
-//  Created by Lorenzo Limoli on 15/06/22.
+//  Created by Lorenzo Limoli on 22/06/22.
 //
-
 
 import SwiftRouting
 import UIKit
 
-class AppRouter: AppRouting{
+
+class AppRouter: IAppRouter{
     
-    static var instance: AppRouting = AppRouter()
+    static var _appRouter: AppRouter?
     
-    weak var window: UIWindow?
-    
-    static func initialize(window: UIWindow?){
-        instance.window = window
+    static var shared: AppRouter{
+        _appRouter!
     }
     
-    private init(){}
+    static func initialize(window: UIWindow){
+        _appRouter = AppRouter(window: window)
+    }
+    
+    weak var window: UIWindow!
+    
+    private init(window: UIWindow){
+        self.window = window
+    }
+    
 }

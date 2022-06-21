@@ -17,7 +17,7 @@ class NotificationManager: NSObject{
 //    private(set) var fcmToken: String?
     private(set) var notificationEnabled: Bool?
     
-    weak var coordinatorDelegate: AppCoordinator?
+    weak var coordinatorDelegate: AppManager?
     
     var deviceToken: String?{
         guard let token = _deviceToken else{

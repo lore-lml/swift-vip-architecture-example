@@ -1,18 +1,22 @@
 //
-//  AppCoordinator.swift
+//  AppManager.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 15/06/22.
 //
 
 import UIKit
+import Swinject
+import SwiftRouting
 
-class AppCoordinator{
+class AppManager{
     
-    static var shared: AppCoordinator = .init()
+    static var shared: AppManager = .init()
     
     private(set) weak var window: UIWindow?
     private(set) var notificationManager: NotificationManager!
+    private(set) var assembler: Assembler!
+    private(set) var startingRouter: StartingRouter!
     
     private init(){}
  
@@ -20,14 +24,17 @@ class AppCoordinator{
     func start(from window: UIWindow?) {
         self.window = window
         
-        initializeAppRouter()
+        initDependencies()
+        
         initNotificationManager()
+        
+        initStartScreen()
     }
     
 }
 
 // MARK: - App lifecycle
-extension AppCoordinator {
+extension AppManager {
     
     func sceneDidEnterBackground(_ scene: UIScene) {
     }
@@ -45,21 +52,28 @@ extension AppCoordinator {
 
 
 //MARK: Service Initializers
-private extension AppCoordinator{
-    func initializeAppRouter(){
-        AppRouter.initialize(window: window)
-        AppRouter.instance.setRootController(ofType: HomeViewController.self, presentationInput: "CIAONE")
+private extension AppManager{
+    func initDependencies(){
+        self.assembler = Assembler([
+            RootAssembly(window: self.window!)
+        ])
     }
     
     func initNotificationManager(){
         self.notificationManager = NotificationManager.initNotificationManager(with: [.alert, .badge, .sound])
         self.notificationManager.coordinatorDelegate = self
     }
+    
+    func initStartScreen(){
+        let appRouter = assembler.resolver.resolve(IAppRouter.self)!
+        self.startingRouter = .init(appRouter, assembler: assembler)
+        self.startingRouter.showRoute(route: .home(input: "Home Screen"))
+    }
 }
 
 // MARK: - App Notification Management
 
-extension AppCoordinator{
+extension AppManager{
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         //Log.i("applicationDidFailToRegisterForRemoteNotificationsWithError")
         notificationManager.application(application, didFailToRegisterForRemoteNotificationsWithError: error)
@@ -78,7 +92,7 @@ extension AppCoordinator{
 }
 
 // MARK: Callback DEEPLINK URL
-extension AppCoordinator{
+extension AppManager{
     func handleDeepLink(deepLink: URL) {
         
     }

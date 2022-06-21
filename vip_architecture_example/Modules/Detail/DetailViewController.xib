@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="vip_architecture_example" customModuleProvider="target">
             <connections>
+                <outlet property="detailLabel" destination="ef4-6J-EFS" id="txB-BX-X8H"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8L-qW-CxJ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef4-6J-EFS">
                     <rect key="frame" x="186" y="442.5" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -29,8 +30,8 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="y8L-qW-CxJ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="RmC-i4-6CJ"/>
-                <constraint firstItem="y8L-qW-CxJ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nMr-XF-1r7"/>
+                <constraint firstItem="ef4-6J-EFS" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="0fE-0B-1RN"/>
+                <constraint firstItem="ef4-6J-EFS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9eP-wY-qdR"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </view>
