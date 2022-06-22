@@ -9,7 +9,7 @@ import UIKit
 import SwiftRouting
 import Swinject
 
-typealias IDetailControllerProtocol = IDetailDelegate & UIViewController
+typealias IDetailController = IDetailDelegate & UIViewController
 
 // MARK: Navigation Methods
 protocol IDetailRouter: AnyObject{
@@ -20,11 +20,11 @@ class DetailRouter: IDetailRouter, IRouter{
     
     typealias Routes = Void
     
-    weak var view: IDetailControllerProtocol?
+    weak var view: IDetailController!
     var appRouter: IAppRouter?
     var assembler: Assembler?
     
-    init(view: IDetailControllerProtocol) {
+    init(view: IDetailController) {
         self.view = view
     }
 }

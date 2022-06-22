@@ -3,11 +3,11 @@ Pods/*
 Pods/**
 Pods/Pods.xcodeproj/**
 
-CBUAEApp.xcodeproj/xcuserdata/*/**
-CBUAEApp.xcodeproj/project.xcworkspace/xcuserdata/*/**
+*.xcodeproj/xcuserdata/*/**
+*/project.xcworkspace/xcuserdata/*/**
 
-CBUAEApp.xcworkspace/xcuserdata/*/**
-CBUAEApp.xcodeproj/xcshareddata/xcschemes/**
+*/xcuserdata/*/**
+*/xcshareddata/xcschemes/**
 
 *.xcworkspace*.pbxuserxcuserdata/
 

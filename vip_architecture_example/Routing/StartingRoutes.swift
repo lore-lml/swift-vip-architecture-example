@@ -33,7 +33,7 @@ class StartingRouter: IRouter{
     func showRoute(route: StartingRoutes){
         switch route {
         case .home(let input):
-            let controller = DetailAdapter.setup(input: input, assembler: assembler)
+            let controller = HomeAdapter.setup(input: input, assembler: assembler)
             appRouter?.setRootController(controller)
         default:
             fatalError()
