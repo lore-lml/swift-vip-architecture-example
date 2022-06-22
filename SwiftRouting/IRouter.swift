@@ -10,7 +10,7 @@ import Swinject
 public protocol IRouter: AnyObject{
     associatedtype Routes
     
-    var appRouter: IAppRouter? { get }
+    var navigator: IAppNavigator? { get }
     var assembler: Assembler? { get }
     
     func showRoute(route: Routes)

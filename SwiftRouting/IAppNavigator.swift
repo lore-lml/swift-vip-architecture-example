@@ -1,5 +1,5 @@
 //
-//  IAppRouter.swift
+//  IAppNavigator.swift
 //  SwiftRouting
 //
 //  Created by Lorenzo Limoli on 15/06/22.
@@ -14,7 +14,7 @@ public enum PresentationType {
     case presentWithNavigation
 }
 
-public protocol IAppRouter: AnyObject{
+public protocol IAppNavigator: AnyObject{
     
     var window: UIWindow! { get set }
 
@@ -33,7 +33,7 @@ public protocol IAppRouter: AnyObject{
     func dismiss(_ controller: UIViewController, completion: (() -> Void)?, animated: Bool)
 }
 
-public extension IAppRouter{
+public extension IAppNavigator{
     
     func setRootController(_ controller: UIViewController, animated: Bool = true){
         

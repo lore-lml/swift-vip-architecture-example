@@ -16,7 +16,7 @@ class AppManager{
     private(set) weak var window: UIWindow?
     private(set) var notificationManager: NotificationManager!
     private(set) var assembler: Assembler!
-    private(set) var startingRouter: StartingRouter!
+    private(set) var startingRouter: BaseRouter!
     
     private init(){}
  
@@ -65,7 +65,7 @@ private extension AppManager{
     }
     
     func initStartScreen(){
-        let appRouter = assembler.resolver.resolve(IAppRouter.self)!
+        let appRouter = assembler.resolver.resolve(IAppNavigator.self)!
         self.startingRouter = .init(appRouter, assembler: assembler)
         self.startingRouter.showRoute(route: .home(input: "Home Screen"))
     }

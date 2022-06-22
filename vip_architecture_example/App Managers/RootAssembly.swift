@@ -18,9 +18,9 @@ class RootAssembly: Assembly{
     
     func assemble(container: Container) {
         
-        container.register(IAppRouter.self) { _ in
-            AppRouter.initialize(window: self.window)
-            return AppRouter.shared
+        container.register(IAppNavigator.self) { _ in
+            AppNavigator.initialize(window: self.window)
+            return AppNavigator.shared
         }
         
     }

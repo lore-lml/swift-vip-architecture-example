@@ -8,21 +8,19 @@
 import Foundation
 
 // MARK: Interactor Requests interface
-protocol IHomeInteractor{
+protocol IHomeSceneInteractor{
     
-    func fetchInputRequest()
 }
 
-class HomeInteractor: IHomeInteractor{
+class HomeSceneInteractor: IHomeSceneInteractor{
     
-    var presenter: IHomePresenter
-    var input: HomeAdapter.Input?
+    var presenter: IHomeScenePresenter
     /*
      var worker1: Worker1
      var worker2: Worker2
      */
     
-    init(presenter: IHomePresenter /*, dependency1: Dependency1, dependency2: Dependency2 */){
+    init(presenter: IHomeScenePresenter /*, dependency1: Dependency1, dependency2: Dependency2 */){
         self.presenter = presenter
         /*
          self.worker1 = Worker1(dependency1)
@@ -30,7 +28,4 @@ class HomeInteractor: IHomeInteractor{
          */
     }
     
-    func fetchInputRequest(){
-        presenter.fetchInputResponse(input: .init(input: input!))
-    }
 }

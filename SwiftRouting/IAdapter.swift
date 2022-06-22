@@ -12,5 +12,5 @@ public protocol IAdapter: AnyObject{
     
     associatedtype Input: Any
     
-    static func setup(input: Input, assembler: Assembler?) -> UIViewController
+    static func setup(input: Input?, assembler: Assembler?) -> UIViewController
 }

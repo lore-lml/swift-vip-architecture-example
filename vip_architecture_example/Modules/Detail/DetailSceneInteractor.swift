@@ -8,21 +8,19 @@
 import Foundation
 
 // MARK: Interactor Requests interface
-protocol IDetailInteractor{
+protocol IDetailSceneInteractor{
     
-    func fetchStartingInputRequest()
 }
 
-class DetailInteractor: IDetailInteractor{
+class DetailSceneInteractor: IDetailSceneInteractor{
     
-    var presenter: IDetailPresenter
-    var input: DetailAdapter.Input?
+    var presenter: IDetailScenePresenter
     /*
      var worker1: Worker1
      var worker2: Worker2
      */
     
-    init(presenter: IDetailPresenter /*, dependency1: Dependency1, dependency2: Dependency2 */){
+    init(presenter: IDetailScenePresenter /*, dependency1: Dependency1, dependency2: Dependency2 */){
         self.presenter = presenter
         /*
          self.worker1 = Worker1(dependency1)
@@ -30,7 +28,4 @@ class DetailInteractor: IDetailInteractor{
          */
     }
     
-    func fetchStartingInputRequest(){
-        presenter.fetchStartingInputResponse(.init(input: input!))
-    }
 }
