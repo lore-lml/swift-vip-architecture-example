@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Response to ViewModel methods mappers
-protocol IDetailScenePresenter{
+protocol IDetailScenePresenter: AnyObject{
     
 }
 

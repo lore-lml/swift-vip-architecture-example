@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Interactor Requests interface
-protocol IHomeSceneInteractor{
+protocol IHomeSceneInteractor: AnyObject{
     
 }
 

@@ -32,7 +32,7 @@ class BaseRouter: IRouter{
         switch route {
         case .home(let input):
             let controller = HomeSceneAdapter.setup(input: input, assembler: assembler)
-            navigator!.setRootController(controller)
+            navigator!.setRootController(rootType: .singleStack(controller: controller))
         }
     }
     

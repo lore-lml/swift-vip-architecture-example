@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: Response to ViewModel methods mappers
-protocol IHomeScenePresenter{
+protocol IHomeScenePresenter: AnyObject{
     
 }
 

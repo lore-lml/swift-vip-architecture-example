@@ -21,9 +21,8 @@ class RootAssembly: Assembly{
         container.register(IAppNavigator.self) { _ in
             AppNavigator.initialize(window: self.window)
             return AppNavigator.shared
-        }
+        }.inObjectScope(.container)
         
     }
-    
     
 }

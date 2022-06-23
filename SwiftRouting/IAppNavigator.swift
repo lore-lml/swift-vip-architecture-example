@@ -14,13 +14,37 @@ public enum PresentationType {
     case presentWithNavigation
 }
 
+public enum RootType{
+    /// Instantiate a simple UINavigationController as Root and set the controller as first controller
+    case singleStack(controller: UIViewController, customStack: UINavigationController? = nil)
+    
+    /// Instantiate a simple UITabBarController with a single navigation stack as Root
+    case singleStackTabBar(
+        tabBarInfoProvider: TabBarInfoProvider,
+        customTabBarController: UITabBarController? = nil,
+        customStack: UINavigationController? = nil)
+    
+    /// Instantiate UITabBarController as Root with a different navigation stack for each Tab
+    case multiStackTabBar(
+        tabBarInfoProvider: TabBarInfoProvider,
+        customTabBarController: UITabBarController? = nil,
+        customStackFactory: (() -> UINavigationController)? = nil)
+    
+    fileprivate var isTabBar: Bool{
+        switch self {
+        case .singleStackTabBar, .multiStackTabBar: return true
+        default: return false
+        }
+    }
+}
+
 public protocol IAppNavigator: AnyObject{
     
     var window: UIWindow! { get set }
 
-    func setRootController(_ controller: UIViewController, animated: Bool)
+    func setRootController(rootType: RootType, animated: Bool)
+    func setCustomRootController(controller: UIViewController)
     
-
     func go(from: UIViewController, to: UIViewController, presentationType: PresentationType, completion: (() -> Void)?, animated: Bool)
     
     
@@ -30,20 +54,74 @@ public protocol IAppNavigator: AnyObject{
     func back<To: UIViewController>(from: UIViewController, to type: To.Type, completion: (() -> Void)?, animated: Bool) -> Bool
     
     
+    
     func dismiss(_ controller: UIViewController, completion: (() -> Void)?, animated: Bool)
 }
 
 public extension IAppNavigator{
     
-    func setRootController(_ controller: UIViewController, animated: Bool = true){
+    func setRootController(rootType: RootType, animated: Bool = true){
+        let root: UIViewController
         
-        if let navCon = window.rootViewController as? UINavigationController{
-            navCon.setViewControllers([controller], animated: animated)
-            return
+        switch rootType {
+        case .singleStack(let controller, let customStack):
+            
+            let navigationController = customStack ?? UINavigationController()
+            
+            navigationController.setViewControllers([controller], animated: animated)
+            
+            root = navigationController
+            
+        case .singleStackTabBar(
+            let tabBarInfoProvider,
+            let customTabBarController,
+            let customStack):
+            
+            let navigationController = customStack ?? UINavigationController()
+            
+            let tabBarController = customTabBarController ?? UITabBarController()
+            
+            let controllers: [UIViewController] = tabBarInfoProvider.itemsInfo.map{ item in
+                let viewController = item.viewController()
+                viewController.tabBarItem = item.tabBarItem
+                return viewController
+            }
+            
+            tabBarController.viewControllers = controllers
+            
+            navigationController.setViewControllers([tabBarController], animated: animated)
+            
+            root = navigationController
+            
+        case .multiStackTabBar(
+            let tabBarInfoProvider,
+            let customTabBarController,
+            let customStackFactory):
+            
+            let tabBarController = customTabBarController ?? UITabBarController()
+            
+            let controllers: [UINavigationController] = tabBarInfoProvider.itemsInfo.map{ item in
+                let viewController = item.viewController()
+                viewController.tabBarItem = item.tabBarItem
+                
+                let navigationController = customStackFactory?() ?? UINavigationController()
+                
+                navigationController.setViewControllers([viewController], animated: animated)
+                
+                return navigationController
+            }
+            
+            tabBarController.viewControllers = controllers
+            
+            root = tabBarController
         }
         
-        window.rootViewController = UINavigationController(rootViewController: controller)
-        
+        window.rootViewController = root
+        window.makeKeyAndVisible()
+    }
+    
+    func setCustomRootController(controller: UIViewController){
+        window.rootViewController = controller
         window.makeKeyAndVisible()
     }
     

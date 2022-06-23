@@ -22,6 +22,7 @@
 		01358CDB2862151E00D25805 /* DetailSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDA2862151E00D25805 /* DetailSceneModels.swift */; };
 		01358CDD2862185500D25805 /* DetailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDC2862185500D25805 /* DetailScenePresenter.swift */; };
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
+		01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A712864A51400CFD56C /* TabBarInfoProvider.swift */; };
 		018105E628574FD7006CD742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E528574FD7006CD742 /* AppDelegate.swift */; };
 		018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E728574FD7006CD742 /* SceneDelegate.swift */; };
 		018105EF28574FD8006CD742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018105EE28574FD8006CD742 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		01358CDA2862151E00D25805 /* DetailSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneModels.swift; sourceTree = "<group>"; };
 		01358CDC2862185500D25805 /* DetailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScenePresenter.swift; sourceTree = "<group>"; };
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
+		01562A712864A51400CFD56C /* TabBarInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfoProvider.swift; sourceTree = "<group>"; };
 		018105E228574FD7006CD742 /* vip_architecture_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip_architecture_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018105E528574FD7006CD742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018105E728574FD7006CD742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,13 +162,30 @@
 			isa = PBXGroup;
 			children = (
 				013128FE2859D43300FFC750 /* SwiftRouting.h */,
+				01562A712864A51400CFD56C /* TabBarInfoProvider.swift */,
 				0198C61D28627C9E00491711 /* IRouter.swift */,
 				0198C61F286283CC00491711 /* IAdapter.swift */,
 				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
+				0151EB182864A341002D7724 /* Utils */,
+			);
+			path = SwiftRouting;
+			sourceTree = "<group>";
+		};
+		013830322864781C005E3F7B /* General Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				0198C62328628A6700491711 /* RootAssembly.swift */,
+			);
+			path = "General Assemblies";
+			sourceTree = "<group>";
+		};
+		0151EB182864A341002D7724 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
 				0198C61B2862753900491711 /* Extension+UINavigationController.swift */,
 				0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */,
 			);
-			path = SwiftRouting;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		018105D928574FD7006CD742 = {
@@ -193,8 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				018105F328574FD8006CD742 /* Info.plist */,
-				0198C62228628A2C00491711 /* App Managers */,
 				018106152857502E006CD742 /* Supporting Files */,
+				0198C62228628A2C00491711 /* App Managers */,
+				013830322864781C005E3F7B /* General Assemblies */,
 				018106D92857515A006CD742 /* Storyboards */,
 				018106DA28575170006CD742 /* Modules */,
 				018106DB2857517D006CD742 /* Routing */,
@@ -250,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				0117CA12285A37F100B1C345 /* AppManager.swift */,
-				0198C62328628A6700491711 /* RootAssembly.swift */,
 				0117CA14285A3C3300B1C345 /* NotificationManager.swift */,
 			);
 			path = "App Managers";
@@ -458,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
 				0198C620286283CC00491711 /* IAdapter.swift in Sources */,
 				0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */,
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
