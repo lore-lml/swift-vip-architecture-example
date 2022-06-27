@@ -10,9 +10,7 @@ import Swinject
 import SwiftRouting
 
 enum BaseRoutes{
-    
-    case home(input: String)
-
+    case home
 }
 
 class BaseRouter: IRouter{
@@ -30,9 +28,9 @@ class BaseRouter: IRouter{
     
     func showRoute(route: BaseRoutes){
         switch route {
-        case .home(let input):
-            let controller = HomeSceneAdapter.setup(input: input, assembler: assembler)
-            navigator!.setRootController(rootType: .singleStack(controller: controller))
+        case .home:
+            let rootType: RootType = .multiStackTabBar(tabBarInfoProvider: TabBarInfo(assembler: assembler))
+            navigator!.setRootController(rootType: rootType)
         }
     }
     

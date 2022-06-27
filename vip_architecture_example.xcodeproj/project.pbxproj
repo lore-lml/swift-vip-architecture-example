@@ -7,38 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010D480D28699F6F00AAA818 /* XibSubscribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010D480C28699F6F00AAA818 /* XibSubscribable.swift */; };
 		0117CA0D2859EF0500B1C345 /* StoryboardImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */; };
 		0117CA13285A37F100B1C345 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117CA12285A37F100B1C345 /* AppManager.swift */; };
 		0117CA15285A3C3300B1C345 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0117CA14285A3C3300B1C345 /* NotificationManager.swift */; };
+		011DB9662864C8D300575446 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011DB9642864C8D300575446 /* CharacterTableViewCell.swift */; };
+		011DB9672864C8D300575446 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DB9652864C8D300575446 /* CharacterTableViewCell.xib */; };
 		013128FF2859D43300FFC750 /* SwiftRouting.h in Headers */ = {isa = PBXBuildFile; fileRef = 013128FE2859D43300FFC750 /* SwiftRouting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		013129022859D43300FFC750 /* SwiftRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; };
 		013129032859D43300FFC750 /* SwiftRouting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		01358CD028620BDB00D25805 /* DetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CCE28620BDB00D25805 /* DetailSceneViewController.swift */; };
-		01358CD128620BDB00D25805 /* DetailSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01358CCF28620BDB00D25805 /* DetailSceneViewController.xib */; };
 		01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD228620C1B00D25805 /* BaseRouter.swift */; };
-		01358CD5286210DF00D25805 /* DetailSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD4286210DF00D25805 /* DetailSceneAdapter.swift */; };
-		01358CD7286212C700D25805 /* DetailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD6286212C700D25805 /* DetailSceneInteractor.swift */; };
-		01358CD9286214E600D25805 /* DetailSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD8286214E600D25805 /* DetailSceneRouter.swift */; };
-		01358CDB2862151E00D25805 /* DetailSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDA2862151E00D25805 /* DetailSceneModels.swift */; };
-		01358CDD2862185500D25805 /* DetailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDC2862185500D25805 /* DetailScenePresenter.swift */; };
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
+		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
+		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
 		01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A712864A51400CFD56C /* TabBarInfoProvider.swift */; };
+		01562A862864B7C200CFD56C /* HPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A852864B7C200CFD56C /* HPRepository.swift */; };
+		01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */; };
+		01562A8C2864BBCA00CFD56C /* HPCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8B2864BBCA00CFD56C /* HPCharacter.swift */; };
+		01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8D2864BDDD00CFD56C /* HPHouse.swift */; };
+		01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */; };
+		01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */; };
+		01562A962864C07A00CFD56C /* HPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A952864C07A00CFD56C /* HPService.swift */; };
+		01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A972864C08800CFD56C /* HPServiceImpl.swift */; };
+		01562A9A2864C4B200CFD56C /* CommonServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */; };
+		01562AA22864C5BF00CFD56C /* StudentsSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01562A9B2864C5BF00CFD56C /* StudentsSceneViewController.xib */; };
+		01562AA32864C5BF00CFD56C /* StudentsSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A9C2864C5BF00CFD56C /* StudentsSceneViewController.swift */; };
+		01562AA42864C5BF00CFD56C /* StudentsSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A9D2864C5BF00CFD56C /* StudentsSceneInteractor.swift */; };
+		01562AA52864C5BF00CFD56C /* StudentsSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A9E2864C5BF00CFD56C /* StudentsSceneAdapter.swift */; };
+		01562AA62864C5BF00CFD56C /* StudentsSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A9F2864C5BF00CFD56C /* StudentsSceneModels.swift */; };
+		01562AA72864C5BF00CFD56C /* StudentsSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562AA02864C5BF00CFD56C /* StudentsSceneRouter.swift */; };
+		01562AA82864C5BF00CFD56C /* StudentsScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562AA12864C5BF00CFD56C /* StudentsScenePresenter.swift */; };
+		01562AAA2864C5D800CFD56C /* HpStudentsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562AA92864C5D800CFD56C /* HpStudentsWorker.swift */; };
 		018105E628574FD7006CD742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E528574FD7006CD742 /* AppDelegate.swift */; };
 		018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E728574FD7006CD742 /* SceneDelegate.swift */; };
 		018105EF28574FD8006CD742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018105EE28574FD8006CD742 /* Assets.xcassets */; };
 		018105F228574FD8006CD742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018105F028574FD8006CD742 /* LaunchScreen.storyboard */; };
 		0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C61B2862753900491711 /* Extension+UINavigationController.swift */; };
 		0198C61E28627C9E00491711 /* IRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C61D28627C9E00491711 /* IRouter.swift */; };
-		0198C620286283CC00491711 /* IAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C61F286283CC00491711 /* IAdapter.swift */; };
-		0198C62428628A6700491711 /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62328628A6700491711 /* RootAssembly.swift */; };
+		0198C62428628A6700491711 /* GeneralAppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62328628A6700491711 /* GeneralAppAssembly.swift */; };
 		0198C62628628AA100491711 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62528628AA100491711 /* AppNavigator.swift */; };
-		0198C62928631AD200491711 /* HomeSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62728631AD200491711 /* HomeSceneViewController.swift */; };
-		0198C62A28631AD200491711 /* HomeSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0198C62828631AD200491711 /* HomeSceneViewController.xib */; };
-		0198C62C28631C1E00491711 /* HomeSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62B28631C1E00491711 /* HomeSceneRouter.swift */; };
-		0198C62E28631C8400491711 /* HomeSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62D28631C8400491711 /* HomeSceneInteractor.swift */; };
-		0198C63028631CAF00491711 /* HomeScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C62F28631CAF00491711 /* HomeScenePresenter.swift */; };
-		0198C63228631CDB00491711 /* HomeSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C63128631CDB00491711 /* HomeSceneAdapter.swift */; };
-		0198C63428631D4C00491711 /* HomeSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198C63328631D4C00491711 /* HomeSceneModels.swift */; };
+		01B303B82869A6900004F740 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303B72869A6900004F740 /* CardView.swift */; };
+		01B303BB2869A6B30004F740 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303BA2869A6B30004F740 /* LoadingView.swift */; };
+		01B303BE2869A75A0004F740 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B303BD2869A7590004F740 /* LoadingView.xib */; };
+		01B303C02869A83C0004F740 /* hp.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B303BF2869A83C0004F740 /* hp.json */; };
+		01B303C42869AF8B0004F740 /* TabBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303C32869AF8B0004F740 /* TabBarInfo.swift */; };
+		01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303CA2869BA4F0004F740 /* XibImportable.swift */; };
 		4E0055A4EA6C6686DE19F3D5 /* Pods_SwiftRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */; };
 		E8B0D96E9B45192E93469DB4 /* Pods_vip_architecture_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */; };
 /* End PBXBuildFile section */
@@ -68,21 +81,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		010D480C28699F6F00AAA818 /* XibSubscribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibSubscribable.swift; sourceTree = "<group>"; };
 		0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardImportable.swift; sourceTree = "<group>"; };
 		0117CA12285A37F100B1C345 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		0117CA14285A3C3300B1C345 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		011DB9642864C8D300575446 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		011DB9652864C8D300575446 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		013128FC2859D43300FFC750 /* SwiftRouting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRouting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		013128FE2859D43300FFC750 /* SwiftRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRouting.h; sourceTree = "<group>"; };
-		01358CCE28620BDB00D25805 /* DetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneViewController.swift; sourceTree = "<group>"; };
-		01358CCF28620BDB00D25805 /* DetailSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSceneViewController.xib; sourceTree = "<group>"; };
 		01358CD228620C1B00D25805 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		01358CD4286210DF00D25805 /* DetailSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneAdapter.swift; sourceTree = "<group>"; };
-		01358CD6286212C700D25805 /* DetailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneInteractor.swift; sourceTree = "<group>"; };
-		01358CD8286214E600D25805 /* DetailSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneRouter.swift; sourceTree = "<group>"; };
-		01358CDA2862151E00D25805 /* DetailSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSceneModels.swift; sourceTree = "<group>"; };
-		01358CDC2862185500D25805 /* DetailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScenePresenter.swift; sourceTree = "<group>"; };
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
+		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
 		01562A712864A51400CFD56C /* TabBarInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfoProvider.swift; sourceTree = "<group>"; };
+		01562A852864B7C200CFD56C /* HPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepository.swift; sourceTree = "<group>"; };
+		01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepositoryImpl.swift; sourceTree = "<group>"; };
+		01562A8B2864BBCA00CFD56C /* HPCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCharacter.swift; sourceTree = "<group>"; };
+		01562A8D2864BDDD00CFD56C /* HPHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPHouse.swift; sourceTree = "<group>"; };
+		01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoHPCharacter.swift; sourceTree = "<group>"; };
+		01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoHpCharacterDetail.swift; sourceTree = "<group>"; };
+		01562A952864C07A00CFD56C /* HPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPService.swift; sourceTree = "<group>"; };
+		01562A972864C08800CFD56C /* HPServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPServiceImpl.swift; sourceTree = "<group>"; };
+		01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonServiceAssembly.swift; sourceTree = "<group>"; };
+		01562A9B2864C5BF00CFD56C /* StudentsSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentsSceneViewController.xib; sourceTree = "<group>"; };
+		01562A9C2864C5BF00CFD56C /* StudentsSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsSceneViewController.swift; sourceTree = "<group>"; };
+		01562A9D2864C5BF00CFD56C /* StudentsSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsSceneInteractor.swift; sourceTree = "<group>"; };
+		01562A9E2864C5BF00CFD56C /* StudentsSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsSceneAdapter.swift; sourceTree = "<group>"; };
+		01562A9F2864C5BF00CFD56C /* StudentsSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsSceneModels.swift; sourceTree = "<group>"; };
+		01562AA02864C5BF00CFD56C /* StudentsSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsSceneRouter.swift; sourceTree = "<group>"; };
+		01562AA12864C5BF00CFD56C /* StudentsScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsScenePresenter.swift; sourceTree = "<group>"; };
+		01562AA92864C5D800CFD56C /* HpStudentsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStudentsWorker.swift; sourceTree = "<group>"; };
 		018105E228574FD7006CD742 /* vip_architecture_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip_architecture_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018105E528574FD7006CD742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018105E728574FD7006CD742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,16 +119,14 @@
 		018105F328574FD8006CD742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0198C61B2862753900491711 /* Extension+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationController.swift"; sourceTree = "<group>"; };
 		0198C61D28627C9E00491711 /* IRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRouter.swift; sourceTree = "<group>"; };
-		0198C61F286283CC00491711 /* IAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAdapter.swift; sourceTree = "<group>"; };
-		0198C62328628A6700491711 /* RootAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
+		0198C62328628A6700491711 /* GeneralAppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAppAssembly.swift; sourceTree = "<group>"; };
 		0198C62528628AA100491711 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
-		0198C62728631AD200491711 /* HomeSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewController.swift; sourceTree = "<group>"; };
-		0198C62828631AD200491711 /* HomeSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSceneViewController.xib; sourceTree = "<group>"; };
-		0198C62B28631C1E00491711 /* HomeSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneRouter.swift; sourceTree = "<group>"; };
-		0198C62D28631C8400491711 /* HomeSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneInteractor.swift; sourceTree = "<group>"; };
-		0198C62F28631CAF00491711 /* HomeScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScenePresenter.swift; sourceTree = "<group>"; };
-		0198C63128631CDB00491711 /* HomeSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneAdapter.swift; sourceTree = "<group>"; };
-		0198C63328631D4C00491711 /* HomeSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneModels.swift; sourceTree = "<group>"; };
+		01B303B72869A6900004F740 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		01B303BA2869A6B30004F740 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		01B303BD2869A7590004F740 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		01B303BF2869A83C0004F740 /* hp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hp.json; sourceTree = "<group>"; };
+		01B303C32869AF8B0004F740 /* TabBarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfo.swift; sourceTree = "<group>"; };
+		01B303CA2869BA4F0004F740 /* XibImportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibImportable.swift; sourceTree = "<group>"; };
 		0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip_architecture_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRouting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B47907667FEBB8F2285330A /* Pods-vip_architecture_example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip_architecture_example.debug.xcconfig"; path = "Target Support Files/Pods-vip_architecture_example/Pods-vip_architecture_example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,32 +156,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0117CA1A285A3E8200B1C345 /* Home */ = {
+		010D480B28699F4C00AAA818 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0198C62728631AD200491711 /* HomeSceneViewController.swift */,
-				0198C62828631AD200491711 /* HomeSceneViewController.xib */,
-				0198C62B28631C1E00491711 /* HomeSceneRouter.swift */,
-				0198C62D28631C8400491711 /* HomeSceneInteractor.swift */,
-				0198C62F28631CAF00491711 /* HomeScenePresenter.swift */,
-				0198C63128631CDB00491711 /* HomeSceneAdapter.swift */,
-				0198C63328631D4C00491711 /* HomeSceneModels.swift */,
+				010D480C28699F6F00AAA818 /* XibSubscribable.swift */,
+				0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */,
+				0155A6F82869C12D004D2CCA /* Log.swift */,
 			);
-			path = Home;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		0117CA1B285A3E8E00B1C345 /* Detail */ = {
+		011DB95E2864C7D000575446 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01358CCE28620BDB00D25805 /* DetailSceneViewController.swift */,
-				01358CCF28620BDB00D25805 /* DetailSceneViewController.xib */,
-				01358CD4286210DF00D25805 /* DetailSceneAdapter.swift */,
-				01358CD6286212C700D25805 /* DetailSceneInteractor.swift */,
-				01358CD8286214E600D25805 /* DetailSceneRouter.swift */,
-				01358CDA2862151E00D25805 /* DetailSceneModels.swift */,
-				01358CDC2862185500D25805 /* DetailScenePresenter.swift */,
 			);
-			path = Detail;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011DB9632864C8A400575446 /* Character Cell */ = {
+			isa = PBXGroup;
+			children = (
+				011DB9642864C8D300575446 /* CharacterTableViewCell.swift */,
+				011DB9652864C8D300575446 /* CharacterTableViewCell.xib */,
+			);
+			path = "Character Cell";
 			sourceTree = "<group>";
 		};
 		013128FD2859D43300FFC750 /* SwiftRouting */ = {
@@ -164,7 +188,6 @@
 				013128FE2859D43300FFC750 /* SwiftRouting.h */,
 				01562A712864A51400CFD56C /* TabBarInfoProvider.swift */,
 				0198C61D28627C9E00491711 /* IRouter.swift */,
-				0198C61F286283CC00491711 /* IAdapter.swift */,
 				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
 				0151EB182864A341002D7724 /* Utils */,
 			);
@@ -174,7 +197,8 @@
 		013830322864781C005E3F7B /* General Assemblies */ = {
 			isa = PBXGroup;
 			children = (
-				0198C62328628A6700491711 /* RootAssembly.swift */,
+				0198C62328628A6700491711 /* GeneralAppAssembly.swift */,
+				01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */,
 			);
 			path = "General Assemblies";
 			sourceTree = "<group>";
@@ -184,8 +208,72 @@
 			children = (
 				0198C61B2862753900491711 /* Extension+UINavigationController.swift */,
 				0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */,
+				01B303CA2869BA4F0004F740 /* XibImportable.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		01562A822864B75D00CFD56C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				01562A842864B78C00CFD56C /* Harry Potter */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		01562A832864B77000CFD56C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				01562A942864C06E00CFD56C /* Harry Potter */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		01562A842864B78C00CFD56C /* Harry Potter */ = {
+			isa = PBXGroup;
+			children = (
+				01562A852864B7C200CFD56C /* HPRepository.swift */,
+				01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */,
+			);
+			path = "Harry Potter";
+			sourceTree = "<group>";
+		};
+		01562A892864B8F200CFD56C /* Data Providers */ = {
+			isa = PBXGroup;
+			children = (
+				01562A8A2864B91300CFD56C /* Dtos */,
+				01562A832864B77000CFD56C /* Services */,
+				01562A822864B75D00CFD56C /* Repositories */,
+			);
+			path = "Data Providers";
+			sourceTree = "<group>";
+		};
+		01562A8A2864B91300CFD56C /* Dtos */ = {
+			isa = PBXGroup;
+			children = (
+				01562A932864BF6E00CFD56C /* Harry Potter */,
+			);
+			path = Dtos;
+			sourceTree = "<group>";
+		};
+		01562A932864BF6E00CFD56C /* Harry Potter */ = {
+			isa = PBXGroup;
+			children = (
+				01562A8B2864BBCA00CFD56C /* HPCharacter.swift */,
+				01562A8D2864BDDD00CFD56C /* HPHouse.swift */,
+				01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */,
+				01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */,
+			);
+			path = "Harry Potter";
+			sourceTree = "<group>";
+		};
+		01562A942864C06E00CFD56C /* Harry Potter */ = {
+			isa = PBXGroup;
+			children = (
+				01562A952864C07A00CFD56C /* HPService.swift */,
+				01562A972864C08800CFD56C /* HPServiceImpl.swift */,
+			);
+			path = "Harry Potter";
 			sourceTree = "<group>";
 		};
 		018105D928574FD7006CD742 = {
@@ -216,8 +304,11 @@
 				0198C62228628A2C00491711 /* App Managers */,
 				013830322864781C005E3F7B /* General Assemblies */,
 				018106D92857515A006CD742 /* Storyboards */,
-				018106DA28575170006CD742 /* Modules */,
+				018106DA28575170006CD742 /* Scenes */,
+				01B303B42869A5D70004F740 /* Common */,
+				010D480B28699F4C00AAA818 /* Utils */,
 				018106DB2857517D006CD742 /* Routing */,
+				01562A892864B8F200CFD56C /* Data Providers */,
 				018106DC2857518A006CD742 /* Resources */,
 			);
 			path = vip_architecture_example;
@@ -240,13 +331,12 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		018106DA28575170006CD742 /* Modules */ = {
+		018106DA28575170006CD742 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0117CA1B285A3E8E00B1C345 /* Detail */,
-				0117CA1A285A3E8200B1C345 /* Home */,
+				01B303A42869A3EE0004F740 /* Students */,
 			);
-			path = Modules;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		018106DB2857517D006CD742 /* Routing */ = {
@@ -254,6 +344,7 @@
 			children = (
 				01358CD228620C1B00D25805 /* BaseRouter.swift */,
 				0198C62528628AA100491711 /* AppNavigator.swift */,
+				01B303C32869AF8B0004F740 /* TabBarInfo.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -261,6 +352,7 @@
 		018106DC2857518A006CD742 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01B303BF2869A83C0004F740 /* hp.json */,
 				018105EE28574FD8006CD742 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -273,6 +365,49 @@
 				0117CA14285A3C3300B1C345 /* NotificationManager.swift */,
 			);
 			path = "App Managers";
+			sourceTree = "<group>";
+		};
+		01B303A42869A3EE0004F740 /* Students */ = {
+			isa = PBXGroup;
+			children = (
+				011DB95E2864C7D000575446 /* Views */,
+				01562A9B2864C5BF00CFD56C /* StudentsSceneViewController.xib */,
+				01562A9C2864C5BF00CFD56C /* StudentsSceneViewController.swift */,
+				01562A9D2864C5BF00CFD56C /* StudentsSceneInteractor.swift */,
+				01562A9E2864C5BF00CFD56C /* StudentsSceneAdapter.swift */,
+				01562A9F2864C5BF00CFD56C /* StudentsSceneModels.swift */,
+				01562AA02864C5BF00CFD56C /* StudentsSceneRouter.swift */,
+				01562AA12864C5BF00CFD56C /* StudentsScenePresenter.swift */,
+				01562AA92864C5D800CFD56C /* HpStudentsWorker.swift */,
+			);
+			path = Students;
+			sourceTree = "<group>";
+		};
+		01B303B42869A5D70004F740 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				01B303B52869A5F00004F740 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		01B303B52869A5F00004F740 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011DB9632864C8A400575446 /* Character Cell */,
+				01B303B72869A6900004F740 /* CardView.swift */,
+				01B303BC2869A72C0004F740 /* Loading View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01B303BC2869A72C0004F740 /* Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				01B303BA2869A6B30004F740 /* LoadingView.swift */,
+				01B303BD2869A7590004F740 /* LoadingView.xib */,
+			);
+			path = "Loading View";
 			sourceTree = "<group>";
 		};
 		14DEB9EA7DEF27F91A1617EC /* Pods */ = {
@@ -401,8 +536,10 @@
 			files = (
 				018105F228574FD8006CD742 /* LaunchScreen.storyboard in Resources */,
 				018105EF28574FD8006CD742 /* Assets.xcassets in Resources */,
-				01358CD128620BDB00D25805 /* DetailSceneViewController.xib in Resources */,
-				0198C62A28631AD200491711 /* HomeSceneViewController.xib in Resources */,
+				01562AA22864C5BF00CFD56C /* StudentsSceneViewController.xib in Resources */,
+				01B303C02869A83C0004F740 /* hp.json in Resources */,
+				011DB9672864C8D300575446 /* CharacterTableViewCell.xib in Resources */,
+				01B303BE2869A75A0004F740 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,8 +615,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
-				0198C620286283CC00491711 /* IAdapter.swift in Sources */,
 				0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */,
+				01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */,
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
 				0198C61E28627C9E00491711 /* IRouter.swift in Sources */,
 				0117CA0D2859EF0500B1C345 /* StoryboardImportable.swift in Sources */,
@@ -491,24 +628,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				0117CA13285A37F100B1C345 /* AppManager.swift in Sources */,
+				01562AA72864C5BF00CFD56C /* StudentsSceneRouter.swift in Sources */,
 				018105E628574FD7006CD742 /* AppDelegate.swift in Sources */,
-				0198C62C28631C1E00491711 /* HomeSceneRouter.swift in Sources */,
-				0198C62E28631C8400491711 /* HomeSceneInteractor.swift in Sources */,
-				0198C63428631D4C00491711 /* HomeSceneModels.swift in Sources */,
-				01358CDD2862185500D25805 /* DetailScenePresenter.swift in Sources */,
-				01358CDB2862151E00D25805 /* DetailSceneModels.swift in Sources */,
-				0198C62428628A6700491711 /* RootAssembly.swift in Sources */,
-				0198C62928631AD200491711 /* HomeSceneViewController.swift in Sources */,
+				0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */,
+				01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */,
+				01562AA62864C5BF00CFD56C /* StudentsSceneModels.swift in Sources */,
+				01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */,
+				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
+				01562AA52864C5BF00CFD56C /* StudentsSceneAdapter.swift in Sources */,
+				01B303BB2869A6B30004F740 /* LoadingView.swift in Sources */,
+				01562AA82864C5BF00CFD56C /* StudentsScenePresenter.swift in Sources */,
+				010D480D28699F6F00AAA818 /* XibSubscribable.swift in Sources */,
+				01562A9A2864C4B200CFD56C /* CommonServiceAssembly.swift in Sources */,
+				01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */,
+				0198C62428628A6700491711 /* GeneralAppAssembly.swift in Sources */,
+				01562AA42864C5BF00CFD56C /* StudentsSceneInteractor.swift in Sources */,
 				0117CA15285A3C3300B1C345 /* NotificationManager.swift in Sources */,
-				01358CD5286210DF00D25805 /* DetailSceneAdapter.swift in Sources */,
 				018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */,
-				0198C63028631CAF00491711 /* HomeScenePresenter.swift in Sources */,
-				01358CD7286212C700D25805 /* DetailSceneInteractor.swift in Sources */,
-				01358CD9286214E600D25805 /* DetailSceneRouter.swift in Sources */,
-				0198C63228631CDB00491711 /* HomeSceneAdapter.swift in Sources */,
+				01562A962864C07A00CFD56C /* HPService.swift in Sources */,
+				01562AAA2864C5D800CFD56C /* HpStudentsWorker.swift in Sources */,
+				01562A862864B7C200CFD56C /* HPRepository.swift in Sources */,
+				01562A8C2864BBCA00CFD56C /* HPCharacter.swift in Sources */,
+				01B303B82869A6900004F740 /* CardView.swift in Sources */,
+				01562AA32864C5BF00CFD56C /* StudentsSceneViewController.swift in Sources */,
+				01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */,
 				0198C62628628AA100491711 /* AppNavigator.swift in Sources */,
 				01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */,
-				01358CD028620BDB00D25805 /* DetailSceneViewController.swift in Sources */,
+				011DB9662864C8D300575446 /* CharacterTableViewCell.swift in Sources */,
+				01B303C42869AF8B0004F740 /* TabBarInfo.swift in Sources */,
+				0155A6F92869C12D004D2CCA /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +877,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9QPEW3P9H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = vip_architecture_example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -760,6 +912,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9QPEW3P9H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = vip_architecture_example/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

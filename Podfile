@@ -6,6 +6,8 @@ target 'vip_architecture_example' do
   use_frameworks!
 
   # Pods for vip_architecture_example
+  pod 'Alamofire'
+  pod 'lottie-ios', '~> 3.2.3'
 
 end
 

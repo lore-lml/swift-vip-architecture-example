@@ -55,7 +55,8 @@ extension AppManager {
 private extension AppManager{
     func initDependencies(){
         self.assembler = Assembler([
-            RootAssembly(window: self.window!)
+            GeneralAppAssembly(window: self.window!),
+            CommonServiceAssembly()
         ])
     }
     
@@ -67,7 +68,7 @@ private extension AppManager{
     func initStartScreen(){
         let appRouter = assembler.resolver.resolve(IAppNavigator.self)!
         self.startingRouter = .init(appRouter, assembler: assembler)
-        self.startingRouter.showRoute(route: .home(input: "Home Screen"))
+        self.startingRouter.showRoute(route: .home)
     }
 }
 

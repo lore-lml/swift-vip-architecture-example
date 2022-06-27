@@ -11,7 +11,7 @@ public protocol StoryboardImportable: UIViewController{
     static var storyboardId: String {get}
     static var storyboardBundle: Bundle {get}
     static var storyboardName: String {get}
-    static func instantiate() -> Self
+    static func fromStoryboard() -> Self
 }
 
 public extension StoryboardImportable{
@@ -27,7 +27,7 @@ public extension StoryboardImportable{
         Bundle(for: Self.self)
     }
     
-    static func instantiate() -> Self{
+    static func fromStoryboard() -> Self{
         let storyboard = UIStoryboard(name: storyboardName, bundle: storyboardBundle)
         
         guard let controller = storyboard.instantiateViewController(withIdentifier: storyboardId) as? Self else{
