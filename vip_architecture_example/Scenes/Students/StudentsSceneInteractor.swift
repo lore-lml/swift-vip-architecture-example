@@ -13,16 +13,20 @@ import Foundation
 // MARK: Interactor Requests interface
 protocol IStudentsSceneInteractor: AnyObject{
     func fetchStudentsRequest()
+    func fetchStudentImageRequest(_ request: StudentsSceneModels.FetchStudentImage.Request)
 }
 
 class StudentsSceneInteractor {
     
     var presenter: IStudentsScenePresenter
     private let _studentWorker: HpStudentsWorker
+    private let _studentImagesWorker: HpStudentImagesWorker
+    private var _studentModels: [DtoHpCharacter] = []
     
     init(presenter: IStudentsScenePresenter, hpService: HPService){
         self.presenter = presenter
-        self._studentWorker = HpStudentsWorker(hpService: hpService)
+        self._studentWorker = .init(hpService: hpService)
+        self._studentImagesWorker = .init(hpService: hpService)
     }
 
 }
@@ -33,10 +37,30 @@ extension StudentsSceneInteractor: IStudentsSceneInteractor{
         _studentWorker.getStudents { [weak self] res in
             switch res{
             case .success(let students):
-                self?.presenter.fetchStudentsResponse(response: students)
+                self?._studentModels = students
+                self?.presenter.fetchStudentsResponse(students)
             case .failure(let err):
-                self?.presenter.showErrorResponse(response: .init(error: err))
+                self?.presenter.showErrorResponse(.init(error: err))
             }
+        }
+    }
+    
+    func fetchStudentImageRequest(_ request: StudentsSceneModels.FetchStudentImage.Request){
+        let selectedCharacter = _studentModels[request.cellIndex.row]
+        _studentImagesWorker.getStudentImage(character: selectedCharacter) { [weak self] res in
+            
+            switch res{
+            case .success(let img):
+                let response = StudentsSceneModels.FetchStudentImage.Response(
+                    cellIndex: request.cellIndex,
+                    studentImg: img
+                )
+                self?.presenter.fetchStudentImageResponse(response)
+                
+            case .failure(let err):
+                self?.presenter.showErrorResponse(.init(error: err))
+            }
+            
         }
     }
 }

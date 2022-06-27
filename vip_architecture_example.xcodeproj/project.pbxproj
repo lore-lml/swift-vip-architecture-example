@@ -20,6 +20,7 @@
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
 		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
 		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
+		0155A6FE2869D3E2004D2CCA /* HpStudentImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */; };
 		01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A712864A51400CFD56C /* TabBarInfoProvider.swift */; };
 		01562A862864B7C200CFD56C /* HPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A852864B7C200CFD56C /* HPRepository.swift */; };
 		01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */; };
@@ -93,6 +94,7 @@
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
 		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
+		0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStudentImagesWorker.swift; sourceTree = "<group>"; };
 		01562A712864A51400CFD56C /* TabBarInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfoProvider.swift; sourceTree = "<group>"; };
 		01562A852864B7C200CFD56C /* HPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepository.swift; sourceTree = "<group>"; };
 		01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -166,13 +168,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		011DB95E2864C7D000575446 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		011DB9632864C8A400575446 /* Character Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +206,15 @@
 				01B303CA2869BA4F0004F740 /* XibImportable.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0155A6FC2869D3B1004D2CCA /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				01562AA92864C5D800CFD56C /* HpStudentsWorker.swift */,
+				0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		01562A822864B75D00CFD56C /* Repositories */ = {
@@ -370,7 +374,6 @@
 		01B303A42869A3EE0004F740 /* Students */ = {
 			isa = PBXGroup;
 			children = (
-				011DB95E2864C7D000575446 /* Views */,
 				01562A9B2864C5BF00CFD56C /* StudentsSceneViewController.xib */,
 				01562A9C2864C5BF00CFD56C /* StudentsSceneViewController.swift */,
 				01562A9D2864C5BF00CFD56C /* StudentsSceneInteractor.swift */,
@@ -378,7 +381,7 @@
 				01562A9F2864C5BF00CFD56C /* StudentsSceneModels.swift */,
 				01562AA02864C5BF00CFD56C /* StudentsSceneRouter.swift */,
 				01562AA12864C5BF00CFD56C /* StudentsScenePresenter.swift */,
-				01562AA92864C5D800CFD56C /* HpStudentsWorker.swift */,
+				0155A6FC2869D3B1004D2CCA /* Workers */,
 			);
 			path = Students;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				01562AA82864C5BF00CFD56C /* StudentsScenePresenter.swift in Sources */,
 				010D480D28699F6F00AAA818 /* XibSubscribable.swift in Sources */,
 				01562A9A2864C4B200CFD56C /* CommonServiceAssembly.swift in Sources */,
+				0155A6FE2869D3E2004D2CCA /* HpStudentImagesWorker.swift in Sources */,
 				01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */,
 				0198C62428628A6700491711 /* GeneralAppAssembly.swift in Sources */,
 				01562AA42864C5BF00CFD56C /* StudentsSceneInteractor.swift in Sources */,

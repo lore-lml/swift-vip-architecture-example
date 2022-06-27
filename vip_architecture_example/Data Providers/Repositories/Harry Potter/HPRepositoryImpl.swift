@@ -33,6 +33,15 @@ class HPRepositoryImpl: HPRepository{
         request(route: "house/\(house.rawValue)", completion: completion)
     }
     
+    func getImageOf(character: HPCharacter, completion: @escaping HPResult<Data>){
+        let url = character.image.replacingOccurrences(of: "http", with: "https")
+        AF.request(url)
+            .validate(statusCode: 200..<300)
+            .responseData { res in
+                completion(res.result)
+            }
+    }
+    
     private func request(route: String, completion: @escaping HPResult<[HPCharacter]>){
         AF.request("\(_baseUrl)/\(route)")
             .validate(statusCode: 200..<300)

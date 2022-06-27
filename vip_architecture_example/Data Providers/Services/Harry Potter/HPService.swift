@@ -16,6 +16,8 @@ protocol HPService{
     
     func getStaff(completion: @escaping HPResult<[DtoHpCharacter]>)
     
+    func getImageOf(character: DtoHpCharacter, completion: @escaping HPResult<Data>)
+    
     func getCharactersOf(house: HPHouse, completion: @escaping HPResult<[DtoHpCharacter]>)
 
 }

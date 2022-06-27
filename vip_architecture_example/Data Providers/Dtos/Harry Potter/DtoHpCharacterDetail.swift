@@ -11,7 +11,7 @@ protocol DtoHPCharacterDetail: DtoHpCharacter{
     var name: String { get }
     var species: String { get }
     var gender: String { get }
-    var house: String { get }
+    var house: HPHouse { get }
     var dateOfBirth: String { get }
     var wizard: Bool { get }
     var ancestry: String { get }

@@ -7,9 +7,10 @@
 
 import Foundation
 
-enum HPHouse: String{
-    case gryffindor
-    case slytherin
-    case ravenclaw
-    case hufflepuff
+enum HPHouse: String, Codable{
+    case gryffindor = "Gryffindor"
+    case slytherin = "Slytherin"
+    case hufflepuff = "Hufflepuff"
+    case ravenclaw = "Ravenclaw"
+    case none = ""
 }

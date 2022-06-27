@@ -13,6 +13,7 @@ import UIKit
 // MARK: Controller Delegate
 protocol IStudentsSceneDelegate: AnyObject{
     func didReceiveFetchStudentsViewModel(_ vms: [StudentsSceneModels.FetchStudents.ViewModel])
+    func didReceiveFetchStudentImageViewModel(_ vm: StudentsSceneModels.FetchStudentImage.ViewModel)
     func didReceiveError(_ errorVm: StudentsSceneModels.ShowError.ViewModel)
 }
 
@@ -25,11 +26,7 @@ class StudentsSceneViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var _loadingView: LoadingView?
-    private var _students: [StudentsSceneModels.FetchStudents.ViewModel] = []{
-        didSet{
-            tableView.reloadData()
-        }
-    }
+    private var _students: [StudentsSceneModels.FetchStudents.ViewModel] = []
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -59,7 +56,12 @@ extension StudentsSceneViewController: UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.cellId, for: indexPath) as! CharacterTableViewCell
         
-        cell.configure(character: _students[indexPath.row])
+        let character = _students[indexPath.row]
+        cell.configure(character: character)
+        
+        
+        Log.d("CELL: \(indexPath.row)")
+        interactor.fetchStudentImageRequest(.init(cellIndex: indexPath))
         
         return cell
     }
@@ -76,10 +78,26 @@ extension StudentsSceneViewController: IStudentsSceneDelegate{
     
     func didReceiveFetchStudentsViewModel(_ vms: [StudentsSceneModels.FetchStudents.ViewModel]){
         self._students = vms
+        tableView.reloadData()
         _loadingView?.stop()
     }
     
+    func didReceiveFetchStudentImageViewModel(_ vm: StudentsSceneModels.FetchStudentImage.ViewModel){
+        
+        guard let img = vm.studentImg else { return }
+        
+        var studentVm = _students[vm.cellIndex.row]
+        studentVm.isLoading = false
+        studentVm.image = img
+        
+        _students[vm.cellIndex.row] = studentVm
+        
+        (tableView.cellForRow(at: vm.cellIndex) as? CharacterTableViewCell)?
+            .configure(character: studentVm)
+            
+    }
+    
     func didReceiveError(_ errorVm: StudentsSceneModels.ShowError.ViewModel){
-        Log.e(errorVm.description)
+//        Log.e(errorVm.description)
     }
 }

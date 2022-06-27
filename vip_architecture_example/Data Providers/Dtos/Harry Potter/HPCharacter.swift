@@ -11,7 +11,7 @@ struct HPCharacter: Codable{
     var name: String
     var species: String
     var gender: String
-    var house: String
+    var house: HPHouse
     var dateOfBirth: String
     var wizard: Bool
     var ancestry: String

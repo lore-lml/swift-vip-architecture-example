@@ -9,7 +9,7 @@ import Foundation
 
 protocol DtoHpCharacter: Codable{
     var name: String { get }
-    var house: String { get }
+    var house: HPHouse { get }
     var image: String { get }
 }
 

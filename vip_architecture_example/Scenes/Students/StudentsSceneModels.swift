@@ -35,6 +35,23 @@ extension StudentsSceneModels{
         }
     }
     
+    struct FetchStudentImage {
+        
+        struct Request{
+            let cellIndex: IndexPath
+        }
+        
+        struct Response {
+            let cellIndex: IndexPath
+            let studentImg: Data
+        }
+        
+        struct ViewModel {
+            let cellIndex: IndexPath
+            let studentImg: UIImage?
+        }
+    }
+    
     struct ShowError {
         
         struct Response {
