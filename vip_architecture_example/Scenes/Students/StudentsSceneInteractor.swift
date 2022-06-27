@@ -14,6 +14,7 @@ import Foundation
 protocol IStudentsSceneInteractor: AnyObject{
     func fetchStudentsRequest()
     func fetchStudentImageRequest(_ request: StudentsSceneModels.FetchStudentImage.Request)
+    func showCharacterDetailRequest(_ request: StudentsSceneModels.ShowCharacterDetail.Request)
 }
 
 class StudentsSceneInteractor {
@@ -49,18 +50,36 @@ extension StudentsSceneInteractor: IStudentsSceneInteractor{
         let selectedCharacter = _studentModels[request.cellIndex.row]
         _studentImagesWorker.getStudentImage(character: selectedCharacter) { [weak self] res in
             
+            let img: Data?
+            
             switch res{
-            case .success(let img):
-                let response = StudentsSceneModels.FetchStudentImage.Response(
-                    cellIndex: request.cellIndex,
-                    studentImg: img
-                )
-                self?.presenter.fetchStudentImageResponse(response)
+            case .success(let imgData):
+                img = imgData
                 
-            case .failure(let err):
-                self?.presenter.showErrorResponse(.init(error: err))
+            case .failure:
+                img = nil
             }
             
+            let response = StudentsSceneModels.FetchStudentImage.Response(
+                cellIndex: request.cellIndex,
+                studentImg: img
+            )
+            
+            self?.presenter.fetchStudentImageResponse(response)
+            
         }
+    }
+    
+    func showCharacterDetailRequest(_ request: StudentsSceneModels.ShowCharacterDetail.Request){
+        let selectedCharacter = _studentModels[request.cellIndex.row]
+        let detail = _studentWorker.getStudentDetail(character: selectedCharacter)
+        _studentImagesWorker.getStudentImage(character: selectedCharacter) { [weak self] res in
+            let data = try? res.get()
+            self?.presenter.showCharacterDetailResponse(
+                .init(studentImg: data, detail: detail)
+            )
+        }
+        
+        
     }
 }

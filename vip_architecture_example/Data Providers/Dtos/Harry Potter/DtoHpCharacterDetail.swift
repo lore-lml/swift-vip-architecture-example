@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DtoHPCharacterDetail: DtoHpCharacter{
+protocol DtoHpCharacterDetail: DtoHpCharacter{
     var name: String { get }
     var species: String { get }
     var gender: String { get }
@@ -22,4 +22,4 @@ protocol DtoHPCharacterDetail: DtoHpCharacter{
     var wand: HPWand { get }
 }
 
-extension HPCharacter: DtoHPCharacterDetail{}
+extension HPCharacter: DtoHpCharacterDetail{}

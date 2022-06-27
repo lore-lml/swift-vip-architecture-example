@@ -28,9 +28,9 @@ class StudentsSceneAdapter {
         }
         
         let newAssembler = Assembler(parentAssembler: assembler)
-        
         let controller = StudentsSceneViewController.fromXib()
         let router = StudentsSceneRouter(view: controller)
+        
         let presenter = StudentsScenePresenter(view: controller)
         let interactor = StudentsSceneInteractor(presenter: presenter, hpService: hpService)
         

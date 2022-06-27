@@ -16,16 +16,16 @@ typealias IStudentsSceneController = IStudentsSceneDelegate & UIViewController
 
 // MARK: Navigation Methods
 protocol IStudentsSceneRouter: AnyObject{
-
+    func showCharacterDetail(_ input: StudentsSceneModels.CharacterDetailInput)
 }
 
-enum ExampleRoutes {
-    case example(input: StudentsSceneAdapter? = nil, assembler: Assembler? = nil)
+enum StudentsSceneRoutes {
+    case characterDetail(input: CharacterDetailSceneModels.Input)
 }
 
 class StudentsSceneRouter: IRouter {
     
-    typealias Routes = ExampleRoutes
+    typealias Routes = StudentsSceneRoutes
     
     weak var view: IStudentsSceneController!
     var navigator: IAppNavigator?
@@ -35,19 +35,23 @@ class StudentsSceneRouter: IRouter {
         self.view = view
     }
     
-    func showRoute(route: ExampleRoutes) {
+    func showRoute(route: StudentsSceneRoutes) {
         
         switch route{
-        case .example(let input, let assembler): break
-//            let controller = ExampleSceneAdapter.setup(input: input, assembler: assembler)
-//            navigator?.go(from: view, to: controller)
+        case .characterDetail(let input):
+            let controller = CharacterDetailSceneAdapter.setup(input: input, assembler: assembler)
+            navigator?.go(from: view, to: controller)
         }
     }
-
 }
 
 
 extension StudentsSceneRouter: IStudentsSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
+    
+    func showCharacterDetail(_ input: StudentsSceneModels.CharacterDetailInput){
+        showRoute(route: .characterDetail(input: .init(character: input.detail, characterImg: input.characterImg)))
+    }
+    
     
 }

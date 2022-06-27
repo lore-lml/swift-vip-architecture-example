@@ -13,6 +13,7 @@ import UIKit
 protocol IStudentsScenePresenter: AnyObject {
     func fetchStudentsResponse(_ response: StudentsSceneModels.FetchStudents.Response)
     func fetchStudentImageResponse(_ response: StudentsSceneModels.FetchStudentImage.Response)
+    func showCharacterDetailResponse(_ response: StudentsSceneModels.ShowCharacterDetail.Response)
     func showErrorResponse(_ response: StudentsSceneModels.ShowError.Response)
     
 }
@@ -34,8 +35,18 @@ extension StudentsScenePresenter: IStudentsScenePresenter{
     }
     
     func fetchStudentImageResponse(_ response: StudentsSceneModels.FetchStudentImage.Response){
-        let vm = StudentsSceneModels.FetchStudentImage.ViewModel(cellIndex: response.cellIndex, studentImg: UIImage(data: response.studentImg))
+        
+        let img = response.studentImg == nil ? UIImage(named: "placeholder") : UIImage(data: response.studentImg!)
+        
+        let vm = StudentsSceneModels.FetchStudentImage.ViewModel(cellIndex: response.cellIndex, studentImg: img)
+        
         view?.didReceiveFetchStudentImageViewModel(vm)
+    }
+    
+    func showCharacterDetailResponse(_ response: StudentsSceneModels.ShowCharacterDetail.Response){
+        let img = response.studentImg == nil ? UIImage(named: "placeholder") : UIImage(data: response.studentImg!)
+        
+        view?.showCharacterDetail(.init(detail: response.detail, characterImg: img))
     }
     
     func showErrorResponse(_ response: StudentsSceneModels.ShowError.Response){

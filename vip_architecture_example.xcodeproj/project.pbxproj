@@ -21,6 +21,16 @@
 		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
 		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
 		0155A6FE2869D3E2004D2CCA /* HpStudentImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */; };
+		0155A7022869F4D0004D2CCA /* NavBarCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */; };
+		0155A70A2869F93A004D2CCA /* CharacterDetailSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7032869F93A004D2CCA /* CharacterDetailSceneAdapter.swift */; };
+		0155A70B2869F93A004D2CCA /* CharacterDetailScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7042869F93A004D2CCA /* CharacterDetailScenePresenter.swift */; };
+		0155A70C2869F93A004D2CCA /* CharacterDetailSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7052869F93A004D2CCA /* CharacterDetailSceneRouter.swift */; };
+		0155A70D2869F93A004D2CCA /* CharacterDetailSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7062869F93A004D2CCA /* CharacterDetailSceneModels.swift */; };
+		0155A70E2869F93A004D2CCA /* CharacterDetailSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7072869F93A004D2CCA /* CharacterDetailSceneViewController.swift */; };
+		0155A70F2869F93A004D2CCA /* CharacterDetailSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7082869F93A004D2CCA /* CharacterDetailSceneInteractor.swift */; };
+		0155A7102869F93A004D2CCA /* CharacterDetailSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0155A7092869F93A004D2CCA /* CharacterDetailSceneViewController.xib */; };
+		0155A712286A0ACC004D2CCA /* Extension+HPHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */; };
+		0155A714286A0C0C004D2CCA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0155A713286A0C0C004D2CCA /* Colors.xcassets */; };
 		01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A712864A51400CFD56C /* TabBarInfoProvider.swift */; };
 		01562A862864B7C200CFD56C /* HPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A852864B7C200CFD56C /* HPRepository.swift */; };
 		01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */; };
@@ -95,6 +105,16 @@
 		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
 		0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStudentImagesWorker.swift; sourceTree = "<group>"; };
+		0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarCustomizer.swift; sourceTree = "<group>"; };
+		0155A7032869F93A004D2CCA /* CharacterDetailSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSceneAdapter.swift; sourceTree = "<group>"; };
+		0155A7042869F93A004D2CCA /* CharacterDetailScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailScenePresenter.swift; sourceTree = "<group>"; };
+		0155A7052869F93A004D2CCA /* CharacterDetailSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSceneRouter.swift; sourceTree = "<group>"; };
+		0155A7062869F93A004D2CCA /* CharacterDetailSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSceneModels.swift; sourceTree = "<group>"; };
+		0155A7072869F93A004D2CCA /* CharacterDetailSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSceneViewController.swift; sourceTree = "<group>"; };
+		0155A7082869F93A004D2CCA /* CharacterDetailSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailSceneInteractor.swift; sourceTree = "<group>"; };
+		0155A7092869F93A004D2CCA /* CharacterDetailSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailSceneViewController.xib; sourceTree = "<group>"; };
+		0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+HPHouse.swift"; sourceTree = "<group>"; };
+		0155A713286A0C0C004D2CCA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		01562A712864A51400CFD56C /* TabBarInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfoProvider.swift; sourceTree = "<group>"; };
 		01562A852864B7C200CFD56C /* HPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepository.swift; sourceTree = "<group>"; };
 		01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepositoryImpl.swift; sourceTree = "<group>"; };
@@ -162,8 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				010D480C28699F6F00AAA818 /* XibSubscribable.swift */,
+				0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */,
 				0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */,
 				0155A6F82869C12D004D2CCA /* Log.swift */,
+				0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -339,6 +361,13 @@
 			isa = PBXGroup;
 			children = (
 				01B303A42869A3EE0004F740 /* Students */,
+				0155A7032869F93A004D2CCA /* CharacterDetailSceneAdapter.swift */,
+				0155A7042869F93A004D2CCA /* CharacterDetailScenePresenter.swift */,
+				0155A7052869F93A004D2CCA /* CharacterDetailSceneRouter.swift */,
+				0155A7062869F93A004D2CCA /* CharacterDetailSceneModels.swift */,
+				0155A7072869F93A004D2CCA /* CharacterDetailSceneViewController.swift */,
+				0155A7082869F93A004D2CCA /* CharacterDetailSceneInteractor.swift */,
+				0155A7092869F93A004D2CCA /* CharacterDetailSceneViewController.xib */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -358,6 +387,7 @@
 			children = (
 				01B303BF2869A83C0004F740 /* hp.json */,
 				018105EE28574FD8006CD742 /* Assets.xcassets */,
+				0155A713286A0C0C004D2CCA /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -541,6 +571,8 @@
 				018105EF28574FD8006CD742 /* Assets.xcassets in Resources */,
 				01562AA22864C5BF00CFD56C /* StudentsSceneViewController.xib in Resources */,
 				01B303C02869A83C0004F740 /* hp.json in Resources */,
+				0155A7102869F93A004D2CCA /* CharacterDetailSceneViewController.xib in Resources */,
+				0155A714286A0C0C004D2CCA /* Colors.xcassets in Resources */,
 				011DB9672864C8D300575446 /* CharacterTableViewCell.xib in Resources */,
 				01B303BE2869A75A0004F740 /* LoadingView.xib in Resources */,
 			);
@@ -630,14 +662,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0155A7022869F4D0004D2CCA /* NavBarCustomizer.swift in Sources */,
 				0117CA13285A37F100B1C345 /* AppManager.swift in Sources */,
 				01562AA72864C5BF00CFD56C /* StudentsSceneRouter.swift in Sources */,
 				018105E628574FD7006CD742 /* AppDelegate.swift in Sources */,
 				0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */,
 				01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */,
+				0155A70E2869F93A004D2CCA /* CharacterDetailSceneViewController.swift in Sources */,
 				01562AA62864C5BF00CFD56C /* StudentsSceneModels.swift in Sources */,
 				01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */,
 				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
+				0155A70A2869F93A004D2CCA /* CharacterDetailSceneAdapter.swift in Sources */,
+				0155A70C2869F93A004D2CCA /* CharacterDetailSceneRouter.swift in Sources */,
 				01562AA52864C5BF00CFD56C /* StudentsSceneAdapter.swift in Sources */,
 				01B303BB2869A6B30004F740 /* LoadingView.swift in Sources */,
 				01562AA82864C5BF00CFD56C /* StudentsScenePresenter.swift in Sources */,
@@ -646,8 +682,11 @@
 				0155A6FE2869D3E2004D2CCA /* HpStudentImagesWorker.swift in Sources */,
 				01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */,
 				0198C62428628A6700491711 /* GeneralAppAssembly.swift in Sources */,
+				0155A70B2869F93A004D2CCA /* CharacterDetailScenePresenter.swift in Sources */,
 				01562AA42864C5BF00CFD56C /* StudentsSceneInteractor.swift in Sources */,
 				0117CA15285A3C3300B1C345 /* NotificationManager.swift in Sources */,
+				0155A70D2869F93A004D2CCA /* CharacterDetailSceneModels.swift in Sources */,
+				0155A712286A0ACC004D2CCA /* Extension+HPHouse.swift in Sources */,
 				018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */,
 				01562A962864C07A00CFD56C /* HPService.swift in Sources */,
 				01562AAA2864C5D800CFD56C /* HpStudentsWorker.swift in Sources */,
@@ -656,6 +695,7 @@
 				01B303B82869A6900004F740 /* CardView.swift in Sources */,
 				01562AA32864C5BF00CFD56C /* StudentsSceneViewController.swift in Sources */,
 				01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */,
+				0155A70F2869F93A004D2CCA /* CharacterDetailSceneInteractor.swift in Sources */,
 				0198C62628628AA100491711 /* AppNavigator.swift in Sources */,
 				01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */,
 				011DB9662864C8D300575446 /* CharacterTableViewCell.swift in Sources */,

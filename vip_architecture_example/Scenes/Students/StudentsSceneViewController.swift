@@ -15,6 +15,7 @@ protocol IStudentsSceneDelegate: AnyObject{
     func didReceiveFetchStudentsViewModel(_ vms: [StudentsSceneModels.FetchStudents.ViewModel])
     func didReceiveFetchStudentImageViewModel(_ vm: StudentsSceneModels.FetchStudentImage.ViewModel)
     func didReceiveError(_ errorVm: StudentsSceneModels.ShowError.ViewModel)
+    func showCharacterDetail(_ detail: StudentsSceneModels.ShowCharacterDetail.ViewModel)
 }
 
 class StudentsSceneViewController: UIViewController {
@@ -32,9 +33,12 @@ class StudentsSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NavBarCustomizer.defaultStyle(for: self)
+        
         _loadingView = .loadView(into: self, autoPlay: false)
         _configureTableView()
         _fetchStudents()
+        
     }
     
     
@@ -66,6 +70,10 @@ extension StudentsSceneViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        interactor.showCharacterDetailRequest(.init(cellIndex: indexPath))
+    }
+    
 }
 
 extension StudentsSceneViewController: IStudentsSceneDelegate{
@@ -95,6 +103,10 @@ extension StudentsSceneViewController: IStudentsSceneDelegate{
         (tableView.cellForRow(at: vm.cellIndex) as? CharacterTableViewCell)?
             .configure(character: studentVm)
             
+    }
+    
+    func showCharacterDetail(_ detail: StudentsSceneModels.ShowCharacterDetail.ViewModel){
+        self.router.showCharacterDetail(detail)
     }
     
     func didReceiveError(_ errorVm: StudentsSceneModels.ShowError.ViewModel){

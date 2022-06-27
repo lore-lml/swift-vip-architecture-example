@@ -94,7 +94,7 @@ class HPServiceImpl: HPService{
         }
     }
     
-    func getCharacterDetail(character: DtoHpCharacter) -> DtoHPCharacterDetail{
-        character as! DtoHPCharacterDetail
+    func getCharacterDetail(character: DtoHpCharacter) -> DtoHpCharacterDetail{
+        character as! DtoHpCharacterDetail
     }
 }

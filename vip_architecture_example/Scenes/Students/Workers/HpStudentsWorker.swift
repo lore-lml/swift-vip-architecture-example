@@ -19,4 +19,8 @@ class HpStudentsWorker {
     func getStudents(completion: @escaping (HPResult<[DtoHpCharacter]>)){
         _hpService.getStudents(completion: completion)
     }
+    
+    func getStudentDetail(character: DtoHpCharacter) -> DtoHpCharacterDetail{
+        _hpService.getCharacterDetail(character: character)
+    }
 }

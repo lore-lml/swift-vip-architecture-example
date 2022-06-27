@@ -25,8 +25,14 @@ class CharacterTableViewCell: UITableViewCell, XibSubscribable {
         nameLabel.text = character.name
         houseLabel.text = character.house
         imgView.image = character.image
-        activityIndicator.isHidden = !character.isLoading
         
+        if character.isLoading{
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }else{
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+        }
         
         selectedBackgroundView = Self.bgView
     }

@@ -16,7 +16,10 @@ struct StudentsSceneModels {
 
 // MARK: Models for passing data to other routes
 extension StudentsSceneModels{
-    
+    struct CharacterDetailInput{
+        var detail: DtoHpCharacterDetail
+        var characterImg: UIImage?
+    }
 }
 
 
@@ -43,13 +46,27 @@ extension StudentsSceneModels{
         
         struct Response {
             let cellIndex: IndexPath
-            let studentImg: Data
+            let studentImg: Data?
         }
         
         struct ViewModel {
             let cellIndex: IndexPath
             let studentImg: UIImage?
         }
+    }
+    
+    struct ShowCharacterDetail {
+        
+        struct Request {
+            let cellIndex: IndexPath
+        }
+        
+        struct Response{
+            let studentImg: Data?
+            let detail: DtoHpCharacterDetail
+        }
+        
+        typealias ViewModel = CharacterDetailInput
     }
     
     struct ShowError {
