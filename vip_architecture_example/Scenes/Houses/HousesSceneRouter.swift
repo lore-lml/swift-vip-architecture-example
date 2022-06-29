@@ -15,13 +15,13 @@ import Swinject
 
 // MARK: Navigation Methods
 protocol IHousesSceneRouter: AnyObject{
-    func showCharactersOf(house: HPHouse)
+    func showCharactersOf(house: HpHouse)
 }
 
 class HousesSceneRouter: IRouter {
     
     enum AvailableRoutes {
-        case house(_ house: HPHouse)
+        case house(_ house: HpHouse)
     }
     
     typealias Routes = AvailableRoutes
@@ -48,7 +48,7 @@ class HousesSceneRouter: IRouter {
 
 extension HousesSceneRouter: IHousesSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
-    func showCharactersOf(house: HPHouse){
+    func showCharactersOf(house: HpHouse){
         showRoute(route: .house(house))
     }
 }

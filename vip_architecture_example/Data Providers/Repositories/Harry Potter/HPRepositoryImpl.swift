@@ -17,23 +17,23 @@ class HPRepositoryImpl: HPRepository{
     
     private init(){}
     
-    func getAllCharacters(completion: @escaping HPResult<[HPCharacter]>){
+    func getAllCharacters(completion: @escaping HPResult<[HpCharacter]>){
         request(route: "", completion: completion)
     }
     
-    func getStudents(completion: @escaping HPResult<[HPCharacter]>){
+    func getStudents(completion: @escaping HPResult<[HpCharacter]>){
         request(route: "students", completion: completion)
     }
     
-    func getStaff(completion: @escaping HPResult<[HPCharacter]>){
+    func getStaff(completion: @escaping HPResult<[HpCharacter]>){
         request(route: "staff", completion: completion)
     }
     
-    func getCharactersOf(house: HPHouse, completion: @escaping HPResult<[HPCharacter]>){
+    func getCharactersOf(house: HpHouse, completion: @escaping HPResult<[HpCharacter]>){
         request(route: "house/\(house.rawValue)", completion: completion)
     }
     
-    func getImageOf(character: HPCharacter, completion: @escaping HPResult<Data>){
+    func getImageOf(character: HpCharacter, completion: @escaping HPResult<Data>){
         let url = character.image.replacingOccurrences(of: "http", with: "https")
         AF.request(url)
             .validate(statusCode: 200..<300)
@@ -42,11 +42,11 @@ class HPRepositoryImpl: HPRepository{
             }
     }
     
-    private func request(route: String, completion: @escaping HPResult<[HPCharacter]>){
+    private func request(route: String, completion: @escaping HPResult<[HpCharacter]>){
         AF.request("\(_baseUrl)/\(route)")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-            .responseDecodable(of: [HPCharacter].self) { response in
+            .responseDecodable(of: [HpCharacter].self) { response in
                 completion(response.result)
             }
 //            .responseData { response in

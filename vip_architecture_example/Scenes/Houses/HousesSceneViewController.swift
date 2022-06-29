@@ -18,7 +18,7 @@ class HousesSceneViewController: UIViewController {
     // MARK: OUTLETS
     @IBOutlet var houseCards: [CardView]!
     
-    private let _houses: [HPHouse] = [.gryffindor, .slytherin, .hufflepuff, .ravenclaw]
+    private let _houses: [HpHouse] = [.gryffindor, .slytherin, .hufflepuff, .ravenclaw]
     private var _tapRecognizers: [UITapGestureRecognizer] = []
     
     // MARK: View lifecycle

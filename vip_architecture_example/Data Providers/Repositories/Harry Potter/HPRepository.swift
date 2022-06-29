@@ -8,13 +8,13 @@
 import Foundation
 
 protocol HPRepository{
-    func getAllCharacters(completion: @escaping HPResult<[HPCharacter]>)
+    func getAllCharacters(completion: @escaping HPResult<[HpCharacter]>)
     
-    func getStudents(completion: @escaping HPResult<[HPCharacter]>)
+    func getStudents(completion: @escaping HPResult<[HpCharacter]>)
     
-    func getStaff(completion: @escaping HPResult<[HPCharacter]>)
+    func getStaff(completion: @escaping HPResult<[HpCharacter]>)
     
-    func getCharactersOf(house: HPHouse, completion: @escaping HPResult<[HPCharacter]>)
+    func getCharactersOf(house: HpHouse, completion: @escaping HPResult<[HpCharacter]>)
     
-    func getImageOf(character: HPCharacter, completion: @escaping HPResult<Data>)
+    func getImageOf(character: HpCharacter, completion: @escaping HPResult<Data>)
 }

@@ -13,7 +13,7 @@ import UIKit
 
 struct CharacterListSceneModels {
     enum ListType{
-        case house(HPHouse)
+        case house(HpHouse)
         case students
         case staff
     }

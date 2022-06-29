@@ -12,10 +12,10 @@ class HPServiceImpl: HPService{
     
     private let _repo: HPRepository
     
-    private var _allCharacters: [HPCharacter]?
-    private var _studentsCharacters: [HPCharacter]?
-    private var _staffCharacters: [HPCharacter]?
-    private var _houseCharacters: [HPHouse: [HPCharacter]] = [:]
+    private var _allCharacters: [HpCharacter]?
+    private var _studentsCharacters: [HpCharacter]?
+    private var _staffCharacters: [HpCharacter]?
+    private var _houseCharacters: [HpHouse: [HpCharacter]] = [:]
     private var _images: NSCache<NSString, NSData> = .init()
     
     required init(hpRepository: HPRepository) {
@@ -67,7 +67,7 @@ class HPServiceImpl: HPService{
         }
     }
     
-    func getCharactersOf(house: HPHouse, completion: @escaping HPResult<[DtoHpCharacter]>){
+    func getCharactersOf(house: HpHouse, completion: @escaping HPResult<[DtoHpCharacter]>){
         
         if let houseCharacters = _houseCharacters[house]{
             completion(.success(houseCharacters))
@@ -89,7 +89,7 @@ class HPServiceImpl: HPService{
             return
         }
         
-        self._repo.getImageOf(character: character as! HPCharacter) { res in
+        self._repo.getImageOf(character: character as! HpCharacter) { res in
             completion(res.map{ $0 as Data })
         }
     }

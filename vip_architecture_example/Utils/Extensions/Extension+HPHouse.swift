@@ -13,7 +13,7 @@ fileprivate let slytherinImg: UIImage = .init(named: "slytherin")!
 fileprivate let huffleouffImg: UIImage = .init(named: "hufflepuff")!
 fileprivate let ravenclawImg: UIImage = .init(named: "ravenclaw")!
 
-extension HPHouse{
+extension HpHouse{
     var img: UIImage?{
         switch self {
         case .gryffindor: return gryffindorImg
@@ -26,10 +26,10 @@ extension HPHouse{
     
     var color: UIColor{
         switch self {
-        case .gryffindor: return .init(named: "gryffindor")!
-        case .slytherin: return .init(named: "slytherin")!
-        case .hufflepuff: return .init(named: "hufflepuff")!
-        case .ravenclaw: return .init(named: "ravenclaw")!
+        case .gryffindor: return .gryffindor
+        case .slytherin: return .slytherin
+        case .hufflepuff: return .hufflepuff
+        case .ravenclaw: return .ravenclaw
         case .none: return .black
         }
     }

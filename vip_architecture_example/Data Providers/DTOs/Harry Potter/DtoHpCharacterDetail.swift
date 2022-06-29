@@ -11,7 +11,7 @@ protocol DtoHpCharacterDetail: DtoHpCharacter{
     var name: String { get }
     var species: String { get }
     var gender: String { get }
-    var house: HPHouse { get }
+    var house: HpHouse { get }
     var dateOfBirth: String { get }
     var wizard: Bool { get }
     var ancestry: String { get }
@@ -22,4 +22,4 @@ protocol DtoHpCharacterDetail: DtoHpCharacter{
     var wand: HPWand { get }
 }
 
-extension HPCharacter: DtoHpCharacterDetail{}
+extension HpCharacter: DtoHpCharacterDetail{}

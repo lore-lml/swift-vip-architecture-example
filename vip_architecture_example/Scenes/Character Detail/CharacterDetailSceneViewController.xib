@@ -41,10 +41,13 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4G-B6-9Qd" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
-                                    <rect key="frame" x="80" y="60" width="254" height="300"/>
+                                    <rect key="frame" x="102.5" y="60" width="209" height="300"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zQ-MV-apc">
-                                            <rect key="frame" x="5" y="5" width="244" height="290"/>
+                                            <rect key="frame" x="5" y="5" width="199" height="290"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="7zQ-MV-apc" secondAttribute="height" multiplier="11:16" id="nUN-41-6BZ"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,15 +213,16 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="olC-Ah-GD3" firstAttribute="top" secondItem="U4G-B6-9Qd" secondAttribute="bottom" constant="50" id="1hb-Z4-fwL"/>
-                                <constraint firstAttribute="trailing" secondItem="U4G-B6-9Qd" secondAttribute="trailing" constant="80" id="4M2-hh-NX8"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U4G-B6-9Qd" secondAttribute="trailing" constant="80" id="4M2-hh-NX8"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" id="76h-e9-Zm2"/>
-                                <constraint firstItem="U4G-B6-9Qd" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="80" id="8Lf-NC-wrM"/>
+                                <constraint firstItem="U4G-B6-9Qd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="80" id="8Lf-NC-wrM"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="top" secondItem="AAZ-7O-UoW" secondAttribute="top" id="OlW-ZD-Z3L"/>
                                 <constraint firstAttribute="bottom" secondItem="olC-Ah-GD3" secondAttribute="bottom" constant="30" id="PcD-yF-N35"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="bottom" secondItem="U4G-B6-9Qd" secondAttribute="bottom" constant="-120" id="Q0y-NB-Byn"/>
                                 <constraint firstItem="U4G-B6-9Qd" firstAttribute="top" secondItem="AAZ-7O-UoW" secondAttribute="top" constant="60" id="YTy-xU-pBW"/>
                                 <constraint firstAttribute="trailing" secondItem="olC-Ah-GD3" secondAttribute="trailing" constant="18" id="cUA-ri-foC"/>
                                 <constraint firstItem="olC-Ah-GD3" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="18" id="i3r-uh-q8Q"/>
+                                <constraint firstItem="U4G-B6-9Qd" firstAttribute="centerX" secondItem="AAZ-7O-UoW" secondAttribute="centerX" id="iCQ-AL-iWZ"/>
                                 <constraint firstAttribute="trailing" secondItem="2do-q6-RDI" secondAttribute="trailing" id="qgN-PC-rRf"/>
                             </constraints>
                         </view>

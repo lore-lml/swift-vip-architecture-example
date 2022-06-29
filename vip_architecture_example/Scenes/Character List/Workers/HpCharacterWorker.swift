@@ -23,7 +23,7 @@ class HpCharacterWorker {
         _hpService.getStaff(completion: completion)
     }
     
-    func getHouseCharacters(house: HPHouse, completion: @escaping (HPResult<[DtoHpCharacter]>)){
+    func getHouseCharacters(house: HpHouse, completion: @escaping (HPResult<[DtoHpCharacter]>)){
         _hpService.getCharactersOf(house: house, completion: completion)
     }
     

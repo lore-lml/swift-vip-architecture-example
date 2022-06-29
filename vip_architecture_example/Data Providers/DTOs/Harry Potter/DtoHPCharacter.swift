@@ -9,8 +9,8 @@ import Foundation
 
 protocol DtoHpCharacter: Codable{
     var name: String { get }
-    var house: HPHouse { get }
+    var house: HpHouse { get }
     var image: String { get }
 }
 
-extension HPCharacter: DtoHpCharacter{}
+extension HpCharacter: DtoHpCharacter{}

@@ -33,8 +33,7 @@
 		01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A712864A51400CFD56C /* TabBarInfoProvider.swift */; };
 		01562A862864B7C200CFD56C /* HPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A852864B7C200CFD56C /* HPRepository.swift */; };
 		01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */; };
-		01562A8C2864BBCA00CFD56C /* HPCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8B2864BBCA00CFD56C /* HPCharacter.swift */; };
-		01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8D2864BDDD00CFD56C /* HPHouse.swift */; };
+		01562A8C2864BBCA00CFD56C /* HpCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8B2864BBCA00CFD56C /* HpCharacter.swift */; };
 		01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */; };
 		01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */; };
 		01562A962864C07A00CFD56C /* HPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A952864C07A00CFD56C /* HPService.swift */; };
@@ -68,6 +67,7 @@
 		01E4EEFA286C9AF50041A556 /* CharacterListSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01E4EEF3286C9AF50041A556 /* CharacterListSceneViewController.xib */; };
 		01E4EEFD286C9E4E0041A556 /* HpCharacterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEFC286C9E4E0041A556 /* HpCharacterWorker.swift */; };
 		01E4EEFF286C9E620041A556 /* HpCharacterImageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEFE286C9E620041A556 /* HpCharacterImageWorker.swift */; };
+		01E4EF04286CAE770041A556 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EF03286CAE770041A556 /* Extension+UIColor.swift */; };
 		4E0055A4EA6C6686DE19F3D5 /* Pods_SwiftRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */; };
 		E8B0D96E9B45192E93469DB4 /* Pods_vip_architecture_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */; };
 /* End PBXBuildFile section */
@@ -122,8 +122,7 @@
 		01562A712864A51400CFD56C /* TabBarInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfoProvider.swift; sourceTree = "<group>"; };
 		01562A852864B7C200CFD56C /* HPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepository.swift; sourceTree = "<group>"; };
 		01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPRepositoryImpl.swift; sourceTree = "<group>"; };
-		01562A8B2864BBCA00CFD56C /* HPCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPCharacter.swift; sourceTree = "<group>"; };
-		01562A8D2864BDDD00CFD56C /* HPHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPHouse.swift; sourceTree = "<group>"; };
+		01562A8B2864BBCA00CFD56C /* HpCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpCharacter.swift; sourceTree = "<group>"; };
 		01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoHPCharacter.swift; sourceTree = "<group>"; };
 		01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoHpCharacterDetail.swift; sourceTree = "<group>"; };
 		01562A952864C07A00CFD56C /* HPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPService.swift; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 		01E4EEF3286C9AF50041A556 /* CharacterListSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListSceneViewController.xib; sourceTree = "<group>"; };
 		01E4EEFC286C9E4E0041A556 /* HpCharacterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpCharacterWorker.swift; sourceTree = "<group>"; };
 		01E4EEFE286C9E620041A556 /* HpCharacterImageWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpCharacterImageWorker.swift; sourceTree = "<group>"; };
+		01E4EF03286CAE770041A556 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip_architecture_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRouting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B47907667FEBB8F2285330A /* Pods-vip_architecture_example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip_architecture_example.debug.xcconfig"; path = "Target Support Files/Pods-vip_architecture_example/Pods-vip_architecture_example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,12 +191,10 @@
 		010D480B28699F4C00AAA818 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				01E4EF05286CAF5D0041A556 /* Extensions */,
 				010D480C28699F6F00AAA818 /* XibSubscribable.swift */,
-				01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */,
 				0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */,
-				0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */,
 				0155A6F82869C12D004D2CCA /* Log.swift */,
-				0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -269,26 +267,25 @@
 		01562A892864B8F200CFD56C /* Data Providers */ = {
 			isa = PBXGroup;
 			children = (
-				01562A8A2864B91300CFD56C /* Dtos */,
-				01562A832864B77000CFD56C /* Services */,
 				01562A822864B75D00CFD56C /* Repositories */,
+				01E4EF01286CAD430041A556 /* Entities */,
+				01562A832864B77000CFD56C /* Services */,
+				01562A8A2864B91300CFD56C /* DTOs */,
 			);
 			path = "Data Providers";
 			sourceTree = "<group>";
 		};
-		01562A8A2864B91300CFD56C /* Dtos */ = {
+		01562A8A2864B91300CFD56C /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
 				01562A932864BF6E00CFD56C /* Harry Potter */,
 			);
-			path = Dtos;
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		01562A932864BF6E00CFD56C /* Harry Potter */ = {
 			isa = PBXGroup;
 			children = (
-				01562A8B2864BBCA00CFD56C /* HPCharacter.swift */,
-				01562A8D2864BDDD00CFD56C /* HPHouse.swift */,
 				01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */,
 				01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */,
 			);
@@ -382,7 +379,7 @@
 		018106DC2857518A006CD742 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				01B303BF2869A83C0004F740 /* hp.json */,
+				01E4EF02286CADB90041A556 /* Lottie Animations */,
 				018105EE28574FD8006CD742 /* Assets.xcassets */,
 				0155A713286A0C0C004D2CCA /* Colors.xcassets */,
 			);
@@ -472,6 +469,33 @@
 				01E4EEF3286C9AF50041A556 /* CharacterListSceneViewController.xib */,
 			);
 			path = "Character List";
+			sourceTree = "<group>";
+		};
+		01E4EF01286CAD430041A556 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				01562A8B2864BBCA00CFD56C /* HpCharacter.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		01E4EF02286CADB90041A556 /* Lottie Animations */ = {
+			isa = PBXGroup;
+			children = (
+				01B303BF2869A83C0004F740 /* hp.json */,
+			);
+			path = "Lottie Animations";
+			sourceTree = "<group>";
+		};
+		01E4EF05286CAF5D0041A556 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */,
+				01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */,
+				0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */,
+				01E4EF03286CAE770041A556 /* Extension+UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		14DEB9EA7DEF27F91A1617EC /* Pods */ = {
@@ -699,7 +723,6 @@
 				01E4EEF9286C9AF50041A556 /* CharacterListSceneInteractor.swift in Sources */,
 				018105E628574FD7006CD742 /* AppDelegate.swift in Sources */,
 				0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */,
-				01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */,
 				0155A70E2869F93A004D2CCA /* CharacterDetailSceneViewController.swift in Sources */,
 				01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */,
 				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
@@ -724,9 +747,10 @@
 				0155A712286A0ACC004D2CCA /* Extension+HPHouse.swift in Sources */,
 				018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */,
 				01E4EEDD286C68DB0041A556 /* Extension+UIView.swift in Sources */,
+				01E4EF04286CAE770041A556 /* Extension+UIColor.swift in Sources */,
 				01562A962864C07A00CFD56C /* HPService.swift in Sources */,
 				01562A862864B7C200CFD56C /* HPRepository.swift in Sources */,
-				01562A8C2864BBCA00CFD56C /* HPCharacter.swift in Sources */,
+				01562A8C2864BBCA00CFD56C /* HpCharacter.swift in Sources */,
 				01B303B82869A6900004F740 /* CardView.swift in Sources */,
 				01562A882864B7D800CFD56C /* HPRepositoryImpl.swift in Sources */,
 				0155A70F2869F93A004D2CCA /* CharacterDetailSceneInteractor.swift in Sources */,

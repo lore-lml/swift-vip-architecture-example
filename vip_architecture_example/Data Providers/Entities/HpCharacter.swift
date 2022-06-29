@@ -1,5 +1,5 @@
 //
-//  HPCharacter.swift
+//  HpCharacter.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 23/06/22.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct HPCharacter: Codable{
+struct HpCharacter: Codable{
     var name: String
     var species: String
     var gender: String
-    var house: HPHouse
+    var house: HpHouse
     var dateOfBirth: String
     var wizard: Bool
     var ancestry: String
@@ -21,6 +21,15 @@ struct HPCharacter: Codable{
     var image: String
     var wand: HPWand
 }
+
+enum HpHouse: String, Codable{
+    case gryffindor = "Gryffindor"
+    case slytherin = "Slytherin"
+    case hufflepuff = "Hufflepuff"
+    case ravenclaw = "Ravenclaw"
+    case none = ""
+}
+
 
 struct HPWand: Codable{
     var core: String
