@@ -22,7 +22,7 @@ class TabBarInfo: TabBarInfoProvider{
                 )
             ),
             
-            .init(viewController: UIViewController(), tabBarItem: .init(
+                .init(viewController: StaffSceneAdapter.setup(assembler: assembler), tabBarItem: .init(
                     title: "Staff",
                     image: .init(systemName: "book"),
                     selectedImage: .init(systemName: "book.fill")

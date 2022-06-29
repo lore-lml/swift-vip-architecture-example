@@ -1,5 +1,5 @@
 //
-//  StudentsSceneScenePresenter.swift
+//  StudentsScenePresenter.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 23/06/22.
@@ -11,27 +11,31 @@
 import UIKit
 
 protocol IStudentsScenePresenter: AnyObject {
+    
     func fetchStudentsResponse(_ response: StudentsSceneModels.FetchStudents.Response)
+    
     func fetchStudentImageResponse(_ response: StudentsSceneModels.FetchStudentImage.Response)
+    
     func showCharacterDetailResponse(_ response: StudentsSceneModels.ShowCharacterDetail.Response)
+    
     func showErrorResponse(_ response: StudentsSceneModels.ShowError.Response)
     
 }
 
 class StudentsScenePresenter{
     
-    weak var view: IStudentsSceneDelegate?
+    weak var vc: IStudentsSceneDelegate?
     
-    init(view: IStudentsSceneDelegate){
-        self.view = view
+    init(vc: IStudentsSceneDelegate){
+        self.vc = vc
     }
 }
 
 extension StudentsScenePresenter: IStudentsScenePresenter{
     // MARK: PRESENTATION LOGIC INTERFACE IMPLEMENTATIONS
     func fetchStudentsResponse(_ response: StudentsSceneModels.FetchStudents.Response){
-        let vms = response.map{ StudentsSceneModels.FetchStudents.ViewModel(name: $0.name, house: $0.house.rawValue, isLoading: true)}
-        self.view?.didReceiveFetchStudentsViewModel(vms)
+        let vms = response.map{ StudentsSceneModels.FetchStudents.ViewModel(dtoCharacter: $0, isLoading: true)}
+        self.vc?.didReceiveFetchStudentsViewModel(vms)
     }
     
     func fetchStudentImageResponse(_ response: StudentsSceneModels.FetchStudentImage.Response){
@@ -40,16 +44,16 @@ extension StudentsScenePresenter: IStudentsScenePresenter{
         
         let vm = StudentsSceneModels.FetchStudentImage.ViewModel(cellIndex: response.cellIndex, studentImg: img)
         
-        view?.didReceiveFetchStudentImageViewModel(vm)
+        vc?.didReceiveFetchStudentImageViewModel(vm)
     }
     
     func showCharacterDetailResponse(_ response: StudentsSceneModels.ShowCharacterDetail.Response){
         let img = response.studentImg == nil ? UIImage(named: "placeholder") : UIImage(data: response.studentImg!)
         
-        view?.showCharacterDetail(.init(detail: response.detail, characterImg: img))
+        vc?.showCharacterDetail(.init(character: response.detail, characterImg: img))
     }
     
     func showErrorResponse(_ response: StudentsSceneModels.ShowError.Response){
-        self.view?.didReceiveError(.init(description: response.error.localizedDescription))
+        self.vc?.didReceiveError(.init(description: response.error.localizedDescription))
     }
 }

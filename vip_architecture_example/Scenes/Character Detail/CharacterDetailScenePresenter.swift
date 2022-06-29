@@ -14,10 +14,10 @@ protocol ICharacterDetailScenePresenter: AnyObject {
 
 class CharacterDetailScenePresenter{
     
-    weak var view: ICharacterDetailSceneDelegate?
+    weak var vc: ICharacterDetailSceneDelegate?
     
-    init(view: ICharacterDetailSceneDelegate){
-        self.view = view
+    init(vc: ICharacterDetailSceneDelegate){
+        self.vc = vc
     }
 }
 

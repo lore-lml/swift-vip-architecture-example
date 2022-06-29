@@ -16,6 +16,7 @@
                 <outlet property="birthDateLabel" destination="MEr-8F-bCl" id="p3v-7f-SoQ"/>
                 <outlet property="characterImgView" destination="7zQ-MV-apc" id="jZc-7O-gut"/>
                 <outlet property="genderLabel" destination="oew-em-Wn3" id="49o-EY-s9A"/>
+                <outlet property="houseContainer" destination="Yga-LS-PtI" id="OVJ-04-iAC"/>
                 <outlet property="houseImgView" destination="lG5-4n-Brv" id="TZy-er-gPQ"/>
                 <outlet property="speciesLabel" destination="kTp-Uo-rbn" id="tB9-MU-875"/>
                 <outlet property="topBackgroundView" destination="2do-q6-RDI" id="qpQ-9H-J2Y"/>
@@ -55,7 +56,7 @@
                                         <constraint firstItem="7zQ-MV-apc" firstAttribute="leading" secondItem="U4G-B6-9Qd" secondAttribute="leading" constant="5" id="qqD-Kw-eVQ"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olC-Ah-GD3">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olC-Ah-GD3" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
                                     <rect key="frame" x="18" y="410" width="378" height="310"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kMk-wa-Yuy">

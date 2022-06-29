@@ -19,7 +19,6 @@ protocol ICharacterDetailSceneRouter: AnyObject{
 
 }
 
-
 class CharacterDetailSceneRouter: IRouter {
     
     typealias Routes = Void

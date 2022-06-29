@@ -58,7 +58,7 @@ class HPServiceImpl: HPService{
             return
         }
         
-        self._repo.getStudents{ res in
+        self._repo.getStaff{ res in
             completion(res.map{
                 self._staffCharacters = $0
                 Log.d($0.jsonString!)
@@ -74,7 +74,7 @@ class HPServiceImpl: HPService{
             return
         }
         
-        self._repo.getStudents{ res in
+        self._repo.getCharactersOf(house: house){ res in
             completion(res.map{
                 self._houseCharacters[house] = $0
                 Log.d($0.jsonString!)

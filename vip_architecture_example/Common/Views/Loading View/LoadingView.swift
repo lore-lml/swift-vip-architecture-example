@@ -10,6 +10,8 @@ import Lottie
 
 class LoadingView: UIView, XibSubscribable {
     
+    private static let loadingView: LoadingView = .init()
+    
     @IBOutlet weak var animationView: AnimationView!
     weak var parentView: UIView?
     private var observerSet = false
@@ -23,18 +25,24 @@ class LoadingView: UIView, XibSubscribable {
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        _commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        _commonInit()
+    }
+    
+    private func _commonInit(){
+        loadViewFromNib()
         
         self.layer.zPosition = 100
         animationView.loopMode = .loop
         
-        if !observerSet{
-            observerSet = true
-            NotificationCenter.default.addObserver(self, selector: #selector(stopWhenAppNotActive), name: UIApplication.didEnterBackgroundNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(restoreSpinnerIfNeeded), name: UIApplication.willEnterForegroundNotification, object: nil)
-        }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(stopWhenAppNotActive), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(restoreSpinnerIfNeeded), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     var isLoading: Bool{
@@ -103,13 +111,11 @@ class LoadingView: UIView, XibSubscribable {
     
     @discardableResult
     static func loadView(into parentView: UIView, autoPlay: Bool = true) -> LoadingView?{
-        guard let spinnerView = loadView() else{
-            return nil
-        }
+        
+        let spinnerView = Self.loadingView
 
         spinnerView.parentView = parentView
         spinnerView.frame = parentView.bounds
-        spinnerView.layer.zPosition = 100
         
         spinnerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

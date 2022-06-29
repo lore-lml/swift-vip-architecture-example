@@ -18,6 +18,13 @@
 		013129032859D43300FFC750 /* SwiftRouting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD228620C1B00D25805 /* BaseRouter.swift */; };
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
+		013CB770286C51D30044A914 /* StaffSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB769286C51D30044A914 /* StaffSceneAdapter.swift */; };
+		013CB771286C51D30044A914 /* StaffScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB76A286C51D30044A914 /* StaffScenePresenter.swift */; };
+		013CB772286C51D30044A914 /* StaffSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB76B286C51D30044A914 /* StaffSceneRouter.swift */; };
+		013CB773286C51D30044A914 /* StaffSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB76C286C51D30044A914 /* StaffSceneModels.swift */; };
+		013CB774286C51D30044A914 /* StaffSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB76D286C51D30044A914 /* StaffSceneViewController.swift */; };
+		013CB775286C51D30044A914 /* StaffSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013CB76E286C51D30044A914 /* StaffSceneInteractor.swift */; };
+		013CB776286C51D30044A914 /* StaffSceneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013CB76F286C51D30044A914 /* StaffSceneViewController.xib */; };
 		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
 		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
 		0155A6FE2869D3E2004D2CCA /* HpStudentImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */; };
@@ -63,6 +70,9 @@
 		01B303C02869A83C0004F740 /* hp.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B303BF2869A83C0004F740 /* hp.json */; };
 		01B303C42869AF8B0004F740 /* TabBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303C32869AF8B0004F740 /* TabBarInfo.swift */; };
 		01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303CA2869BA4F0004F740 /* XibImportable.swift */; };
+		01E4EED9286C5CE80041A556 /* HpStaffWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EED8286C5CE80041A556 /* HpStaffWorker.swift */; };
+		01E4EEDB286C5CF90041A556 /* HpStaffImagesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDA286C5CF90041A556 /* HpStaffImagesWorker.swift */; };
+		01E4EEDD286C68DB0041A556 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */; };
 		4E0055A4EA6C6686DE19F3D5 /* Pods_SwiftRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */; };
 		E8B0D96E9B45192E93469DB4 /* Pods_vip_architecture_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +112,13 @@
 		013128FE2859D43300FFC750 /* SwiftRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRouting.h; sourceTree = "<group>"; };
 		01358CD228620C1B00D25805 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
+		013CB769286C51D30044A914 /* StaffSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffSceneAdapter.swift; sourceTree = "<group>"; };
+		013CB76A286C51D30044A914 /* StaffScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffScenePresenter.swift; sourceTree = "<group>"; };
+		013CB76B286C51D30044A914 /* StaffSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffSceneRouter.swift; sourceTree = "<group>"; };
+		013CB76C286C51D30044A914 /* StaffSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffSceneModels.swift; sourceTree = "<group>"; };
+		013CB76D286C51D30044A914 /* StaffSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffSceneViewController.swift; sourceTree = "<group>"; };
+		013CB76E286C51D30044A914 /* StaffSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffSceneInteractor.swift; sourceTree = "<group>"; };
+		013CB76F286C51D30044A914 /* StaffSceneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaffSceneViewController.xib; sourceTree = "<group>"; };
 		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
 		0155A6FD2869D3E2004D2CCA /* HpStudentImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStudentImagesWorker.swift; sourceTree = "<group>"; };
@@ -149,6 +166,9 @@
 		01B303BF2869A83C0004F740 /* hp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hp.json; sourceTree = "<group>"; };
 		01B303C32869AF8B0004F740 /* TabBarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfo.swift; sourceTree = "<group>"; };
 		01B303CA2869BA4F0004F740 /* XibImportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibImportable.swift; sourceTree = "<group>"; };
+		01E4EED8286C5CE80041A556 /* HpStaffWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStaffWorker.swift; sourceTree = "<group>"; };
+		01E4EEDA286C5CF90041A556 /* HpStaffImagesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HpStaffImagesWorker.swift; sourceTree = "<group>"; };
+		01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		0B2A9BA445959FB0EC07198A /* Pods_vip_architecture_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vip_architecture_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		135BC9EFE07DA429282D9716 /* Pods_SwiftRouting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftRouting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B47907667FEBB8F2285330A /* Pods-vip_architecture_example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vip_architecture_example.debug.xcconfig"; path = "Target Support Files/Pods-vip_architecture_example/Pods-vip_architecture_example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				010D480C28699F6F00AAA818 /* XibSubscribable.swift */,
+				01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */,
 				0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */,
 				0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */,
 				0155A6F82869C12D004D2CCA /* Log.swift */,
@@ -197,6 +218,15 @@
 				011DB9652864C8D300575446 /* CharacterTableViewCell.xib */,
 			);
 			path = "Character Cell";
+			sourceTree = "<group>";
+		};
+		0125D943286C5BCA009205AB /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				01E4EED8286C5CE80041A556 /* HpStaffWorker.swift */,
+				01E4EEDA286C5CF90041A556 /* HpStaffImagesWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		013128FD2859D43300FFC750 /* SwiftRouting */ = {
@@ -360,14 +390,9 @@
 		018106DA28575170006CD742 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				01B1EE5F286C4F62002208E6 /* Staff */,
 				01B303A42869A3EE0004F740 /* Students */,
-				0155A7032869F93A004D2CCA /* CharacterDetailSceneAdapter.swift */,
-				0155A7042869F93A004D2CCA /* CharacterDetailScenePresenter.swift */,
-				0155A7052869F93A004D2CCA /* CharacterDetailSceneRouter.swift */,
-				0155A7062869F93A004D2CCA /* CharacterDetailSceneModels.swift */,
-				0155A7072869F93A004D2CCA /* CharacterDetailSceneViewController.swift */,
-				0155A7082869F93A004D2CCA /* CharacterDetailSceneInteractor.swift */,
-				0155A7092869F93A004D2CCA /* CharacterDetailSceneViewController.xib */,
+				01B1EE5E286C4F10002208E6 /* Character Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -401,6 +426,35 @@
 			path = "App Managers";
 			sourceTree = "<group>";
 		};
+		01B1EE5E286C4F10002208E6 /* Character Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0155A7032869F93A004D2CCA /* CharacterDetailSceneAdapter.swift */,
+				0155A7042869F93A004D2CCA /* CharacterDetailScenePresenter.swift */,
+				0155A7052869F93A004D2CCA /* CharacterDetailSceneRouter.swift */,
+				0155A7062869F93A004D2CCA /* CharacterDetailSceneModels.swift */,
+				0155A7072869F93A004D2CCA /* CharacterDetailSceneViewController.swift */,
+				0155A7082869F93A004D2CCA /* CharacterDetailSceneInteractor.swift */,
+				0155A7092869F93A004D2CCA /* CharacterDetailSceneViewController.xib */,
+			);
+			path = "Character Detail";
+			sourceTree = "<group>";
+		};
+		01B1EE5F286C4F62002208E6 /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				0125D943286C5BCA009205AB /* Workers */,
+				013CB769286C51D30044A914 /* StaffSceneAdapter.swift */,
+				013CB76A286C51D30044A914 /* StaffScenePresenter.swift */,
+				013CB76B286C51D30044A914 /* StaffSceneRouter.swift */,
+				013CB76C286C51D30044A914 /* StaffSceneModels.swift */,
+				013CB76D286C51D30044A914 /* StaffSceneViewController.swift */,
+				013CB76E286C51D30044A914 /* StaffSceneInteractor.swift */,
+				013CB76F286C51D30044A914 /* StaffSceneViewController.xib */,
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
 		01B303A42869A3EE0004F740 /* Students */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,8 +482,8 @@
 			isa = PBXGroup;
 			children = (
 				011DB9632864C8A400575446 /* Character Cell */,
-				01B303B72869A6900004F740 /* CardView.swift */,
 				01B303BC2869A72C0004F740 /* Loading View */,
+				01B303B72869A6900004F740 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -570,6 +624,7 @@
 				018105F228574FD8006CD742 /* LaunchScreen.storyboard in Resources */,
 				018105EF28574FD8006CD742 /* Assets.xcassets in Resources */,
 				01562AA22864C5BF00CFD56C /* StudentsSceneViewController.xib in Resources */,
+				013CB776286C51D30044A914 /* StaffSceneViewController.xib in Resources */,
 				01B303C02869A83C0004F740 /* hp.json in Resources */,
 				0155A7102869F93A004D2CCA /* CharacterDetailSceneViewController.xib in Resources */,
 				0155A714286A0C0C004D2CCA /* Colors.xcassets in Resources */,
@@ -665,6 +720,7 @@
 				0155A7022869F4D0004D2CCA /* NavBarCustomizer.swift in Sources */,
 				0117CA13285A37F100B1C345 /* AppManager.swift in Sources */,
 				01562AA72864C5BF00CFD56C /* StudentsSceneRouter.swift in Sources */,
+				013CB771286C51D30044A914 /* StaffScenePresenter.swift in Sources */,
 				018105E628574FD7006CD742 /* AppDelegate.swift in Sources */,
 				0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */,
 				01562A8E2864BDDD00CFD56C /* HPHouse.swift in Sources */,
@@ -673,6 +729,8 @@
 				01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */,
 				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
 				0155A70A2869F93A004D2CCA /* CharacterDetailSceneAdapter.swift in Sources */,
+				01E4EEDB286C5CF90041A556 /* HpStaffImagesWorker.swift in Sources */,
+				013CB772286C51D30044A914 /* StaffSceneRouter.swift in Sources */,
 				0155A70C2869F93A004D2CCA /* CharacterDetailSceneRouter.swift in Sources */,
 				01562AA52864C5BF00CFD56C /* StudentsSceneAdapter.swift in Sources */,
 				01B303BB2869A6B30004F740 /* LoadingView.swift in Sources */,
@@ -683,11 +741,15 @@
 				01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */,
 				0198C62428628A6700491711 /* GeneralAppAssembly.swift in Sources */,
 				0155A70B2869F93A004D2CCA /* CharacterDetailScenePresenter.swift in Sources */,
+				013CB770286C51D30044A914 /* StaffSceneAdapter.swift in Sources */,
 				01562AA42864C5BF00CFD56C /* StudentsSceneInteractor.swift in Sources */,
 				0117CA15285A3C3300B1C345 /* NotificationManager.swift in Sources */,
+				013CB774286C51D30044A914 /* StaffSceneViewController.swift in Sources */,
 				0155A70D2869F93A004D2CCA /* CharacterDetailSceneModels.swift in Sources */,
 				0155A712286A0ACC004D2CCA /* Extension+HPHouse.swift in Sources */,
+				013CB773286C51D30044A914 /* StaffSceneModels.swift in Sources */,
 				018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */,
+				01E4EEDD286C68DB0041A556 /* Extension+UIView.swift in Sources */,
 				01562A962864C07A00CFD56C /* HPService.swift in Sources */,
 				01562AAA2864C5D800CFD56C /* HpStudentsWorker.swift in Sources */,
 				01562A862864B7C200CFD56C /* HPRepository.swift in Sources */,
@@ -700,6 +762,8 @@
 				01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */,
 				011DB9662864C8D300575446 /* CharacterTableViewCell.swift in Sources */,
 				01B303C42869AF8B0004F740 /* TabBarInfo.swift in Sources */,
+				013CB775286C51D30044A914 /* StaffSceneInteractor.swift in Sources */,
+				01E4EED9286C5CE80041A556 /* HpStaffWorker.swift in Sources */,
 				0155A6F92869C12D004D2CCA /* Log.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  StudentsSceneSceneInteractor.swift
+//  StudentsSceneInteractor.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 23/06/22.
@@ -22,7 +22,6 @@ class StudentsSceneInteractor {
     var presenter: IStudentsScenePresenter
     private let _studentWorker: HpStudentsWorker
     private let _studentImagesWorker: HpStudentImagesWorker
-    private var _studentModels: [DtoHpCharacter] = []
     
     init(presenter: IStudentsScenePresenter, hpService: HPService){
         self.presenter = presenter
@@ -38,7 +37,6 @@ extension StudentsSceneInteractor: IStudentsSceneInteractor{
         _studentWorker.getStudents { [weak self] res in
             switch res{
             case .success(let students):
-                self?._studentModels = students
                 self?.presenter.fetchStudentsResponse(students)
             case .failure(let err):
                 self?.presenter.showErrorResponse(.init(error: err))
@@ -47,7 +45,7 @@ extension StudentsSceneInteractor: IStudentsSceneInteractor{
     }
     
     func fetchStudentImageRequest(_ request: StudentsSceneModels.FetchStudentImage.Request){
-        let selectedCharacter = _studentModels[request.cellIndex.row]
+        let selectedCharacter = request.dtoCharacter
         _studentImagesWorker.getStudentImage(character: selectedCharacter) { [weak self] res in
             
             let img: Data?
@@ -71,7 +69,7 @@ extension StudentsSceneInteractor: IStudentsSceneInteractor{
     }
     
     func showCharacterDetailRequest(_ request: StudentsSceneModels.ShowCharacterDetail.Request){
-        let selectedCharacter = _studentModels[request.cellIndex.row]
+        let selectedCharacter = request.dtoCharacter
         let detail = _studentWorker.getStudentDetail(character: selectedCharacter)
         _studentImagesWorker.getStudentImage(character: selectedCharacter) { [weak self] res in
             let data = try? res.get()

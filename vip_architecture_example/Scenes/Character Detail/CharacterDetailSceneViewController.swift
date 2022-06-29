@@ -24,6 +24,7 @@ class CharacterDetailSceneViewController: UIViewController  {
     // MARK: OUTLETS
     @IBOutlet weak var topBackgroundView: UIView!
     @IBOutlet weak var characterImgView: UIImageView!
+    @IBOutlet weak var houseContainer: UIStackView!
     @IBOutlet weak var houseImgView: UIImageView!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
@@ -47,8 +48,12 @@ class CharacterDetailSceneViewController: UIViewController  {
         topBackgroundView.backgroundColor = input?.houseColor
         
         characterImgView.image = input?.characterImg
+        
+        houseContainer.isHidden = input?.houseImg == nil
         houseImgView.image = input?.houseImg
+        
         genderLabel.text = input?.gender
+        
         speciesLabel.text = input?.species
         
         birtDateContainer.isHidden = input?.dateOfBirth.isEmpty ?? true

@@ -31,7 +31,7 @@ class CharacterDetailSceneAdapter {
         
         let controller = CharacterDetailSceneViewController.fromXib()
         let router = CharacterDetailSceneRouter(view: controller)
-        let presenter = CharacterDetailScenePresenter(view: controller)
+        let presenter = CharacterDetailScenePresenter(vc: controller)
         let interactor = CharacterDetailSceneInteractor(presenter: presenter)
         
         controller.router = router

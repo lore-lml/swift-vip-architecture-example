@@ -1,5 +1,5 @@
 //
-//  StudentsSceneSceneRouter.swift
+//  StudentsSceneRouter.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 23/06/22.
@@ -12,35 +12,33 @@ import UIKit
 import SwiftRouting
 import Swinject
 
-typealias IStudentsSceneController = IStudentsSceneDelegate & UIViewController
-
 // MARK: Navigation Methods
 protocol IStudentsSceneRouter: AnyObject{
-    func showCharacterDetail(_ input: StudentsSceneModels.CharacterDetailInput)
-}
-
-enum StudentsSceneRoutes {
-    case characterDetail(input: CharacterDetailSceneModels.Input)
+    func showCharacterDetail(_ input: CharacterDetailSceneModels.Input)
 }
 
 class StudentsSceneRouter: IRouter {
     
-    typealias Routes = StudentsSceneRoutes
+    enum AvailableRoutes {
+        case characterDetail(input: CharacterDetailSceneModels.Input)
+    }
     
-    weak var view: IStudentsSceneController!
+    typealias Routes = AvailableRoutes
+    
+    weak var vc: UIViewController!
     var navigator: IAppNavigator?
     var assembler: Assembler?
     
-    init(view: IStudentsSceneController) {
-        self.view = view
+    init(vc: UIViewController) {
+        self.vc = vc
     }
     
-    func showRoute(route: StudentsSceneRoutes) {
+    func showRoute(route: AvailableRoutes) {
         
         switch route{
         case .characterDetail(let input):
             let controller = CharacterDetailSceneAdapter.setup(input: input, assembler: assembler)
-            navigator?.go(from: view, to: controller)
+            navigator?.go(from: vc, to: controller)
         }
     }
 }
@@ -49,8 +47,8 @@ class StudentsSceneRouter: IRouter {
 extension StudentsSceneRouter: IStudentsSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
     
-    func showCharacterDetail(_ input: StudentsSceneModels.CharacterDetailInput){
-        showRoute(route: .characterDetail(input: .init(character: input.detail, characterImg: input.characterImg)))
+    func showCharacterDetail(_ input: CharacterDetailSceneModels.Input){
+        showRoute(route: .characterDetail(input: input))
     }
     
     

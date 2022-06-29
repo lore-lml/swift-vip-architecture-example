@@ -1,5 +1,5 @@
 //
-//  StudentsSceneSceneModels.swift
+//  StudentsSceneModels.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 23/06/22.
@@ -11,15 +11,11 @@
 import UIKit
 
 
-struct StudentsSceneModels {
-}
+struct StudentsSceneModels {}
+
 
 // MARK: Models for passing data to other routes
 extension StudentsSceneModels{
-    struct CharacterDetailInput{
-        var detail: DtoHpCharacterDetail
-        var characterImg: UIImage?
-    }
 }
 
 
@@ -31,8 +27,9 @@ extension StudentsSceneModels{
         typealias Response = [DtoHpCharacter]
         
         struct ViewModel {
-            var name: String
-            var house: String
+            let dtoCharacter: DtoHpCharacter
+            var name: String{ dtoCharacter.name }
+            var house: String{ dtoCharacter.house.rawValue }
             var isLoading: Bool
             var image: UIImage?
         }
@@ -42,6 +39,7 @@ extension StudentsSceneModels{
         
         struct Request{
             let cellIndex: IndexPath
+            let dtoCharacter: DtoHpCharacter
         }
         
         struct Response {
@@ -59,6 +57,7 @@ extension StudentsSceneModels{
         
         struct Request {
             let cellIndex: IndexPath
+            let dtoCharacter: DtoHpCharacter
         }
         
         struct Response{
@@ -66,7 +65,7 @@ extension StudentsSceneModels{
             let detail: DtoHpCharacterDetail
         }
         
-        typealias ViewModel = CharacterDetailInput
+        typealias ViewModel = CharacterDetailSceneModels.Input
     }
     
     struct ShowError {
