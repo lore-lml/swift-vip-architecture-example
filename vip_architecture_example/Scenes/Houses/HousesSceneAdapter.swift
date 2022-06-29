@@ -1,5 +1,5 @@
 //
-//  StaffSceneAdapter.swift
+//  HousesSceneAdapter.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 29/06/22.
@@ -11,9 +11,9 @@
 import Swinject
 import SwiftRouting
 
-extension StaffSceneViewController: XibImportable{}
+extension HousesSceneViewController: XibImportable{}
 
-class StaffSceneAdapter {
+class HousesSceneAdapter {
     
     private init() {}
     
@@ -21,21 +21,17 @@ class StaffSceneAdapter {
     static func setup(assembler: Assembler? = nil) -> UIViewController{
         
         guard let assembler = assembler,
-              let navigator = assembler.resolver.resolve(IAppNavigator.self),
-              let hpService = assembler.resolver.resolve(HPService.self)
+              let navigator = assembler.resolver.resolve(IAppNavigator.self)
         else {
             fatalError("Dependencies not found")
         }
         
         let newAssembler = Assembler(parentAssembler: assembler)
         
-        let controller = StaffSceneViewController.fromXib()
-        let router = StaffSceneRouter(vc: controller)
-        let presenter = StaffScenePresenter(vc: controller)
-        let interactor = StaffSceneInteractor(presenter: presenter, hpService: hpService )
+        let controller = HousesSceneViewController.fromXib()
+        let router = HousesSceneRouter(vc: controller)
         
         controller.router = router
-        controller.interactor = interactor
         
         router.assembler = newAssembler
         router.navigator = navigator

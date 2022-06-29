@@ -15,21 +15,21 @@ class TabBarInfo: TabBarInfoProvider{
     
     init(assembler: Assembler?){
         itemsInfo = [
-            .init(viewController: StudentsSceneAdapter.setup(assembler: assembler), tabBarItem: .init(
+            .init(viewController: CharacterListSceneAdapter.setup(input: .students, assembler: assembler), tabBarItem: .init(
                     title: "Students",
                     image: .init(systemName: "person"),
                     selectedImage: .init(systemName: "person.fill")
                 )
             ),
             
-                .init(viewController: StaffSceneAdapter.setup(assembler: assembler), tabBarItem: .init(
+                .init(viewController: CharacterListSceneAdapter.setup(input: .staff, assembler: assembler), tabBarItem: .init(
                     title: "Staff",
                     image: .init(systemName: "book"),
                     selectedImage: .init(systemName: "book.fill")
                 )
             ),
         
-            .init(viewController: UIViewController(), tabBarItem: .init(
+                .init(viewController: HousesSceneAdapter.setup(assembler: assembler), tabBarItem: .init(
                     title: "Houses",
                     image: .init(systemName: "house"),
                     selectedImage: .init(systemName: "house.fill")

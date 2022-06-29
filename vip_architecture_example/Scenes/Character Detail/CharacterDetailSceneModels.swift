@@ -22,7 +22,15 @@ struct CharacterDetailSceneModels {
         var dateOfBirth: String{ _character.dateOfBirth }
         var alive: String{ _character.alive ? "Yes" : "No"}
         var wand: String{
-            "\(_character.wand.core.capitalized)\n\(_character.wand.wood.capitalized)"
+            let core = _character.wand.core
+            let wood = _character.wand.wood
+            
+            switch (core, wood){
+            case ("", ""): return ""
+            case ("", _): return wood
+            case (_, ""): return core
+            default: return "\(_character.wand.core.capitalized)\n\(_character.wand.wood.capitalized)"
+            }
         }
         
         init(character: DtoHpCharacterDetail, characterImg: UIImage?){

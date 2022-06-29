@@ -21,7 +21,7 @@ class CharacterTableViewCell: UITableViewCell, XibSubscribable {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    func configure(character: StudentsSceneModels.FetchStudents.ViewModel){
+    func configure(character: CharacterListSceneModels.FetchCharacters.ViewModel){
         nameLabel.text = character.name
         houseLabel.text = character.house
         imgView.image = character.image

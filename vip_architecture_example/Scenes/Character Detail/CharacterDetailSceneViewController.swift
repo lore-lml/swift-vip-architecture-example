@@ -46,7 +46,7 @@ class CharacterDetailSceneViewController: UIViewController  {
     private func _setupView(){
         
         topBackgroundView.backgroundColor = input?.houseColor
-        
+         
         characterImgView.image = input?.characterImg
         
         houseContainer.isHidden = input?.houseImg == nil
@@ -61,7 +61,7 @@ class CharacterDetailSceneViewController: UIViewController  {
         
         aliveLabel.text = input?.alive
         
-        wandContainer.isHidden = input?.wand == "\n"
+        wandContainer.isHidden = input?.wand.isEmpty ?? true
         wandLabel.text = input?.wand
     }
 }

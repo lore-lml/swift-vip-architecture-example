@@ -1,5 +1,5 @@
 //
-//  HpStaffImagesWorker.swift
+//  HpCharacterImageWorker.swift
 //  vip_architecture_example
 //
 //  Created by Lorenzo Limoli on 29/06/22.
@@ -10,16 +10,15 @@
 
 import Foundation
 
-class HpStaffImagesWorker {
+class HpCharacterImageWorker {
     // MARK: Business Logic
-    
     private let _hpService: HPService
     
     init(hpService: HPService){
         self._hpService = hpService
     }
     
-    func getStaffImage(character: DtoHpCharacter, completion: @escaping HPResult<Data>){
+    func getImageOf(character: DtoHpCharacter, completion: @escaping HPResult<Data>){
         _hpService.getImageOf(character: character, completion: completion)
     }
 }

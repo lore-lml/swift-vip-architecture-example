@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HousesSceneViewController" customModule="vip_architecture_example" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="houseCards" destination="9nD-F7-3tC" collectionClass="NSMutableArray" id="MA0-4i-zgr"/>
+                <outletCollection property="houseCards" destination="b62-yS-cYW" collectionClass="NSMutableArray" id="Z3J-4T-kB7"/>
+                <outletCollection property="houseCards" destination="fWy-5O-0Xg" collectionClass="NSMutableArray" id="Yfb-qu-P8V"/>
+                <outletCollection property="houseCards" destination="aea-av-00s" collectionClass="NSMutableArray" id="rMt-Gq-kM9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XvB-9g-Pk3">
+                    <rect key="frame" x="18" y="252.5" width="378" height="401"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Smv-rz-NXB">
+                            <rect key="frame" x="0.0" y="0.0" width="378" height="190.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="seP-tG-pF6">
+                                    <rect key="frame" x="0.0" y="0.0" width="184" height="190.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-F7-3tC" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="160"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gryffindor" translatesAutoresizingMaskIntoConstraints="NO" id="57j-Uc-37b">
+                                                    <rect key="frame" x="10" y="10" width="164" height="140"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="gryffindor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="57j-Uc-37b" secondAttribute="bottom" constant="10" id="PfY-lZ-OYA"/>
+                                                <constraint firstAttribute="trailing" secondItem="57j-Uc-37b" secondAttribute="trailing" constant="10" id="VOz-Xk-RbW"/>
+                                                <constraint firstItem="57j-Uc-37b" firstAttribute="top" secondItem="9nD-F7-3tC" secondAttribute="top" constant="10" id="dwb-yy-WK3"/>
+                                                <constraint firstAttribute="height" constant="160" id="gBi-NN-ctj"/>
+                                                <constraint firstItem="57j-Uc-37b" firstAttribute="leading" secondItem="9nD-F7-3tC" secondAttribute="leading" constant="10" id="zHb-g7-R0X"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gryffindor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-jx-AUv">
+                                            <rect key="frame" x="53" y="170" width="78" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g0Q-Q8-uAK">
+                                    <rect key="frame" x="194" y="0.0" width="184" height="190.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b62-yS-cYW" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="160"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slytherin" translatesAutoresizingMaskIntoConstraints="NO" id="IRh-hk-2YQ">
+                                                    <rect key="frame" x="10" y="10" width="164" height="140"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="slytherin"/>
+                                            <constraints>
+                                                <constraint firstItem="IRh-hk-2YQ" firstAttribute="leading" secondItem="b62-yS-cYW" secondAttribute="leading" constant="10" id="91w-nk-dUi"/>
+                                                <constraint firstAttribute="trailing" secondItem="IRh-hk-2YQ" secondAttribute="trailing" constant="10" id="h6a-KR-s8f"/>
+                                                <constraint firstAttribute="bottom" secondItem="IRh-hk-2YQ" secondAttribute="bottom" constant="10" id="jCt-od-yBT"/>
+                                                <constraint firstAttribute="height" constant="160" id="lJI-Sp-8Y1"/>
+                                                <constraint firstItem="IRh-hk-2YQ" firstAttribute="top" secondItem="b62-yS-cYW" secondAttribute="top" constant="10" id="qIr-qr-UzX"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slytherin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-dl-IHh">
+                                            <rect key="frame" x="58.5" y="170" width="67" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VZP-i2-SYK">
+                            <rect key="frame" x="0.0" y="210.5" width="378" height="190.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-po-f7p">
+                                    <rect key="frame" x="0.0" y="0.0" width="184" height="190.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWy-5O-0Xg" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="160"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hufflepuff" translatesAutoresizingMaskIntoConstraints="NO" id="YZ5-G9-ojk">
+                                                    <rect key="frame" x="10" y="10" width="164" height="140"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="hufflepuff"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="YZ5-G9-ojk" secondAttribute="bottom" constant="10" id="6nm-uM-p7m"/>
+                                                <constraint firstAttribute="height" constant="160" id="FZn-Wz-IVP"/>
+                                                <constraint firstItem="YZ5-G9-ojk" firstAttribute="leading" secondItem="fWy-5O-0Xg" secondAttribute="leading" constant="10" id="TA0-QX-D1Y"/>
+                                                <constraint firstItem="YZ5-G9-ojk" firstAttribute="top" secondItem="fWy-5O-0Xg" secondAttribute="top" constant="10" id="kWh-bV-5E6"/>
+                                                <constraint firstAttribute="trailing" secondItem="YZ5-G9-ojk" secondAttribute="trailing" constant="10" id="xIn-vN-2tR"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hufflepuff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-XV-eYx">
+                                            <rect key="frame" x="53" y="170" width="78" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n5V-dU-vvj">
+                                    <rect key="frame" x="194" y="0.0" width="184" height="190.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aea-av-00s" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="160"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ravenclaw" translatesAutoresizingMaskIntoConstraints="NO" id="oCV-zU-dkx">
+                                                    <rect key="frame" x="10" y="10" width="164" height="140"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="ravenclaw"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oCV-zU-dkx" secondAttribute="trailing" constant="10" id="BPy-91-zmg"/>
+                                                <constraint firstItem="oCV-zU-dkx" firstAttribute="top" secondItem="aea-av-00s" secondAttribute="top" constant="10" id="OHx-Iv-Lss"/>
+                                                <constraint firstAttribute="bottom" secondItem="oCV-zU-dkx" secondAttribute="bottom" constant="10" id="YkH-k1-Aq9"/>
+                                                <constraint firstAttribute="height" constant="160" id="imA-G0-YUk"/>
+                                                <constraint firstItem="oCV-zU-dkx" firstAttribute="leading" secondItem="aea-av-00s" secondAttribute="leading" constant="10" id="ot3-6V-vYB"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ravenclaw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unt-zz-uOn">
+                                            <rect key="frame" x="51.5" y="170" width="81" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XvB-9g-Pk3" secondAttribute="trailing" constant="18" id="547-Fp-hpZ"/>
+                <constraint firstItem="XvB-9g-Pk3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="VK9-Rd-Rpd"/>
+                <constraint firstItem="XvB-9g-Pk3" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="sn2-hC-f9k"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="147"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gryffindor" width="150" height="191.5"/>
+        <image name="hufflepuff" width="308.5" height="384"/>
+        <image name="ravenclaw" width="375" height="455"/>
+        <image name="slytherin" width="350" height="350"/>
+        <namedColor name="gryffindor">
+            <color red="0.45490196078431372" green="0.0" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="hufflepuff">
+            <color red="1" green="0.85882352941176465" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ravenclaw">
+            <color red="0.054901960784313725" green="0.10196078431372549" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="slytherin">
+            <color red="0.10196078431372549" green="0.27843137254901962" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
