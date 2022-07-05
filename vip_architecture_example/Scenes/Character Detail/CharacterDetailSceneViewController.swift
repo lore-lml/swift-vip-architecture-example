@@ -38,7 +38,13 @@ class CharacterDetailSceneViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NavBarCustomizer.defaultStyle(for: self)
+        if !isModal{
+            NavBarCustomizer.defaultStyle(for: self)
+        }else{
+            let btnItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(_didTapClose))
+            NavBarCustomizer.defaultStyle(for: self, leftBarButton: btnItem, hideBackButton: true)
+        }
+        
         
         _setupView()
     }
@@ -63,6 +69,10 @@ class CharacterDetailSceneViewController: UIViewController  {
         
         wandContainer.isHidden = input?.wand.isEmpty ?? true
         wandLabel.text = input?.wand
+    }
+    
+    @objc private func _didTapClose(){
+        self.router.backToCharactersList()
     }
 }
 

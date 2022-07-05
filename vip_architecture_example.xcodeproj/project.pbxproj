@@ -39,6 +39,8 @@
 		01562A962864C07A00CFD56C /* HPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A952864C07A00CFD56C /* HPService.swift */; };
 		01562A982864C08800CFD56C /* HPServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A972864C08800CFD56C /* HPServiceImpl.swift */; };
 		01562A9A2864C4B200CFD56C /* CommonServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */; };
+		0180A83A28743E810025A939 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0180A83928743E810025A939 /* Extension+UIViewController.swift */; };
+		0180A83C287441280025A939 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0180A83B287441280025A939 /* Extension+UIViewController.swift */; };
 		018105E628574FD7006CD742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E528574FD7006CD742 /* AppDelegate.swift */; };
 		018105E828574FD7006CD742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018105E728574FD7006CD742 /* SceneDelegate.swift */; };
 		018105EF28574FD8006CD742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 018105EE28574FD8006CD742 /* Assets.xcassets */; };
@@ -128,6 +130,8 @@
 		01562A952864C07A00CFD56C /* HPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPService.swift; sourceTree = "<group>"; };
 		01562A972864C08800CFD56C /* HPServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPServiceImpl.swift; sourceTree = "<group>"; };
 		01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonServiceAssembly.swift; sourceTree = "<group>"; };
+		0180A83928743E810025A939 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		0180A83B287441280025A939 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		018105E228574FD7006CD742 /* vip_architecture_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vip_architecture_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		018105E528574FD7006CD742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		018105E728574FD7006CD742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				0198C61B2862753900491711 /* Extension+UINavigationController.swift */,
 				0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */,
 				01B303CA2869BA4F0004F740 /* XibImportable.swift */,
+				0180A83B287441280025A939 /* Extension+UIViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -494,6 +499,7 @@
 				01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */,
 				0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */,
 				01E4EF03286CAE770041A556 /* Extension+UIColor.swift */,
+				0180A83928743E810025A939 /* Extension+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
+				0180A83C287441280025A939 /* Extension+UIViewController.swift in Sources */,
 				0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */,
 				01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */,
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
@@ -726,6 +733,7 @@
 				0155A70E2869F93A004D2CCA /* CharacterDetailSceneViewController.swift in Sources */,
 				01562A922864BF5800CFD56C /* DtoHpCharacterDetail.swift in Sources */,
 				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
+				0180A83A28743E810025A939 /* Extension+UIViewController.swift in Sources */,
 				0155A70A2869F93A004D2CCA /* CharacterDetailSceneAdapter.swift in Sources */,
 				01E4EEE6286C90590041A556 /* HousesSceneAdapter.swift in Sources */,
 				0155A70C2869F93A004D2CCA /* CharacterDetailSceneRouter.swift in Sources */,

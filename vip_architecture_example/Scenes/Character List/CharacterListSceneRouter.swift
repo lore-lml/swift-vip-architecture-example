@@ -16,6 +16,7 @@ import Swinject
 // MARK: Navigation Methods
 protocol ICharacterListSceneRouter: AnyObject{
     func showCharacterDetail(_ input: CharacterDetailSceneModels.Input)
+    func dismissIfModal()
 }
 
 class CharacterListSceneRouter: IRouter {
@@ -50,5 +51,9 @@ extension CharacterListSceneRouter: ICharacterListSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
     func showCharacterDetail(_ input: CharacterDetailSceneModels.Input){
         showRoute(route: .characterDetail(input: input))
+    }
+    
+    func dismissIfModal() {
+        navigator?.dismissModal(vc)
     }
 }

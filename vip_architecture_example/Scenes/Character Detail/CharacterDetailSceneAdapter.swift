@@ -30,7 +30,7 @@ class CharacterDetailSceneAdapter {
         let newAssembler = Assembler(parentAssembler: assembler)
         
         let controller = CharacterDetailSceneViewController.fromXib()
-        let router = CharacterDetailSceneRouter(view: controller)
+        let router = CharacterDetailSceneRouter(vc: controller)
         let presenter = CharacterDetailScenePresenter(vc: controller)
         let interactor = CharacterDetailSceneInteractor(presenter: presenter)
         

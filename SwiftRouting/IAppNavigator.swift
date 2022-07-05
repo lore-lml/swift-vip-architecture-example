@@ -8,9 +8,13 @@
 import UIKit
 
 public enum PresentationType {
+    /// A new UIViewController is added to the navigation stack
     case push
+    /// A new UIViewController replace the current UIViewController
     case pushReplace
+    /// A new UIViewController is presented modally
     case present
+    /// A new UIViewController is added to a new navigation stack presented modally
     case presentWithNavigation
 }
 
@@ -42,20 +46,31 @@ public protocol IAppNavigator: AnyObject{
     
     var window: UIWindow! { get set }
 
+    /// Set the root view controller chosing among a predefined configurations
     func setRootController(rootType: RootType, animated: Bool)
+    /// Set the root view controller
     func setCustomRootController(controller: UIViewController)
     
+    /// Create a new route from a source controller towards a destination controller using the selected presentation type
     func go(from: UIViewController, to: UIViewController, presentationType: PresentationType, completion: (() -> Void)?, animated: Bool)
     
     
-    func back(from: UIViewController, to: UIViewController, completion: (() -> Void)?, animated: Bool)
+    /// Go back to the provided controller if it is part of a navigation stack
+    @discardableResult
+    func backTo(controller: UIViewController, completion: (() -> Void)?, animated: Bool) -> Bool
     
+    /// Go back to the controller of the provided Type if present in the navigation stack of the source controller.
     @discardableResult
     func back<To: UIViewController>(from: UIViewController, to type: To.Type, completion: (() -> Void)?, animated: Bool) -> Bool
     
     
+    /// Pop the provided controller out of the navigation stack if it is the top view controller, or dismiss it if it is presented modally
+    @discardableResult
+    func popOrDismiss(_ controller: UIViewController, completion: (() -> Void)?, animated: Bool) -> Bool
     
-    func dismiss(_ controller: UIViewController, completion: (() -> Void)?, animated: Bool)
+    /// Dismiss the view controller if it is presented modally, or the entire navigation stack if the root has been presented modally
+    @discardableResult
+    func dismissModal(_ controller: UIViewController, completion: (() -> Void)? , animated: Bool) -> Bool
 }
 
 public extension IAppNavigator{
@@ -168,20 +183,22 @@ public extension IAppNavigator{
         }
     }
     
-    func back(
-        from: UIViewController,
-        to: UIViewController,
-        completion: (() -> Void)? = nil,
-        animated: Bool = true
-    ){
+    @discardableResult
+    func backTo(
+        controller: UIViewController,
+        completion: (() -> Void)?,
+        animated: Bool
+    ) -> Bool{
         
-        guard let navCon = from.navigationController else {
-            fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
+        guard let navCon = controller.navigationController else {
+            return false
         }
         
-        navCon.popToViewController(to, animated: animated, completion: completion)
+        navCon.popToViewController(controller, animated: animated, completion: completion)
+        return true
     }
 
+    @discardableResult
     func back<To: UIViewController>(
         from: UIViewController,
         to type: To.Type,
@@ -190,7 +207,7 @@ public extension IAppNavigator{
     ) -> Bool{
         
         guard let navCon = from.navigationController else {
-            fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
+            return false
         }
         
         guard let controller = navCon.viewControllers.last(where: { $0 is To }),
@@ -198,22 +215,51 @@ public extension IAppNavigator{
             return false
         }
         
-        back(from: from, to: routedController, completion: completion, animated: animated)
+        backTo(controller: routedController, completion: completion, animated: animated)
         
         return true
     }
     
-    
-    func dismiss(
+    @discardableResult
+    func popOrDismiss(
         _ controller: UIViewController,
         completion: (() -> Void)? = nil,
         animated: Bool = true
-    ){
+    ) -> Bool{
         
         if let navCon = controller.navigationController{
-            navCon.popViewController(animated: true, completion: completion)
+            if navCon.topViewController === controller{
+                navCon.popViewController(animated: true, completion: completion)
+                return true
+            }
+            return false
+        }
+        
+        if controller.isModal{
+            controller.dismiss(animated: animated, completion: completion)
+            return true
+        }
+        
+        return false
+    }
+    
+    @discardableResult
+    func dismissModal(
+        _ controller: UIViewController,
+        completion: (() -> Void)? = nil ,
+        animated: Bool = true
+    ) -> Bool{
+        
+        if !controller.isModal{
+            return false
+        }
+        
+        if let navCon = controller.navigationController{
+            navCon.dismiss(animated: animated, completion: completion)
+            return true
         }
         
         controller.dismiss(animated: animated, completion: completion)
+        return true
     }
 }

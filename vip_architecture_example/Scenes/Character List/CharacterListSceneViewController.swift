@@ -34,7 +34,12 @@ class CharacterListSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NavBarCustomizer.defaultStyle(for: self)
+        if !isModal{
+            NavBarCustomizer.defaultStyle(for: self)
+        }else{
+            let btnItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(_didTapClose))
+            NavBarCustomizer.defaultStyle(for: self, leftBarButton: btnItem, hideBackButton: true)
+        }
         
         _loadingView = .loadView(into: self.view, autoPlay: false)
         _configureTableView()
@@ -45,6 +50,10 @@ class CharacterListSceneViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         CharacterTableViewCell.subscribe(to: tableView)
+    }
+    
+    @objc private func _didTapClose(){
+        router.dismissIfModal()
     }
 }
 

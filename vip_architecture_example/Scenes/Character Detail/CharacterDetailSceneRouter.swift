@@ -16,25 +16,40 @@ typealias ICharacterDetailSceneController = ICharacterDetailSceneDelegate & UIVi
 
 // MARK: Navigation Methods
 protocol ICharacterDetailSceneRouter: AnyObject{
-
+    func backToCharactersList()
 }
 
 class CharacterDetailSceneRouter: IRouter {
     
-    typealias Routes = Void
+    enum AvailableRoutes{
+        case characterLists
+        case house
+    }
     
-    weak var view: ICharacterDetailSceneController!
+    typealias Routes = AvailableRoutes
+    
+    weak var vc: ICharacterDetailSceneController!
     var navigator: IAppNavigator?
     var assembler: Assembler?
     
-    init(view: ICharacterDetailSceneController) {
-        self.view = view
+    init(vc: ICharacterDetailSceneController) {
+        self.vc = vc
     }
-
+    
+    func showRoute(route: AvailableRoutes) {
+        switch route {
+        case .characterLists:
+            navigator?.dismissModal(vc)
+        case .house:
+            break
+        }
+    }
 }
 
 
 extension CharacterDetailSceneRouter: ICharacterDetailSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
-    
+    func backToCharactersList(){
+        showRoute(route: .characterLists)
+    }
 }
