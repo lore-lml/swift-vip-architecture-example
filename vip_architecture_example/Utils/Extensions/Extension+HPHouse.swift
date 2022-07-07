@@ -30,7 +30,7 @@ extension HpHouse{
         case .slytherin: return .slytherin
         case .hufflepuff: return .hufflepuff
         case .ravenclaw: return .ravenclaw
-        case .none: return .black
+        case .none: return .noneHouseColor
         }
     }
 }

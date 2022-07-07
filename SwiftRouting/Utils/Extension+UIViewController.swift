@@ -17,4 +17,20 @@ extension UIViewController {
 
         return presentingIsModal || presentingIsNavigation || presentingIsTabBar
     }
+    
+    func presentInBottomSheetController(_ vc: UIViewController, withHeight height: CGFloat? = nil, animated: Bool = true, dismissCompletion: (() -> Void)? = nil ){
+        let bottomSheetController = BottomSheetViewController.fromStoryboard()
+            .withDismissHandler(dismissCompletion)
+        
+        bottomSheetController.modalPresentationStyle = .custom
+        // This is possible because transitioningDelegate is a weak property. This avoid memory cycles
+        bottomSheetController.transitioningDelegate = bottomSheetController
+        
+        bottomSheetController.addChild(vc)
+        bottomSheetController.frameHeight = height
+        bottomSheetController.containerSubview = vc.view
+        
+        vc.didMove(toParent: self)
+        present(bottomSheetController, animated: animated)
+    }
 }

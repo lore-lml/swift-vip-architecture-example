@@ -15,7 +15,11 @@ public enum PresentationType {
     /// A new UIViewController is presented modally
     case present
     /// A new UIViewController is added to a new navigation stack presented modally
-    case presentWithNavigation
+    case presentWithNavigation(customStack: UINavigationController? = nil)
+    /// A new UIViewController is presented in a bottom sheet controller
+    case bottomSheet(desiredHeight: CGFloat? = nil)
+    /// A new UIViewController is added to a new navigation stack presented in a bottom sheet controller
+    case bottomSheetWithNavigation(desiredHeight: CGFloat? = nil, customStack: UINavigationController? = nil)
 }
 
 public enum RootType{
@@ -175,11 +179,23 @@ public extension IAppNavigator{
             
             from.present(to, animated: animated, completion: completion)
             
-        case .presentWithNavigation:
+        case .presentWithNavigation(let customStack):
             
-            let newNavCon = UINavigationController(rootViewController: to)
+            let newNavCon = customStack ?? .init()
+            
+            newNavCon.viewControllers = [to]
             
             from.present(newNavCon, animated: animated, completion: completion)
+            
+        case .bottomSheet(let desiredHeight):
+            from.presentInBottomSheetController(to, withHeight: desiredHeight, animated: animated)
+            
+        case .bottomSheetWithNavigation(let desiredHeight, let customStack):
+            let newNavCon = customStack ?? .init()
+            
+            newNavCon.viewControllers = [to]
+            
+            from.presentInBottomSheetController(newNavCon, withHeight: desiredHeight, animated: animated)
         }
     }
     

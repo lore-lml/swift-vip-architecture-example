@@ -55,6 +55,10 @@
 		01B303C02869A83C0004F740 /* hp.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B303BF2869A83C0004F740 /* hp.json */; };
 		01B303C42869AF8B0004F740 /* TabBarInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303C32869AF8B0004F740 /* TabBarInfo.swift */; };
 		01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B303CA2869BA4F0004F740 /* XibImportable.swift */; };
+		01B7D0C5287725BE00616BD7 /* BottomSheetController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B7D0C1287725BE00616BD7 /* BottomSheetController.storyboard */; };
+		01B7D0C6287725BE00616BD7 /* BottomSheetControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C2287725BE00616BD7 /* BottomSheetControllerProtocol.swift */; };
+		01B7D0C7287725BE00616BD7 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C3287725BE00616BD7 /* BottomSheetPresentationController.swift */; };
+		01B7D0C8287725BE00616BD7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C4287725BE00616BD7 /* BottomSheetViewController.swift */; };
 		01E4EEDD286C68DB0041A556 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */; };
 		01E4EEE6286C90590041A556 /* HousesSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDF286C90590041A556 /* HousesSceneAdapter.swift */; };
 		01E4EEE8286C90590041A556 /* HousesSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEE1286C90590041A556 /* HousesSceneRouter.swift */; };
@@ -148,6 +152,10 @@
 		01B303BF2869A83C0004F740 /* hp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hp.json; sourceTree = "<group>"; };
 		01B303C32869AF8B0004F740 /* TabBarInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInfo.swift; sourceTree = "<group>"; };
 		01B303CA2869BA4F0004F740 /* XibImportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibImportable.swift; sourceTree = "<group>"; };
+		01B7D0C1287725BE00616BD7 /* BottomSheetController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BottomSheetController.storyboard; sourceTree = "<group>"; };
+		01B7D0C2287725BE00616BD7 /* BottomSheetControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetControllerProtocol.swift; sourceTree = "<group>"; };
+		01B7D0C3287725BE00616BD7 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
+		01B7D0C4287725BE00616BD7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		01E4EEDF286C90590041A556 /* HousesSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesSceneAdapter.swift; sourceTree = "<group>"; };
 		01E4EEE1286C90590041A556 /* HousesSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesSceneRouter.swift; sourceTree = "<group>"; };
@@ -219,6 +227,7 @@
 				01562A712864A51400CFD56C /* TabBarInfoProvider.swift */,
 				0198C61D28627C9E00491711 /* IRouter.swift */,
 				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
+				01B7D0C0287725A900616BD7 /* Bottom Sheet Controller */,
 				0151EB182864A341002D7724 /* Utils */,
 			);
 			path = SwiftRouting;
@@ -441,6 +450,17 @@
 			path = "Loading View";
 			sourceTree = "<group>";
 		};
+		01B7D0C0287725A900616BD7 /* Bottom Sheet Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01B7D0C1287725BE00616BD7 /* BottomSheetController.storyboard */,
+				01B7D0C2287725BE00616BD7 /* BottomSheetControllerProtocol.swift */,
+				01B7D0C3287725BE00616BD7 /* BottomSheetPresentationController.swift */,
+				01B7D0C4287725BE00616BD7 /* BottomSheetViewController.swift */,
+			);
+			path = "Bottom Sheet Controller";
+			sourceTree = "<group>";
+		};
 		01E4EEDE286C90480041A556 /* Houses */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +641,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B7D0C5287725BE00616BD7 /* BottomSheetController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,11 +734,14 @@
 			files = (
 				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
 				0180A83C287441280025A939 /* Extension+UIViewController.swift in Sources */,
+				01B7D0C6287725BE00616BD7 /* BottomSheetControllerProtocol.swift in Sources */,
+				01B7D0C8287725BE00616BD7 /* BottomSheetViewController.swift in Sources */,
 				0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */,
 				01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */,
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
 				0198C61E28627C9E00491711 /* IRouter.swift in Sources */,
 				0117CA0D2859EF0500B1C345 /* StoryboardImportable.swift in Sources */,
+				01B7D0C7287725BE00616BD7 /* BottomSheetPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

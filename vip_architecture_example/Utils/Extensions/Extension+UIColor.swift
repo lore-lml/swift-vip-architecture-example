@@ -15,5 +15,5 @@ extension UIColor{
     static var hufflepuff: UIColor{ .init(named: "hufflepuff")! }
     static var ravenclaw: UIColor{ .init(named: "ravenclaw")! }
     static var backgroundSelectionCell: UIColor{ .init(named: "backgroundSelectionCell")! }
-    
+    static var noneHouseColor: UIColor{ .init(named: "noneHouse")! }
 }
