@@ -258,7 +258,8 @@
 		01562A822864B75D00CFD56C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				01562A842864B78C00CFD56C /* Harry Potter */,
+				01562A852864B7C200CFD56C /* HPRepository.swift */,
+				01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -266,27 +267,16 @@
 		01562A832864B77000CFD56C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				01562A942864C06E00CFD56C /* Harry Potter */,
+				01562A952864C07A00CFD56C /* HPService.swift */,
+				01562A972864C08800CFD56C /* HPServiceImpl.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		01562A842864B78C00CFD56C /* Harry Potter */ = {
-			isa = PBXGroup;
-			children = (
-				01562A852864B7C200CFD56C /* HPRepository.swift */,
-				01562A872864B7D800CFD56C /* HPRepositoryImpl.swift */,
-			);
-			path = "Harry Potter";
 			sourceTree = "<group>";
 		};
 		01562A892864B8F200CFD56C /* Data Providers */ = {
 			isa = PBXGroup;
 			children = (
-				01562A822864B75D00CFD56C /* Repositories */,
-				01E4EF01286CAD430041A556 /* Entities */,
-				01562A832864B77000CFD56C /* Services */,
-				01562A8A2864B91300CFD56C /* DTOs */,
+				016CE0EF2878919A004682E4 /* Harry Potter */,
 			);
 			path = "Data Providers";
 			sourceTree = "<group>";
@@ -294,25 +284,19 @@
 		01562A8A2864B91300CFD56C /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				01562A932864BF6E00CFD56C /* Harry Potter */,
+				01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */,
+				01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
 		};
-		01562A932864BF6E00CFD56C /* Harry Potter */ = {
+		016CE0EF2878919A004682E4 /* Harry Potter */ = {
 			isa = PBXGroup;
 			children = (
-				01562A8F2864BF4F00CFD56C /* DtoHPCharacter.swift */,
-				01562A912864BF5800CFD56C /* DtoHpCharacterDetail.swift */,
-			);
-			path = "Harry Potter";
-			sourceTree = "<group>";
-		};
-		01562A942864C06E00CFD56C /* Harry Potter */ = {
-			isa = PBXGroup;
-			children = (
-				01562A952864C07A00CFD56C /* HPService.swift */,
-				01562A972864C08800CFD56C /* HPServiceImpl.swift */,
+				01562A822864B75D00CFD56C /* Repositories */,
+				01E4EF01286CAD430041A556 /* Entities */,
+				01562A832864B77000CFD56C /* Services */,
+				01562A8A2864B91300CFD56C /* DTOs */,
 			);
 			path = "Harry Potter";
 			sourceTree = "<group>";
