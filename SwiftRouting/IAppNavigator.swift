@@ -9,17 +9,56 @@ import UIKit
 
 public enum PresentationType {
     /// A new UIViewController is added to the navigation stack
-    case push
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    case push(animated: Bool = true, completion: (() -> Void)? = nil)
+    
     /// A new UIViewController replace the current UIViewController
-    case pushReplace
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    case pushReplace(animated: Bool = true, completion: (() -> Void)? = nil)
+    
     /// A new UIViewController is presented modally
-    case present
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    case present(animated: Bool = true, completion: (() -> Void)? = nil)
+    
     /// A new UIViewController is added to a new navigation stack presented modally
-    case presentWithNavigation(customStack: UINavigationController? = nil)
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    /// - Parameter customStack: If not nil, the source controller will use this custom navigation controller instead of the default one
+    case presentWithNavigation(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil,
+        customStack: UINavigationController? = nil
+    )
+    
     /// A new UIViewController is presented in a bottom sheet controller
-    case bottomSheet(desiredHeight: CGFloat? = nil)
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    /// - Parameter desiredHeight: Set the desired height for the bottom sheet controller
+    case bottomSheet(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil,
+        desiredHeight: CGFloat? = nil
+    )
+    
     /// A new UIViewController is added to a new navigation stack presented in a bottom sheet controller
-    case bottomSheetWithNavigation(desiredHeight: CGFloat? = nil, customStack: UINavigationController? = nil)
+    /// - Parameter animated: Specifies if the presentation transition is animated or not
+    /// - Parameter completion: Action performed after presentation has been performed
+    /// - Parameter desiredHeight: Set the desired height for the bottom sheet controller
+    /// - Parameter customStack: If not nil, the source controller will use this custom navigation controller instead of the default one
+    case bottomSheetWithNavigation(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil,
+        desiredHeight: CGFloat? = nil,
+        customStack: UINavigationController? = nil
+    )
+    
+    /// Custom implementation of a navigation:
+    /// - Parameter UIViewController source view controller
+    /// - Parameter UIViewController destination view controller
+    case custom(navigationHandler: (UIViewController, UIViewController) -> Void)
 }
 
 public enum RootType{
@@ -38,6 +77,8 @@ public enum RootType{
         customTabBarController: UITabBarController? = nil,
         customStackFactory: (() -> UINavigationController)? = nil)
     
+    case custom(rootController: UIViewController)
+    
     fileprivate var isTabBar: Bool{
         switch self {
         case .singleStackTabBar, .multiStackTabBar: return true
@@ -52,11 +93,9 @@ public protocol IAppNavigator: AnyObject{
 
     /// Set the root view controller chosing among a predefined configurations
     func setRootController(rootType: RootType, animated: Bool)
-    /// Set the root view controller
-    func setCustomRootController(controller: UIViewController)
     
     /// Create a new route from a source controller towards a destination controller using the selected presentation type
-    func go(from: UIViewController, to: UIViewController, presentationType: PresentationType, completion: (() -> Void)?, animated: Bool)
+    func go(from: UIViewController, to: UIViewController, presentationType: PresentationType)
     
     
     /// Go back to the provided controller if it is part of a navigation stack
@@ -133,36 +172,34 @@ public extension IAppNavigator{
             tabBarController.viewControllers = controllers
             
             root = tabBarController
+            
+        case .custom(let rootController):
+            root = rootController
+            
         }
         
         window.rootViewController = root
         window.makeKeyAndVisible()
     }
-    
-    func setCustomRootController(controller: UIViewController){
-        window.rootViewController = controller
-        window.makeKeyAndVisible()
-    }
+
     
     func go(
         from: UIViewController,
         to: UIViewController,
-        presentationType: PresentationType = .push,
-        completion: (() -> Void)? = nil,
-        animated: Bool = true
+        presentationType: PresentationType = .push()
     ){
         
         
         switch presentationType {
 
-        case .push:
+        case .push(let animated, let completion):
             guard let navCon = from.navigationController else {
                 fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
             }
             
             navCon.pushViewController(to, animated: animated, completion: completion)
             
-        case .pushReplace:
+        case .pushReplace(let animated, let completion):
             
             guard let navCon = from.navigationController else {
                 fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
@@ -175,11 +212,11 @@ public extension IAppNavigator{
             
             completion?()
             
-        case .present:
+        case .present(let animated, let completion):
             
             from.present(to, animated: animated, completion: completion)
             
-        case .presentWithNavigation(let customStack):
+        case .presentWithNavigation(let animated, let completion, let customStack):
             
             let newNavCon = customStack ?? .init()
             
@@ -187,15 +224,27 @@ public extension IAppNavigator{
             
             from.present(newNavCon, animated: animated, completion: completion)
             
-        case .bottomSheet(let desiredHeight):
+        case .bottomSheet(let animated, let completion, let desiredHeight):
             from.presentInBottomSheetController(to, withHeight: desiredHeight, animated: animated)
             
-        case .bottomSheetWithNavigation(let desiredHeight, let customStack):
+            completion?()
+            
+        case .bottomSheetWithNavigation(
+            let animated,
+            let completion,
+            let desiredHeight,
+            let customStack
+        ):
             let newNavCon = customStack ?? .init()
             
             newNavCon.viewControllers = [to]
             
             from.presentInBottomSheetController(newNavCon, withHeight: desiredHeight, animated: animated)
+            
+            completion?()
+            
+        case .custom(let handler):
+            handler(from, to)
         }
     }
     
