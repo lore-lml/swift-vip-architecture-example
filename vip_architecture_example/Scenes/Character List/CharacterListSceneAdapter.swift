@@ -18,7 +18,7 @@ class CharacterListSceneAdapter {
     private init() {}
     
     // MARK: Dependency Injection
-    static func setup(input: CharacterListSceneModels.Input? = nil, assembler: Assembler? = nil) -> UIViewController{
+    static func setup(input: CharacterList.Input? = nil, assembler: Assembler? = nil) -> UIViewController{
         
         guard let assembler = assembler,
               let navigator = assembler.resolver.resolve(IAppNavigator.self),

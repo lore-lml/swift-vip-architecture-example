@@ -11,13 +11,13 @@
 import UIKit
 
 protocol ICharacterListScenePresenter: AnyObject {
-    func fetchCharactersResponse(_ response: CharacterListSceneModels.FetchCharacters.Response)
+    func fetchCharactersResponse(_ response: CharacterList.FetchCharacters.Response)
     
-    func fetchCharacterImageResponse(_ response: CharacterListSceneModels.FetchCharacterImage.Response)
+    func fetchCharacterImageResponse(_ response: CharacterList.FetchCharacterImage.Response)
     
-    func showCharacterDetailResponse(_ response: CharacterListSceneModels.ShowCharacterDetail.Response)
+    func showCharacterDetailResponse(_ response: CharacterList.ShowCharacterDetail.Response)
     
-    func showErrorResponse(_ response: CharacterListSceneModels.ShowError.Response)
+    func showErrorResponse(_ response: CharacterList.ShowError.Response)
 }
 
 class CharacterListScenePresenter{
@@ -32,33 +32,42 @@ class CharacterListScenePresenter{
 extension CharacterListScenePresenter: ICharacterListScenePresenter{
     // MARK: PRESENTATION LOGIC INTERFACE IMPLEMENTATIONS
     
-    func fetchCharactersResponse(_ response: CharacterListSceneModels.FetchCharacters.Response){
+    func fetchCharactersResponse(_ response: CharacterList.FetchCharacters.Response){
         
-        let vms = response.map{ CharacterListSceneModels.FetchCharacters.ViewModel(dtoCharacter: $0, isLoading: true)}
+        let vms = response.characters.map{
+            CharacterList.FetchCharacters.ViewModel(
+                dtoCharacter: $0,
+                isLoading: true
+            )
+        }
         
         self.vc?.didReceiveFetchCharactersViewModel(vms)
         
     }
     
-    func fetchCharacterImageResponse(_ response: CharacterListSceneModels.FetchCharacterImage.Response){
+    func fetchCharacterImageResponse(_ response: CharacterList.FetchCharacterImage.Response){
         
-        let img = response.characterImg == nil ? UIImage(named: "placeholder") : UIImage(data: response.characterImg!)
-        
-        let vm = CharacterListSceneModels.FetchCharacterImage.ViewModel(cellIndex: response.cellIndex, characterImg: img)
+        let vm = CharacterList.FetchCharacterImage.ViewModel(
+            cellIndex: response.cellIndex,
+            characterImg: response.characterImg
+        )
         
         vc?.didReceiveFetchCharacterImageViewModel(vm)
         
     }
     
-    func showCharacterDetailResponse(_ response: CharacterListSceneModels.ShowCharacterDetail.Response){
+    func showCharacterDetailResponse(_ response: CharacterList.ShowCharacterDetail.Response){
         
-        let img = response.studentImg == nil ? UIImage(named: "placeholder") : UIImage(data: response.studentImg!)
+        let vm = CharacterList.ShowCharacterDetail.ViewModel(
+            character: response.detail,
+            characterImg: response.studentImg
+        )
         
-        vc?.showCharacterDetail(.init(character: response.detail, characterImg: img))
+        vc?.showCharacterDetail(vm)
         
     }
     
-    func showErrorResponse(_ response: CharacterListSceneModels.ShowError.Response){
+    func showErrorResponse(_ response: CharacterList.ShowError.Response){
         self.vc?.didReceiveError(.init(description: response.error.localizedDescription))
     }
 }

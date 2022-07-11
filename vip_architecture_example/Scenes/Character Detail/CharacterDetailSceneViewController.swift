@@ -19,7 +19,7 @@ class CharacterDetailSceneViewController: UIViewController  {
     
     var router: ICharacterDetailSceneRouter!
     var interactor: ICharacterDetailSceneInteractor!
-    var input: CharacterDetailSceneModels.Input?
+    var input: CharacterDetail.Input?
     
     // MARK: OUTLETS
     @IBOutlet weak var topBackgroundView: UIView!

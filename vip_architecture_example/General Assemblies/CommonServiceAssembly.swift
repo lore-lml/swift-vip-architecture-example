@@ -25,5 +25,6 @@ class CommonServiceAssembly: Assembly {
             HPServiceImpl(hpRepository: r.resolve(HPRepository.self)!)
         }
         .inObjectScope(.container)
+        
     }
 }

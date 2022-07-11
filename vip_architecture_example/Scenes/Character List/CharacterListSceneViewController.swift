@@ -12,23 +12,26 @@ import UIKit
 
 // MARK: Controller Delegate
 protocol ICharacterListSceneDelegate: AnyObject{
-    func didReceiveFetchCharactersViewModel(_ vms: [CharacterListSceneModels.FetchCharacters.ViewModel])
-    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterListSceneModels.FetchCharacterImage.ViewModel)
-    func didReceiveError(_ errorVm: CharacterListSceneModels.ShowError.ViewModel)
-    func showCharacterDetail(_ detail: CharacterListSceneModels.ShowCharacterDetail.ViewModel)
+    func didReceiveFetchCharactersViewModel(_ vms: [CharacterList.FetchCharacters.ViewModel])
+    
+    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterList.FetchCharacterImage.ViewModel)
+    
+    func didReceiveError(_ errorVm: CharacterList.ShowError.ViewModel)
+    
+    func showCharacterDetail(_ detail: CharacterList.ShowCharacterDetail.ViewModel)
 }
 
 class CharacterListSceneViewController: UIViewController {
     
     var router: ICharacterListSceneRouter!
     var interactor: ICharacterListSceneInteractor!
-    var input: CharacterListSceneModels.Input!
+    var input: CharacterList.Input!
     
     // MARK: OUTLETS
     @IBOutlet weak var tableView: UITableView!
     
     private var _loadingView: LoadingView?
-    private var _characters: [CharacterListSceneModels.FetchCharacters.ViewModel] = []
+    private var _characters: [CharacterList.FetchCharacters.ViewModel] = []
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -94,40 +97,43 @@ extension CharacterListSceneViewController: UITableViewDelegate, UITableViewData
 extension CharacterListSceneViewController: ICharacterListSceneDelegate{
     private func _fetchCharacters(){
         _loadingView?.play()
-        interactor.fetchCharactersRequest(input)
+        interactor.fetchCharactersRequest(.init(listType: input))
     }
-    func didReceiveFetchCharactersViewModel(_ vms: [CharacterListSceneModels.FetchCharacters.ViewModel]) {
+    func didReceiveFetchCharactersViewModel(_ vms: [CharacterList.FetchCharacters.ViewModel]) {
         self._characters = vms
         tableView.reloadData()
         _loadingView?.stop()
     }
     
     
-    private func _fetchCharacterImage(_ request: CharacterListSceneModels.FetchCharacterImage.Request){
+    private func _fetchCharacterImage(_ request: CharacterList.FetchCharacterImage.Request){
         interactor.fetchCharacterImageRequest(request)
     }
-    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterListSceneModels.FetchCharacterImage.ViewModel) {
-        guard let img = vm.characterImg else { return }
+    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterList.FetchCharacterImage.ViewModel) {
         
-        var studentVm = _characters[vm.cellIndex.row]
-        studentVm.isLoading = false
-        studentVm.image = img
+        var characterVm = _characters[vm.cellIndex.row]
+        characterVm.isLoading = false
+        characterVm.imageData = vm.characterImg
         
-        _characters[vm.cellIndex.row] = studentVm
+        _characters[vm.cellIndex.row] = characterVm
         
         (tableView.cellForRow(at: vm.cellIndex) as? CharacterTableViewCell)?
-            .configure(character: studentVm)
+            .configure(character: characterVm)
     }
     
-    func didReceiveError(_ errorVm: CharacterListSceneModels.ShowError.ViewModel) {
+    func didReceiveError(_ errorVm: CharacterList.ShowError.ViewModel) {
 //        Log.e(errorVm.description)
     }
     
     
-    private func _showCharacterDetailRequest(_ request: CharacterListSceneModels.ShowCharacterDetail.Request){
+    private func _showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request){
         interactor.showCharacterDetailRequest(request)
     }
-    func showCharacterDetail(_ detail: CharacterListSceneModels.ShowCharacterDetail.ViewModel) {
-        self.router.showCharacterDetail(detail)
+    func showCharacterDetail(_ detail: CharacterList.ShowCharacterDetail.ViewModel) {
+        let dataPassing = CharacterList.CharacterDetailDataPassing(
+            character: detail.character,
+            characterImg: detail.characterImg
+        )
+        self.router.showCharacterDetail(input: dataPassing)
     }
 }

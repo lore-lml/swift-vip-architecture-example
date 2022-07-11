@@ -21,17 +21,18 @@ class CharacterTableViewCell: UITableViewCell, XibSubscribable {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    func configure(character: CharacterListSceneModels.FetchCharacters.ViewModel){
+    func configure(character: CharacterList.FetchCharacters.ViewModel){
         nameLabel.text = character.name
         houseLabel.text = character.house
-        imgView.image = character.image
+        imgView.image = character.imageData == nil ? UIImage(named: "placeholder") : character.imageData?.image
+        
+        imgView.isHidden = character.isLoading
+        activityIndicator.isHidden = !character.isLoading
         
         if character.isLoading{
-            activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         }else{
             activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
         }
         
         selectedBackgroundView = Self.bgView

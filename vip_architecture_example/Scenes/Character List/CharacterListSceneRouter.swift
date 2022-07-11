@@ -15,14 +15,14 @@ import Swinject
 
 // MARK: Navigation Methods
 protocol ICharacterListSceneRouter: AnyObject{
-    func showCharacterDetail(_ input: CharacterDetailSceneModels.Input)
+    func showCharacterDetail(input: CharacterList.CharacterDetailDataPassing)
     func dismissIfModal()
 }
 
 class CharacterListSceneRouter: IRouter {
     
     enum AvailableRoutes {
-        case characterDetail(input: CharacterDetailSceneModels.Input)
+        case characterDetail(input: CharacterDetail.Input)
     }
     
     typealias Routes = AvailableRoutes
@@ -49,7 +49,11 @@ class CharacterListSceneRouter: IRouter {
 
 extension CharacterListSceneRouter: ICharacterListSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
-    func showCharacterDetail(_ input: CharacterDetailSceneModels.Input){
+    func showCharacterDetail(input: CharacterList.CharacterDetailDataPassing){
+        let input = CharacterDetail.Input(
+            character: input.character,
+            characterImg: input.characterImg?.image
+        )
         showRoute(route: .characterDetail(input: input))
     }
     

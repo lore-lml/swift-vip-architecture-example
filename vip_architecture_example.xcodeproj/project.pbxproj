@@ -60,6 +60,7 @@
 		01B7D0C7287725BE00616BD7 /* BottomSheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C3287725BE00616BD7 /* BottomSheetPresentationController.swift */; };
 		01B7D0C8287725BE00616BD7 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C4287725BE00616BD7 /* BottomSheetViewController.swift */; };
 		01B7D0CA2877312800616BD7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7D0C92877312800616BD7 /* CardView.swift */; };
+		01E3641E287C7F3C007C3A0F /* Extension+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3641D287C7F3C007C3A0F /* Extension+Data.swift */; };
 		01E4EEDD286C68DB0041A556 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */; };
 		01E4EEE6286C90590041A556 /* HousesSceneAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEDF286C90590041A556 /* HousesSceneAdapter.swift */; };
 		01E4EEE8286C90590041A556 /* HousesSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4EEE1286C90590041A556 /* HousesSceneRouter.swift */; };
@@ -158,6 +159,7 @@
 		01B7D0C3287725BE00616BD7 /* BottomSheetPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetPresentationController.swift; sourceTree = "<group>"; };
 		01B7D0C4287725BE00616BD7 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		01B7D0C92877312800616BD7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		01E3641D287C7F3C007C3A0F /* Extension+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Data.swift"; sourceTree = "<group>"; };
 		01E4EEDC286C68DB0041A556 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		01E4EEDF286C90590041A556 /* HousesSceneAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesSceneAdapter.swift; sourceTree = "<group>"; };
 		01E4EEE1286C90590041A556 /* HousesSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesSceneRouter.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				0155A711286A0ACC004D2CCA /* Extension+HPHouse.swift */,
 				01E4EF03286CAE770041A556 /* Extension+UIColor.swift */,
 				0180A83928743E810025A939 /* Extension+UIViewController.swift */,
+				01E3641D287C7F3C007C3A0F /* Extension+Data.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				01562A902864BF4F00CFD56C /* DtoHPCharacter.swift in Sources */,
 				0180A83A28743E810025A939 /* Extension+UIViewController.swift in Sources */,
 				0155A70A2869F93A004D2CCA /* CharacterDetailSceneAdapter.swift in Sources */,
+				01E3641E287C7F3C007C3A0F /* Extension+Data.swift in Sources */,
 				01E4EEE6286C90590041A556 /* HousesSceneAdapter.swift in Sources */,
 				0155A70C2869F93A004D2CCA /* CharacterDetailSceneRouter.swift in Sources */,
 				01E4EEFD286C9E4E0041A556 /* HpCharacterWorker.swift in Sources */,

@@ -12,9 +12,11 @@ import Foundation
 
 // MARK: Interactor Requests interface
 protocol ICharacterListSceneInteractor: AnyObject{
-    func fetchCharactersRequest(_ request: CharacterListSceneModels.FetchCharacters.Request)
-    func fetchCharacterImageRequest(_ request: CharacterListSceneModels.FetchCharacterImage.Request)
-    func showCharacterDetailRequest(_ request: CharacterListSceneModels.ShowCharacterDetail.Request)
+    func fetchCharactersRequest(_ request: CharacterList.FetchCharacters.Request)
+    
+    func fetchCharacterImageRequest(_ request: CharacterList.FetchCharacterImage.Request)
+    
+    func showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request)
 }
 
 class CharacterListSceneInteractor {
@@ -34,20 +36,20 @@ class CharacterListSceneInteractor {
 extension CharacterListSceneInteractor: ICharacterListSceneInteractor{
     // MARK: BUSINESS LOGIC INTERFACE IMPLEMENTATIONS
     
-    func fetchCharactersRequest(_ request: CharacterListSceneModels.FetchCharacters.Request){
+    func fetchCharactersRequest(_ request: CharacterList.FetchCharacters.Request){
         
         let completion: HPResult<[DtoHpCharacter]> = { [weak self] res in
             
             switch res{
-            case .success(let students):
-                self?.presenter.fetchCharactersResponse(students)
+            case .success(let characters):
+                self?.presenter.fetchCharactersResponse(.init(characters: characters))
             case .failure(let err):
                 self?.presenter.showErrorResponse(.init(error: err))
             }
             
         }
         
-        switch request{
+        switch request.listType{
         case .house(let house):
             _characterWorker.getHouseCharacters(house: house, completion: completion)
         case .staff:
@@ -58,7 +60,7 @@ extension CharacterListSceneInteractor: ICharacterListSceneInteractor{
         
     }
     
-    func fetchCharacterImageRequest(_ request: CharacterListSceneModels.FetchCharacterImage.Request){
+    func fetchCharacterImageRequest(_ request: CharacterList.FetchCharacterImage.Request){
         
         let selectedCharacter = request.dtoCharacter
         
@@ -74,7 +76,7 @@ extension CharacterListSceneInteractor: ICharacterListSceneInteractor{
                 img = nil
             }
             
-            let response = CharacterListSceneModels.FetchCharacterImage.Response(
+            let response = CharacterList.FetchCharacterImage.Response(
                 cellIndex: request.cellIndex,
                 characterImg: img
             )
@@ -86,7 +88,7 @@ extension CharacterListSceneInteractor: ICharacterListSceneInteractor{
     }
     
     
-    func showCharacterDetailRequest(_ request: CharacterListSceneModels.ShowCharacterDetail.Request){
+    func showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request){
         
         let selectedCharacter = request.dtoCharacter
         

@@ -11,9 +11,10 @@
 import UIKit
 
 
-struct CharacterDetailSceneModels {
+struct CharacterDetail {
     struct Input{
         private let _character: DtoHpCharacterDetail
+        
         var characterImg: UIImage?
         var houseImg: UIImage?{ _character.house.img }
         var houseColor: UIColor{ _character.house.color }
@@ -41,12 +42,12 @@ struct CharacterDetailSceneModels {
 }
 
 // MARK: Models for passing data to other routes
-extension CharacterDetailSceneModels{
+extension CharacterDetail{
     
 }
 
 
 // MARK: VIP - USE CASES
-extension CharacterDetailSceneModels{
+extension CharacterDetail{
     // type `usecases` for magic
 }

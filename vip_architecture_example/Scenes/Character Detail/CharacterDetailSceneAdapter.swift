@@ -18,7 +18,7 @@ class CharacterDetailSceneAdapter {
     private init() {}
     
     // MARK: Dependency Injection
-    static func setup(input: CharacterDetailSceneModels.Input? = nil, assembler: Assembler? = nil) -> UIViewController{
+    static func setup(input: CharacterDetail.Input? = nil, assembler: Assembler? = nil) -> UIViewController{
         
         guard let assembler = assembler,
               let navigator = assembler.resolver.resolve(IAppNavigator.self)
