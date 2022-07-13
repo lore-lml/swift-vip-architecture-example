@@ -11,7 +11,7 @@
 import UIKit
 
 
-struct CharacterDetail {
+enum CharacterDetail {
     struct Input{
         private let _character: DtoHpCharacterDetail
         

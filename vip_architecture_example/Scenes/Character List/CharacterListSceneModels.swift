@@ -10,7 +10,7 @@
 
 import Foundation
 
-struct CharacterList {
+enum CharacterList {
     
     enum ListType{
         case house(HpHouse)
