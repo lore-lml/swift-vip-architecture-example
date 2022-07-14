@@ -121,6 +121,7 @@ public final class NavBarCustomizer{
     
 }
 
+fileprivate var logo = UIImage(named: "hp-logo")!
 
 extension NavBarCustomizer{
     
@@ -128,7 +129,7 @@ extension NavBarCustomizer{
         for viewController: UIViewController,
         rightBarButton: UIBarButtonItem? = nil,
         leftBarButton: UIBarButtonItem? = nil,
-        image: UIImage = UIImage(named: "hp-logo")!,
+        image: UIImage = logo,
         hideBackButton: Bool = false){
         
         let customizer = NavBarCustomizer(navBar: viewController.navigationController?.navigationBar, navItem: viewController.navigationItem)

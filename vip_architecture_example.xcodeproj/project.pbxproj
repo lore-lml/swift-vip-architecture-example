@@ -18,6 +18,8 @@
 		013129032859D43300FFC750 /* SwiftRouting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01358CD328620C1B00D25805 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CD228620C1B00D25805 /* BaseRouter.swift */; };
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
+		01440A3E288062F30046C6AD /* IRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01440A3D288062F30046C6AD /* IRootController.swift */; };
+		01440A4028806F340046C6AD /* Extension+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01440A3F28806F340046C6AD /* Extension+UIWindow.swift */; };
 		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
 		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
 		0155A7022869F4D0004D2CCA /* NavBarCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */; };
@@ -115,6 +117,8 @@
 		013128FE2859D43300FFC750 /* SwiftRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRouting.h; sourceTree = "<group>"; };
 		01358CD228620C1B00D25805 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
+		01440A3D288062F30046C6AD /* IRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRootController.swift; sourceTree = "<group>"; };
+		01440A3F28806F340046C6AD /* Extension+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIWindow.swift"; sourceTree = "<group>"; };
 		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
 		0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarCustomizer.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				01562A712864A51400CFD56C /* TabBarInfoProvider.swift */,
 				0198C61D28627C9E00491711 /* IRouter.swift */,
 				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
+				01440A3D288062F30046C6AD /* IRootController.swift */,
 				01B7D0C0287725A900616BD7 /* Bottom Sheet Controller */,
 				0151EB182864A341002D7724 /* Utils */,
 			);
@@ -253,6 +258,7 @@
 				0117CA0C2859EF0500B1C345 /* StoryboardImportable.swift */,
 				01B303CA2869BA4F0004F740 /* XibImportable.swift */,
 				0180A83B287441280025A939 /* Extension+UIViewController.swift */,
+				01440A3F28806F340046C6AD /* Extension+UIWindow.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01440A4028806F340046C6AD /* Extension+UIWindow.swift in Sources */,
 				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
 				0180A83C287441280025A939 /* Extension+UIViewController.swift in Sources */,
 				01B7D0C6287725BE00616BD7 /* BottomSheetControllerProtocol.swift in Sources */,
@@ -731,6 +738,7 @@
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
 				0198C61E28627C9E00491711 /* IRouter.swift in Sources */,
 				0117CA0D2859EF0500B1C345 /* StoryboardImportable.swift in Sources */,
+				01440A3E288062F30046C6AD /* IRootController.swift in Sources */,
 				01B7D0CA2877312800616BD7 /* CardView.swift in Sources */,
 				01B7D0C7287725BE00616BD7 /* BottomSheetPresentationController.swift in Sources */,
 			);

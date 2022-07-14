@@ -39,7 +39,7 @@ class HousesSceneRouter: IRouter {
         switch route{
         case .house(let house):
             let controller = CharacterListSceneAdapter.setup(input: .house(house), assembler: assembler)
-            navigator?.go(from: vc, to: controller, presentationType: .presentWithNavigation())
+            navigator?.go(to: controller, presentationType: .presentWithNavigation())
         }
     }
 

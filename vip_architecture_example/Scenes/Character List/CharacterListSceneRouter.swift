@@ -40,7 +40,7 @@ class CharacterListSceneRouter: IRouter {
         switch route{
         case .characterDetail(let input):
             let controller = CharacterDetailSceneAdapter.setup(input: input, assembler: assembler)
-            navigator?.go(from: vc, to: controller)
+            navigator?.go(to: controller)
         }
     }
 
@@ -52,7 +52,7 @@ extension CharacterListSceneRouter: ICharacterListSceneRouter{
     func showCharacterDetail(input: CharacterList.CharacterDetailDataPassing){
         let input = CharacterDetail.Input(
             character: input.character,
-            characterImg: input.characterImg?.image
+            characterImg: input.characterImg
         )
         showRoute(route: .characterDetail(input: input))
     }

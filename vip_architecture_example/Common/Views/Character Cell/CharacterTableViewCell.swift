@@ -8,6 +8,7 @@
 import UIKit
 
 class CharacterTableViewCell: UITableViewCell, XibSubscribable {
+    private static let placeholder = UIImage(named: "placeholder")!
     
     static var bgView: UIView = {
         let view = UIView()
@@ -24,7 +25,7 @@ class CharacterTableViewCell: UITableViewCell, XibSubscribable {
     func configure(character: CharacterList.FetchCharacters.ViewModel){
         nameLabel.text = character.name
         houseLabel.text = character.house
-        imgView.image = character.imageData == nil ? UIImage(named: "placeholder") : character.imageData?.image
+        imgView.image = character.imageData == nil ? Self.placeholder : character.imageData?.image
         
         imgView.isHidden = character.isLoading
         activityIndicator.isHidden = !character.isLoading

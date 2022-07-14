@@ -24,6 +24,8 @@ class AppNavigator: IAppNavigator{
     
     weak var window: UIWindow!
     
+    var root: IRootController!
+    
     private init(window: UIWindow){
         self.window = window
     }

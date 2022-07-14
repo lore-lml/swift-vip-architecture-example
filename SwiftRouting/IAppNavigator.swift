@@ -7,21 +7,32 @@
 
 import UIKit
 
+public typealias CustomNavigationHandler = (UINavigationController?, UIViewController?, UIViewController) -> Void
+
 public enum PresentationType {
     /// A new UIViewController is added to the navigation stack
     /// - Parameter animated: Specifies if the presentation transition is animated or not
     /// - Parameter completion: Action performed after presentation has been performed
-    case push(animated: Bool = true, completion: (() -> Void)? = nil)
+    case push(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil
+    )
     
     /// A new UIViewController replace the current UIViewController
     /// - Parameter animated: Specifies if the presentation transition is animated or not
     /// - Parameter completion: Action performed after presentation has been performed
-    case pushReplace(animated: Bool = true, completion: (() -> Void)? = nil)
+    case pushReplace(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil
+    )
     
     /// A new UIViewController is presented modally
     /// - Parameter animated: Specifies if the presentation transition is animated or not
     /// - Parameter completion: Action performed after presentation has been performed
-    case present(animated: Bool = true, completion: (() -> Void)? = nil)
+    case present(
+        animated: Bool = true,
+        completion: (() -> Void)? = nil
+    )
     
     /// A new UIViewController is added to a new navigation stack presented modally
     /// - Parameter animated: Specifies if the presentation transition is animated or not
@@ -56,28 +67,37 @@ public enum PresentationType {
     )
     
     /// Custom implementation of a navigation:
-    /// - Parameter UIViewController source view controller
-    /// - Parameter UIViewController destination view controller
-    case custom(navigationHandler: (UIViewController, UIViewController) -> Void)
+    /// - Parameter navigationHandler custom navigation Handler:
+    ///     - Parameter navController active UINavigationController if present
+    ///     - Parameter sourceController the currently visible view controller
+    ///     - Parameter destinationController the controller to present
+    case custom(
+        navigationHandler: CustomNavigationHandler
+    )
 }
 
 public enum RootType{
     /// Instantiate a simple UINavigationController as Root and set the controller as first controller
-    case singleStack(controller: UIViewController, customStack: UINavigationController? = nil)
+    case singleStack(
+        controller: UIViewController,
+        customStack: UINavigationController? = nil
+    )
     
     /// Instantiate a simple UITabBarController with a single navigation stack as Root
     case singleStackTabBar(
         tabBarInfoProvider: TabBarInfoProvider,
         customTabBarController: UITabBarController? = nil,
-        customStack: UINavigationController? = nil)
+        customStack: UINavigationController? = nil
+    )
     
     /// Instantiate UITabBarController as Root with a different navigation stack for each Tab
     case multiStackTabBar(
         tabBarInfoProvider: TabBarInfoProvider,
         customTabBarController: UITabBarController? = nil,
-        customStackFactory: (() -> UINavigationController)? = nil)
+        customStackFactory: (() -> UINavigationController)? = nil
+    )
     
-    case custom(rootController: UIViewController)
+    case custom(rootController: IRootController & UIViewController)
     
     fileprivate var isTabBar: Bool{
         switch self {
@@ -89,13 +109,15 @@ public enum RootType{
 
 public protocol IAppNavigator: AnyObject{
     
-    var window: UIWindow! { get set }
+    var window: UIWindow! { get }
+    
+    var root: IRootController! { get set }
 
     /// Set the root view controller chosing among a predefined configurations
     func setRootController(rootType: RootType, animated: Bool)
     
     /// Create a new route from a source controller towards a destination controller using the selected presentation type
-    func go(from: UIViewController, to: UIViewController, presentationType: PresentationType)
+    func go(to: UIViewController, presentationType: PresentationType)
     
     
     /// Go back to the provided controller if it is part of a navigation stack
@@ -119,7 +141,7 @@ public protocol IAppNavigator: AnyObject{
 public extension IAppNavigator{
     
     func setRootController(rootType: RootType, animated: Bool = true){
-        let root: UIViewController
+        let root: IRootController & UIViewController
         
         switch rootType {
         case .singleStack(let controller, let customStack):
@@ -178,13 +200,13 @@ public extension IAppNavigator{
             
         }
         
+        self.root = root
         window.rootViewController = root
         window.makeKeyAndVisible()
     }
 
     
     func go(
-        from: UIViewController,
         to: UIViewController,
         presentationType: PresentationType = .push()
     ){
@@ -193,16 +215,16 @@ public extension IAppNavigator{
         switch presentationType {
 
         case .push(let animated, let completion):
-            guard let navCon = from.navigationController else {
-                fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
+            guard let navCon = window.topViewController?.navigationController else {
+                fatalError("Navigation Controller not found in hierarchy")
             }
             
             navCon.pushViewController(to, animated: animated, completion: completion)
             
         case .pushReplace(let animated, let completion):
             
-            guard let navCon = from.navigationController else {
-                fatalError("Cannot find navigation controller. Please use one as root to push new controllers")
+            guard let navCon = window.topViewController?.navigationController else {
+                fatalError("Navigation Controller not found in hierarchy")
             }
             
             let controllersCount = navCon.viewControllers.count
@@ -213,19 +235,33 @@ public extension IAppNavigator{
             completion?()
             
         case .present(let animated, let completion):
-            
-            from.present(to, animated: animated, completion: completion)
+            guard let topVc = window.topViewController else {
+                fatalError("Top Vc not found")
+            }
+            topVc.present(to, animated: animated, completion: completion)
             
         case .presentWithNavigation(let animated, let completion, let customStack):
+            
+            guard let topVc = window.topViewController else {
+                fatalError("Top Vc not found")
+            }
             
             let newNavCon = customStack ?? .init()
             
             newNavCon.viewControllers = [to]
             
-            from.present(newNavCon, animated: animated, completion: completion)
+            topVc.present(newNavCon, animated: animated, completion: completion)
             
-        case .bottomSheet(let animated, let completion, let desiredHeight):
-            from.presentInBottomSheetController(to, withHeight: desiredHeight, animated: animated)
+        case .bottomSheet(
+            let animated,
+            let completion,
+            let desiredHeight
+        ):
+            guard let topVc = window.topViewController else {
+                fatalError("Top Vc not found")
+            }
+            
+            topVc.presentInBottomSheetController(to, withHeight: desiredHeight, animated: animated)
             
             completion?()
             
@@ -235,16 +271,24 @@ public extension IAppNavigator{
             let desiredHeight,
             let customStack
         ):
+            
+            guard let topVc = window.topViewController else {
+                fatalError("Top Vc not found")
+            }
+            
             let newNavCon = customStack ?? .init()
             
             newNavCon.viewControllers = [to]
             
-            from.presentInBottomSheetController(newNavCon, withHeight: desiredHeight, animated: animated)
+            topVc.presentInBottomSheetController(newNavCon, withHeight: desiredHeight, animated: animated)
             
             completion?()
             
         case .custom(let handler):
-            handler(from, to)
+            guard let topVc = window.topViewController else {
+                fatalError("Top Vc not found")
+            }
+            handler(root.activeNavCon, topVc, to)
         }
     }
     
