@@ -9,6 +9,7 @@
 //  https://github.com/lore-lml
 
 import UIKit
+import SDWebImage
 
 // MARK: Controller Delegate
 protocol ICharacterDetailSceneDelegate: AnyObject{
@@ -26,6 +27,7 @@ class CharacterDetailSceneViewController: UIViewController  {
     // MARK: OUTLETS
     @IBOutlet weak var topBackgroundView: UIView!
     @IBOutlet weak var characterImgView: UIImageView!
+    @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var houseContainer: UIStackView!
     @IBOutlet weak var houseImgView: UIImageView!
     @IBOutlet weak var genderLabel: UILabel!
@@ -52,13 +54,15 @@ class CharacterDetailSceneViewController: UIViewController  {
     }
     
     private func _setupView(){
-        let start = Date().timeIntervalSince1970
-        
+
         topBackgroundView.backgroundColor = input?.houseColor
         
-        let start2 = Date().timeIntervalSince1970
-        characterImgView.image = input?.characterImg?.image ?? Self.placeholder
-        let interval2 = Date().timeIntervalSince1970 - start2
+        characterImgView.sd_setImage(
+            with: URL(string: input?.characterImage ?? ""),
+            placeholderImage: Self.placeholder
+        )
+        
+        characterNameLabel.text = input?.characterName
         
         houseContainer.isHidden = input?.houseImg == nil
         houseImgView.image = input?.houseImg
@@ -74,9 +78,6 @@ class CharacterDetailSceneViewController: UIViewController  {
         
         wandContainer.isHidden = input?.wand.isEmpty ?? true
         wandLabel.text = input?.wand
-        
-        let interval = Date().timeIntervalSince1970 - start
-        Log.d("\(interval): \(interval2 * 100 / interval)")
     }
     
     @objc private func _didTapClose(){

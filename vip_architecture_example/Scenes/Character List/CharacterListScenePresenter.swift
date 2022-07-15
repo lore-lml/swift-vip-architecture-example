@@ -13,8 +13,6 @@ import UIKit
 protocol ICharacterListScenePresenter: AnyObject {
     func fetchCharactersResponse(_ response: CharacterList.FetchCharacters.Response)
     
-    func fetchCharacterImageResponse(_ response: CharacterList.FetchCharacterImage.Response)
-    
     func showCharacterDetailResponse(_ response: CharacterList.ShowCharacterDetail.Response)
     
     func showErrorResponse(_ response: CharacterList.ShowError.Response)
@@ -34,33 +32,20 @@ extension CharacterListScenePresenter: ICharacterListScenePresenter{
     
     func fetchCharactersResponse(_ response: CharacterList.FetchCharacters.Response){
         
-        let vms = response.characters.map{
-            CharacterList.FetchCharacters.ViewModel(
-                dtoCharacter: $0,
-                isLoading: true
-            )
+        let characters = response.characters.map{
+            CharacterList.FetchCharacters.ViewModel.CharacterVm(dtoCharacter: $0)
         }
         
-        self.vc?.didReceiveFetchCharactersViewModel(vms)
+        let vm = CharacterList.FetchCharacters.ViewModel(characters: characters)
         
-    }
-    
-    func fetchCharacterImageResponse(_ response: CharacterList.FetchCharacterImage.Response){
-        
-        let vm = CharacterList.FetchCharacterImage.ViewModel(
-            cellIndex: response.cellIndex,
-            characterImg: response.characterImg
-        )
-        
-        vc?.didReceiveFetchCharacterImageViewModel(vm)
+        self.vc?.didReceiveFetchCharactersViewModel(vm)
         
     }
     
     func showCharacterDetailResponse(_ response: CharacterList.ShowCharacterDetail.Response){
         
         let vm = CharacterList.ShowCharacterDetail.ViewModel(
-            character: response.detail,
-            characterImg: response.studentImg
+            character: response.detail
         )
         
         vc?.showCharacterDetail(vm)

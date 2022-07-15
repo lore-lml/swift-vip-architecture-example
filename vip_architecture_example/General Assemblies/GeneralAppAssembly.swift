@@ -19,8 +19,7 @@ class GeneralAppAssembly: Assembly{
     func assemble(container: Container) {
         
         container.register(IAppNavigator.self) { _ in
-            AppNavigator.initialize(window: self.window)
-            return AppNavigator.shared
+            return DefaultAppNavigator(window: self.window)
         }.inObjectScope(.container)
         
     }

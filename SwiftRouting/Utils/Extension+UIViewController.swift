@@ -19,7 +19,7 @@ extension UIViewController {
     }
     
     func presentInBottomSheetController(_ vc: UIViewController, withHeight height: CGFloat? = nil, animated: Bool = true, dismissCompletion: (() -> Void)? = nil ){
-        let bottomSheetController = BottomSheetViewController.fromStoryboard()
+        let bottomSheetController = BottomSheetViewController.fromXib()
             .withDismissHandler(dismissCompletion)
         
         bottomSheetController.modalPresentationStyle = .custom

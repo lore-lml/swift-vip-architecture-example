@@ -16,7 +16,6 @@ class HPServiceImpl: HPService{
     private var _studentsCharacters: [HpCharacter]?
     private var _staffCharacters: [HpCharacter]?
     private var _houseCharacters: [HpHouse: [HpCharacter]] = [:]
-    private var _images: NSCache<NSString, NSData> = .init()
     
     required init(hpRepository: HPRepository) {
         self._repo = hpRepository
@@ -80,17 +79,6 @@ class HPServiceImpl: HPService{
                 Log.d($0.jsonString!)
                 return $0 as [DtoHpCharacter]
             })
-        }
-    }
-    
-    func getImageOf(character: DtoHpCharacter, completion: @escaping HPResult<Data>){
-        if !character.image.isEmpty, let cachedImg = _images.object(forKey: .init(string: character.image)){
-            completion(.success( cachedImg as Data ))
-            return
-        }
-        
-        self._repo.getImageOf(character: character as! HpCharacter) { res in
-            completion(res.map{ $0 as Data })
         }
     }
     

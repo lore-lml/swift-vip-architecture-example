@@ -8,18 +8,14 @@
 import UIKit
 
 
-public protocol BottomSheetControllerProtocol: StoryboardImportable{
-    static var storyboardName: String { get }
+public protocol BottomSheetControllerProtocol: XibImportable{
     var frameHeight: CGFloat? { get set }
     var containerSubview: UIView? { get set }
     
-    static func fromStoryboard() -> Self
+    static func fromXib() -> Self
 }
 
 extension BottomSheetControllerProtocol where Self: BottomSheetViewController{
-     public static var storyboardName: String {
-        "BottomSheetController"
-    }
     
     func addViewToContainer(_ view: UIView){
         view.frame = containerView.bounds

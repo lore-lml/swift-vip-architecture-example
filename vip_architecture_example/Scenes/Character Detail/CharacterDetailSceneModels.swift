@@ -15,7 +15,8 @@ enum CharacterDetail {
     struct Input{
         private let _character: DtoHpCharacterDetail
         
-        var characterImg: Data?
+        var characterName: String{ _character.name }
+        var characterImage: String{ _character.image }
         var houseImg: UIImage?{ _character.house.img }
         var houseColor: UIColor{ _character.house.color }
         var gender: String{ _character.gender.capitalized }
@@ -34,9 +35,8 @@ enum CharacterDetail {
             }
         }
         
-        init(character: DtoHpCharacterDetail, characterImg: Data?){
+        init(character: DtoHpCharacterDetail){
             _character = character
-            self.characterImg = characterImg
         }
     }
 }

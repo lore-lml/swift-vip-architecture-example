@@ -33,21 +33,17 @@ class HPRepositoryImpl: HPRepository{
         request(route: "house/\(house.rawValue)", completion: completion)
     }
     
-    func getImageOf(character: HpCharacter, completion: @escaping HPResult<Data>){
-        let url = character.image.replacingOccurrences(of: "http", with: "https")
-        AF.request(url)
-            .validate(statusCode: 200..<300)
-            .responseData { res in
-                completion(res.result)
-            }
-    }
-    
     private func request(route: String, completion: @escaping HPResult<[HpCharacter]>){
         AF.request("\(_baseUrl)/\(route)")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseDecodable(of: [HpCharacter].self) { response in
-                completion(response.result)
+                let mappedRes = response.result.map{
+                    $0.map{ c in
+                        c.copyWith(image: c.image.replacingOccurrences(of: "http", with: "https"))
+                    }
+                }
+                completion(mappedRes)
             }
 //            .responseData { response in
 //                let decoder = JSONDecoder()
@@ -58,5 +54,38 @@ class HPRepositoryImpl: HPRepository{
 //
 //                completion(newResponse)
 //            }
+    }
+}
+
+
+fileprivate extension HpCharacter{
+    func copyWith(
+        name: String? = nil,
+        species: String? = nil,
+        gender: String? = nil,
+        house: HpHouse? = nil,
+        dateOfBirth: String? = nil,
+        wizard: Bool? = nil,
+        ancestry: String? = nil,
+        eyeColour: String? = nil,
+        hairColour: String? = nil,
+        alive: Bool? = nil,
+        image: String? = nil,
+        wand: HPWand? = nil
+    ) -> HpCharacter{
+        .init(
+            name: name ?? self.name,
+            species: species ?? self.species,
+            gender: gender ?? self.species,
+            house: house ?? self.house,
+            dateOfBirth: dateOfBirth ?? self.dateOfBirth,
+            wizard: wizard ?? self.wizard,
+            ancestry: ancestry ?? self.ancestry,
+            eyeColour: eyeColour ?? self.eyeColour,
+            hairColour: hairColour ?? self.hairColour,
+            alive: alive ?? self.alive,
+            image: image ?? self.image,
+            wand: wand ?? self.wand
+        )
     }
 }

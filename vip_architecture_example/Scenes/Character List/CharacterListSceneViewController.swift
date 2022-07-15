@@ -12,9 +12,7 @@ import UIKit
 
 // MARK: Controller Delegate
 protocol ICharacterListSceneDelegate: AnyObject{
-    func didReceiveFetchCharactersViewModel(_ vms: [CharacterList.FetchCharacters.ViewModel])
-    
-    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterList.FetchCharacterImage.ViewModel)
+    func didReceiveFetchCharactersViewModel(_ vm: CharacterList.FetchCharacters.ViewModel)
     
     func didReceiveError(_ errorVm: CharacterList.ShowError.ViewModel)
     
@@ -31,7 +29,8 @@ class CharacterListSceneViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var _loadingView: LoadingView?
-    private var _characters: [CharacterList.FetchCharacters.ViewModel] = []
+    private var _viewModel: CharacterList.FetchCharacters.ViewModel = .init(characters: [])
+    private var _characters: [CharacterList.FetchCharacters.ViewModel.CharacterVm]{ _viewModel.characters }
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -74,20 +73,11 @@ extension CharacterListSceneViewController: UITableViewDelegate, UITableViewData
         let character = _characters[indexPath.row]
         cell.configure(character: character)
         
-        
-        _fetchCharacterImage(.init(cellIndex: indexPath, dtoCharacter: character.dtoCharacter))
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        _showCharacterDetailRequest(
-            .init(
-                cellIndex: indexPath,
-                dtoCharacter: _characters[indexPath.row].dtoCharacter
-            )
-        )
+        _showCharacterDetailRequest(cellIndex: indexPath)
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -96,29 +86,14 @@ extension CharacterListSceneViewController: UITableViewDelegate, UITableViewData
 
 extension CharacterListSceneViewController: ICharacterListSceneDelegate{
     private func _fetchCharacters(){
+        let request = CharacterList.FetchCharacters.Request(listType: input)
         _loadingView?.play()
-        interactor.fetchCharactersRequest(.init(listType: input))
+        interactor.fetchCharactersRequest(request)
     }
-    func didReceiveFetchCharactersViewModel(_ vms: [CharacterList.FetchCharacters.ViewModel]) {
-        self._characters = vms
+    func didReceiveFetchCharactersViewModel(_ vm: CharacterList.FetchCharacters.ViewModel) {
+        self._viewModel = vm
         tableView.reloadData()
         _loadingView?.stop()
-    }
-    
-    
-    private func _fetchCharacterImage(_ request: CharacterList.FetchCharacterImage.Request){
-        interactor.fetchCharacterImageRequest(request)
-    }
-    func didReceiveFetchCharacterImageViewModel(_ vm: CharacterList.FetchCharacterImage.ViewModel) {
-        
-        var characterVm = _characters[vm.cellIndex.row]
-        characterVm.isLoading = false
-        characterVm.imageData = vm.characterImg
-        
-        _characters[vm.cellIndex.row] = characterVm
-        
-        (tableView.cellForRow(at: vm.cellIndex) as? CharacterTableViewCell)?
-            .configure(character: characterVm)
     }
     
     func didReceiveError(_ errorVm: CharacterList.ShowError.ViewModel) {
@@ -126,13 +101,15 @@ extension CharacterListSceneViewController: ICharacterListSceneDelegate{
     }
     
     
-    private func _showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request){
+    private func _showCharacterDetailRequest(cellIndex: IndexPath){
+        let request = CharacterList.ShowCharacterDetail.Request(
+            characterVm: _characters[cellIndex.row]
+        )
         interactor.showCharacterDetailRequest(request)
     }
     func showCharacterDetail(_ detail: CharacterList.ShowCharacterDetail.ViewModel) {
         let dataPassing = CharacterList.CharacterDetailDataPassing(
-            character: detail.character,
-            characterImg: detail.characterImg
+            character: detail.character
         )
         self.router.showCharacterDetail(input: dataPassing)
     }

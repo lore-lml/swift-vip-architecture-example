@@ -16,6 +16,7 @@
                 <outlet property="birtDateContainer" destination="rWZ-69-Dey" id="vjJ-TW-FqP"/>
                 <outlet property="birthDateLabel" destination="MEr-8F-bCl" id="p3v-7f-SoQ"/>
                 <outlet property="characterImgView" destination="7zQ-MV-apc" id="jZc-7O-gut"/>
+                <outlet property="characterNameLabel" destination="wbv-XS-qQM" id="mwT-7n-bon"/>
                 <outlet property="genderLabel" destination="oew-em-Wn3" id="49o-EY-s9A"/>
                 <outlet property="houseContainer" destination="Yga-LS-PtI" id="OVJ-04-iAC"/>
                 <outlet property="houseImgView" destination="lG5-4n-Brv" id="TZy-er-gPQ"/>
@@ -35,7 +36,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAZ-7O-UoW" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="780"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2do-q6-RDI">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
@@ -61,7 +62,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olC-Ah-GD3" customClass="CardView" customModule="vip_architecture_example" customModuleProvider="target">
-                                    <rect key="frame" x="18" y="410" width="378" height="310"/>
+                                    <rect key="frame" x="18" y="440" width="378" height="310"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kMk-wa-Yuy">
                                             <rect key="frame" x="18" y="5" width="342" height="300"/>
@@ -215,19 +216,28 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbv-XS-qQM">
+                                    <rect key="frame" x="18" y="380" width="378" height="30"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="olC-Ah-GD3" firstAttribute="top" secondItem="U4G-B6-9Qd" secondAttribute="bottom" constant="50" id="1hb-Z4-fwL"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U4G-B6-9Qd" secondAttribute="trailing" constant="80" id="4M2-hh-NX8"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" id="76h-e9-Zm2"/>
+                                <constraint firstItem="olC-Ah-GD3" firstAttribute="top" secondItem="wbv-XS-qQM" secondAttribute="bottom" constant="30" id="7JQ-2J-2hm"/>
                                 <constraint firstItem="U4G-B6-9Qd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="80" id="8Lf-NC-wrM"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="top" secondItem="AAZ-7O-UoW" secondAttribute="top" id="OlW-ZD-Z3L"/>
                                 <constraint firstAttribute="bottom" secondItem="olC-Ah-GD3" secondAttribute="bottom" constant="30" id="PcD-yF-N35"/>
                                 <constraint firstItem="2do-q6-RDI" firstAttribute="bottom" secondItem="U4G-B6-9Qd" secondAttribute="bottom" constant="-120" id="Q0y-NB-Byn"/>
                                 <constraint firstItem="U4G-B6-9Qd" firstAttribute="top" secondItem="AAZ-7O-UoW" secondAttribute="top" constant="60" id="YTy-xU-pBW"/>
+                                <constraint firstItem="wbv-XS-qQM" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="18" id="aYX-x2-EA3"/>
                                 <constraint firstAttribute="trailing" secondItem="olC-Ah-GD3" secondAttribute="trailing" constant="18" id="cUA-ri-foC"/>
+                                <constraint firstAttribute="trailing" secondItem="wbv-XS-qQM" secondAttribute="trailing" constant="18" id="f7T-YC-Xs4"/>
                                 <constraint firstItem="olC-Ah-GD3" firstAttribute="leading" secondItem="AAZ-7O-UoW" secondAttribute="leading" constant="18" id="i3r-uh-q8Q"/>
+                                <constraint firstItem="wbv-XS-qQM" firstAttribute="top" secondItem="U4G-B6-9Qd" secondAttribute="bottom" constant="20" id="i8m-Na-4V9"/>
                                 <constraint firstItem="U4G-B6-9Qd" firstAttribute="centerX" secondItem="AAZ-7O-UoW" secondAttribute="centerX" id="iCQ-AL-iWZ"/>
                                 <constraint firstAttribute="trailing" secondItem="2do-q6-RDI" secondAttribute="trailing" id="qgN-PC-rRf"/>
                             </constraints>

@@ -8,7 +8,8 @@ target 'vip_architecture_example' do
   # Pods for vip_architecture_example
   pod 'Alamofire'
   pod 'lottie-ios', '~> 3.2.3'
-
+  pod 'SDWebImage', '~> 5.0'
+  
 end
 
 target 'SwiftRouting' do

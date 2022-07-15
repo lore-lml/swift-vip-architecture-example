@@ -1,19 +1,21 @@
 //
 //  BottomSheetViewController.swift
-//  CBUAEsdk
+//  SwiftRouting
 //
-//  Created by Lorenzo Limoli on 10/01/22.
+//  Created by Lorenzo Limoli on 15/07/22.
 //
 
 import UIKit
 
 public class BottomSheetViewController: UIViewController, BottomSheetControllerProtocol {
     
+    
     public var frameHeight: CGFloat?
     public var containerSubview: UIView?
     
+    @IBOutlet weak var swipeDownArea: UIView!
+    @IBOutlet weak var swipeDownIndicator: UIView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var indicatorContainer: UIView!
     
@@ -40,6 +42,9 @@ public class BottomSheetViewController: UIViewController, BottomSheetControllerP
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        swipeDownArea.layer.cornerRadius = 15
+        swipeDownIndicator.layer.cornerRadius = 4
         
         if let containerSubview = containerSubview {
             addViewToContainer(containerSubview)

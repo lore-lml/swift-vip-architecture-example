@@ -51,8 +51,7 @@ extension CharacterListSceneRouter: ICharacterListSceneRouter{
     // MARK: NAVIGATION METHODS LOGIC INTERFACE IMPLEMENTATION
     func showCharacterDetail(input: CharacterList.CharacterDetailDataPassing){
         let input = CharacterDetail.Input(
-            character: input.character,
-            characterImg: input.characterImg
+            character: input.character
         )
         showRoute(route: .characterDetail(input: input))
     }

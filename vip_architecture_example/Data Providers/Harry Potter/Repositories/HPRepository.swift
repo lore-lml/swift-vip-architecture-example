@@ -15,6 +15,4 @@ protocol HPRepository{
     func getStaff(completion: @escaping HPResult<[HpCharacter]>)
     
     func getCharactersOf(house: HpHouse, completion: @escaping HPResult<[HpCharacter]>)
-    
-    func getImageOf(character: HpCharacter, completion: @escaping HPResult<Data>)
 }

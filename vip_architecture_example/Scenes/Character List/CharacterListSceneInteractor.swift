@@ -14,8 +14,6 @@ import Foundation
 protocol ICharacterListSceneInteractor: AnyObject{
     func fetchCharactersRequest(_ request: CharacterList.FetchCharacters.Request)
     
-    func fetchCharacterImageRequest(_ request: CharacterList.FetchCharacterImage.Request)
-    
     func showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request)
 }
 
@@ -23,12 +21,10 @@ class CharacterListSceneInteractor {
     
     var presenter: ICharacterListScenePresenter
     private let _characterWorker: HpCharacterWorker
-    private let _characterImageWorker: HpCharacterImageWorker
     
     init(presenter: ICharacterListScenePresenter, hpService: HPService){
         self.presenter = presenter
         self._characterWorker = .init(hpService: hpService)
-        self._characterImageWorker = .init(hpService: hpService)
     }
 
 }
@@ -60,46 +56,14 @@ extension CharacterListSceneInteractor: ICharacterListSceneInteractor{
         
     }
     
-    func fetchCharacterImageRequest(_ request: CharacterList.FetchCharacterImage.Request){
-        
-        let selectedCharacter = request.dtoCharacter
-        
-        _characterImageWorker.getImageOf(character: selectedCharacter) { [weak self] res in
-            
-            let img: Data?
-            
-            switch res{
-            case .success(let imgData):
-                img = imgData
-                
-            case .failure:
-                img = nil
-            }
-            
-            let response = CharacterList.FetchCharacterImage.Response(
-                cellIndex: request.cellIndex,
-                characterImg: img
-            )
-            
-            self?.presenter.fetchCharacterImageResponse(response)
-            
-        }
-        
-    }
-    
     
     func showCharacterDetailRequest(_ request: CharacterList.ShowCharacterDetail.Request){
         
-        let selectedCharacter = request.dtoCharacter
+        let selectedCharacter = request.characterVm.dtoCharacter
         
         let detail = _characterWorker.getDetailOf(character: selectedCharacter)
         
-        _characterImageWorker.getImageOf(character: selectedCharacter) { [weak self] res in
-            let data = try? res.get()
-            self?.presenter.showCharacterDetailResponse(
-                .init(studentImg: data, detail: detail)
-            )
-        }
-        
+        let response = CharacterList.ShowCharacterDetail.Response(detail: detail)
+        self.presenter.showCharacterDetailResponse(response)
     }
 }

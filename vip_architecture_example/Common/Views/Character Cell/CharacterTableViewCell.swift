@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterTableViewCell: UITableViewCell, XibSubscribable {
     private static let placeholder = UIImage(named: "placeholder")!
@@ -22,18 +23,22 @@ class CharacterTableViewCell: UITableViewCell, XibSubscribable {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    func configure(character: CharacterList.FetchCharacters.ViewModel){
+    func configure(character: CharacterList.FetchCharacters.ViewModel.CharacterVm){
         nameLabel.text = character.name
         houseLabel.text = character.house
-        imgView.image = character.imageData == nil ? Self.placeholder : character.imageData?.image
         
-        imgView.isHidden = character.isLoading
-        activityIndicator.isHidden = !character.isLoading
+        imgView.isHidden = true
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
-        if character.isLoading{
-            activityIndicator.startAnimating()
-        }else{
-            activityIndicator.stopAnimating()
+        imgView.sd_setImage(
+            with: URL(string: character.image),
+            placeholderImage: Self.placeholder) { [weak self] _, _, _, _ in
+                
+                self?.activityIndicator.stopAnimating()
+                self?.activityIndicator.isHidden = true
+                self?.imgView.isHidden = false
+
         }
         
         selectedBackgroundView = Self.bgView

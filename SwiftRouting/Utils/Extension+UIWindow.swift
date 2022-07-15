@@ -15,8 +15,13 @@ extension UIWindow {
                 top = presented
             } else if let nav = top as? UINavigationController {
                 top = nav.visibleViewController
+                
             } else if let tab = top as? UITabBarController {
                 top = tab.selectedViewController
+                
+            } else if let bottomSheet = top as? BottomSheetViewController, bottomSheet.children.count > 0{
+                top = bottomSheet.children[bottomSheet.children.count - 1]
+                
             } else {
                 break
             }
