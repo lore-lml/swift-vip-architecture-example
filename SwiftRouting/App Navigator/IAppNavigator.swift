@@ -7,99 +7,8 @@
 
 import UIKit
 
-public typealias CustomNavigationHandler = (UINavigationController?, UIViewController?, UIViewController) -> Void
-
-public enum PresentationType {
-    /// A new UIViewController is added to the navigation stack
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    case push(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil
-    )
-    
-    /// A new UIViewController replace the current UIViewController
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    case pushReplace(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil
-    )
-    
-    /// A new UIViewController is presented modally
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    case present(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil
-    )
-    
-    /// A new UIViewController is added to a new navigation stack presented modally
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    /// - Parameter customStack: If not nil, the source controller will use this custom navigation controller instead of the default one
-    case presentWithNavigation(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil,
-        customStack: UINavigationController? = nil
-    )
-    
-    /// A new UIViewController is presented in a bottom sheet controller
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    /// - Parameter desiredHeight: Set the desired height for the bottom sheet controller
-    case bottomSheet(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil,
-        desiredHeight: CGFloat? = nil
-    )
-    
-    /// A new UIViewController is added to a new navigation stack presented in a bottom sheet controller
-    /// - Parameter animated: Specifies if the presentation transition is animated or not
-    /// - Parameter completion: Action performed after presentation has been performed
-    /// - Parameter desiredHeight: Set the desired height for the bottom sheet controller
-    /// - Parameter customStack: If not nil, the source controller will use this custom navigation controller instead of the default one
-    case bottomSheetWithNavigation(
-        animated: Bool = true,
-        completion: (() -> Void)? = nil,
-        desiredHeight: CGFloat? = nil,
-        customStack: UINavigationController? = nil
-    )
-    
-    /// Custom implementation of a navigation:
-    /// - Parameter navigationHandler custom navigation Handler:
-    ///     - Parameter navController active UINavigationController if present
-    ///     - Parameter sourceController the currently visible view controller
-    ///     - Parameter destinationController the controller to present
-    case custom(
-        navigationHandler: CustomNavigationHandler
-    )
-}
-
-public enum RootType{
-    /// Instantiate a simple UINavigationController as Root and set the controller as first controller
-    case singleStack(
-        controller: UIViewController,
-        customStack: UINavigationController? = nil
-    )
-    
-    /// Instantiate a simple UITabBarController with a single navigation stack as Root
-    case singleStackTabBar(
-        tabBarInfoProvider: TabBarInfoProvider,
-        customTabBarController: UITabBarController? = nil,
-        customStack: UINavigationController? = nil
-    )
-    
-    /// Instantiate UITabBarController as Root with a different navigation stack for each Tab
-    case multiStackTabBar(
-        tabBarInfoProvider: TabBarInfoProvider,
-        customTabBarController: UITabBarController? = nil,
-        customStackFactory: (() -> UINavigationController)? = nil
-    )
-    
-    case custom(rootController: IRootController & UIViewController)
-    
-    fileprivate var isTabBar: Bool{
+fileprivate extension RootType{
+    var isTabBar: Bool{
         switch self {
         case .singleStackTabBar, .multiStackTabBar: return true
         default: return false
@@ -109,9 +18,7 @@ public enum RootType{
 
 public protocol IAppNavigator: AnyObject{
     
-    var window: UIWindow! { get }
-    
-    var root: IRootController! { get set }
+    var window: UIWindow { get }
 
     /// Set the root view controller chosing among a predefined configurations
     func setRootController(rootType: RootType, animated: Bool)
@@ -141,7 +48,7 @@ public protocol IAppNavigator: AnyObject{
 public extension IAppNavigator{
     
     func setRootController(rootType: RootType, animated: Bool = true){
-        let root: IRootController & UIViewController
+        let root: UIViewController
         
         switch rootType {
         case .singleStack(let controller, let customStack):
@@ -200,7 +107,6 @@ public extension IAppNavigator{
             
         }
         
-        self.root = root
         window.rootViewController = root
         window.makeKeyAndVisible()
     }
@@ -288,7 +194,7 @@ public extension IAppNavigator{
             guard let topVc = window.topViewController else {
                 fatalError("Top Vc not found")
             }
-            handler(root.activeNavCon, topVc, to)
+            handler(topVc.navigationController, topVc, to)
         }
     }
     

@@ -17,11 +17,12 @@
 		013129022859D43300FFC750 /* SwiftRouting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; };
 		013129032859D43300FFC750 /* SwiftRouting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 013128FC2859D43300FFC750 /* SwiftRouting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01358CDE28622D2E00D25805 /* IAppNavigator.swift */; };
-		01440A3E288062F30046C6AD /* IRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01440A3D288062F30046C6AD /* IRootController.swift */; };
 		01440A4028806F340046C6AD /* Extension+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01440A3F28806F340046C6AD /* Extension+UIWindow.swift */; };
 		014602102881884D00793B98 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146020F2881884D00793B98 /* BaseRouter.swift */; };
 		01460215288191EB00793B98 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01460213288191EB00793B98 /* BottomSheetViewController.swift */; };
 		01460216288191EB00793B98 /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01460214288191EB00793B98 /* BottomSheetViewController.xib */; };
+		014602192881AB8A00793B98 /* PresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014602182881AB8A00793B98 /* PresentationType.swift */; };
+		0146021B2881AB9400793B98 /* RootType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146021A2881AB9300793B98 /* RootType.swift */; };
 		0155A6F92869C12D004D2CCA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6F82869C12D004D2CCA /* Log.swift */; };
 		0155A6FB2869C720004D2CCA /* JsonPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */; };
 		0155A7022869F4D0004D2CCA /* NavBarCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */; };
@@ -114,11 +115,12 @@
 		013128FC2859D43300FFC750 /* SwiftRouting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRouting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		013128FE2859D43300FFC750 /* SwiftRouting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRouting.h; sourceTree = "<group>"; };
 		01358CDE28622D2E00D25805 /* IAppNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppNavigator.swift; sourceTree = "<group>"; };
-		01440A3D288062F30046C6AD /* IRootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRootController.swift; sourceTree = "<group>"; };
 		01440A3F28806F340046C6AD /* Extension+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIWindow.swift"; sourceTree = "<group>"; };
 		0146020F2881884D00793B98 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		01460213288191EB00793B98 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		01460214288191EB00793B98 /* BottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
+		014602182881AB8A00793B98 /* PresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationType.swift; sourceTree = "<group>"; };
+		0146021A2881AB9300793B98 /* RootType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootType.swift; sourceTree = "<group>"; };
 		0155A6F82869C12D004D2CCA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		0155A6FA2869C720004D2CCA /* JsonPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonPrettyPrint.swift; sourceTree = "<group>"; };
 		0155A7012869F4D0004D2CCA /* NavBarCustomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarCustomizer.swift; sourceTree = "<group>"; };
@@ -230,9 +232,7 @@
 				013128FE2859D43300FFC750 /* SwiftRouting.h */,
 				01562A712864A51400CFD56C /* TabBarInfoProvider.swift */,
 				0198C61D28627C9E00491711 /* IRouter.swift */,
-				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
-				018D82642881841A00A18BD2 /* DefaultAppNavigator.swift */,
-				01440A3D288062F30046C6AD /* IRootController.swift */,
+				014602172881AB5500793B98 /* App Navigator */,
 				01B7D0C0287725A900616BD7 /* Bottom Sheet Controller */,
 				0151EB182864A341002D7724 /* Utils */,
 			);
@@ -246,6 +246,17 @@
 				01562A992864C4B200CFD56C /* CommonServiceAssembly.swift */,
 			);
 			path = "General Assemblies";
+			sourceTree = "<group>";
+		};
+		014602172881AB5500793B98 /* App Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				01358CDE28622D2E00D25805 /* IAppNavigator.swift */,
+				018D82642881841A00A18BD2 /* DefaultAppNavigator.swift */,
+				014602182881AB8A00793B98 /* PresentationType.swift */,
+				0146021A2881AB9300793B98 /* RootType.swift */,
+			);
+			path = "App Navigator";
 			sourceTree = "<group>";
 		};
 		0151EB182864A341002D7724 /* Utils */ = {
@@ -725,14 +736,15 @@
 				01440A4028806F340046C6AD /* Extension+UIWindow.swift in Sources */,
 				01562A722864A51400CFD56C /* TabBarInfoProvider.swift in Sources */,
 				0180A83C287441280025A939 /* Extension+UIViewController.swift in Sources */,
+				0146021B2881AB9400793B98 /* RootType.swift in Sources */,
 				01B7D0C6287725BE00616BD7 /* BottomSheetControllerProtocol.swift in Sources */,
 				0198C61C2862753900491711 /* Extension+UINavigationController.swift in Sources */,
 				01B303CB2869BA4F0004F740 /* XibImportable.swift in Sources */,
 				01358CDF28622D2F00D25805 /* IAppNavigator.swift in Sources */,
 				0198C61E28627C9E00491711 /* IRouter.swift in Sources */,
 				018D82652881841A00A18BD2 /* DefaultAppNavigator.swift in Sources */,
+				014602192881AB8A00793B98 /* PresentationType.swift in Sources */,
 				0117CA0D2859EF0500B1C345 /* StoryboardImportable.swift in Sources */,
-				01440A3E288062F30046C6AD /* IRootController.swift in Sources */,
 				01B7D0C7287725BE00616BD7 /* BottomSheetPresentationController.swift in Sources */,
 				01460215288191EB00793B98 /* BottomSheetViewController.swift in Sources */,
 			);

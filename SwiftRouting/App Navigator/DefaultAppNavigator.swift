@@ -9,9 +9,7 @@ import UIKit
 
 open class DefaultAppNavigator: IAppNavigator{
     
-    public weak var window: UIWindow!
-    
-    public var root: IRootController!
+    public private(set) var window: UIWindow
     
     public init(window: UIWindow){
         self.window = window
