@@ -23,7 +23,7 @@ public protocol IAppNavigator: AnyObject{
     /// Set the root view controller chosing among a predefined configurations
     func setRootController(rootType: RootType, animated: Bool)
     
-    /// Create a new route from a source controller towards a destination controller using the selected presentation type
+    /// Create a new route towards a destination controller using the selected presentation type
     func go(to: UIViewController, presentationType: PresentationType)
     
     

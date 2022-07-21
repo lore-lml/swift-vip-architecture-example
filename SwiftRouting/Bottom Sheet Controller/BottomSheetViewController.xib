@@ -68,7 +68,7 @@
             <constraints>
                 <constraint firstItem="HHZ-33-4cJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KET-LJ-uYx"/>
                 <constraint firstItem="HHZ-33-4cJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="YO3-e2-qMb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="HHZ-33-4cJ" secondAttribute="top" id="eBm-Ys-xxc"/>
+                <constraint firstItem="HHZ-33-4cJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eBm-Ys-xxc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HHZ-33-4cJ" secondAttribute="trailing" id="nbB-hB-nRS"/>
             </constraints>
             <point key="canvasLocation" x="-628.98550724637687" y="142.63392857142856"/>
